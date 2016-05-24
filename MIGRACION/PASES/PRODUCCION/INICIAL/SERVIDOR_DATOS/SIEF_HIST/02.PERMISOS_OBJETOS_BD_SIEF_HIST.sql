@@ -1,0 +1,12 @@
+USE [SIEF_HIST]
+GO
+
+/* TABLAS */
+
+GRANT SELECT ON dbo.DEUDOR TO AccesoSIGANEM
+GO
+
+
+
+
+

@@ -2,7 +2,7 @@
  
 echo Desinstalando SIGANEM Windows Service...
 echo ---------------------------------------------------
-C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\InstallUtil /u ..\wsaIndicadores\wsaIndicadores.exe
+C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\InstallUtil /u E:\Servicios\SIGANEM\wsaIndicadores\wsaIndicadores.exe
 echo ---------------------------------------------------
 echo Done.
 pause

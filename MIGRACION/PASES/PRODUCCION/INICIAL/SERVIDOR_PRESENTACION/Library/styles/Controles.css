@@ -1,0 +1,197 @@
+﻿/***************** CONTROLES *****************/
+.divCenter
+{
+    position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.divControles
+{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    vertical-align:top;
+    font-family: Verdana;
+    font-size: 11px;
+    
+    bottom:0px;
+    vertical-align:bottom;
+    display:block;
+}
+
+.blackLabel
+{
+	color: #000000;
+	font-family: Verdana;
+	font-size: 11px;
+}
+
+.blackBoldLabel
+{
+	color: #000000;
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/**/
+.ctrDropDown
+{
+    width: 145px;
+    font-size: 11px;
+    z-index: -1;
+    font-family: Verdana;
+	font-size: 11px;
+}
+.ctrDropDownClick
+{
+    color: red;
+    font-size: 11px;
+    width: 100%;
+    z-index: 9999999;
+    font-family: Verdana;
+	font-size: 11px;
+}
+.plainDropDown
+{
+    width: 145px;
+    font-size: 11px;
+    font-family: Verdana;
+	font-size: 11px;
+}
+/**/
+
+.mainTableBoxesCss
+{
+	font-family: Verdana;
+	font-size: 11px;
+	width: 145px;
+}
+
+.mainTableBoxesCss:hover
+{
+	cursor : pointer;
+}
+
+.labelTabError
+{
+	color : #FF0000;
+	font-family: Verdana;
+}
+
+.checkboxContainers 
+{
+	/*FONT*/
+	font-family: Verdana;
+	text-align : left;
+}
+
+.boxContainers 
+{
+	font-family: Verdana;
+	width: 150px;
+	text-align : left;
+}
+
+.labelSub
+{
+    color : #798FA5;
+	font-family: Verdana;
+	font-weight: bold;
+}
+
+.botonValidar
+{
+    background-image: url('../img/16/iconValidar.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    border: 1px solid #707070;
+    cursor: pointer;
+    padding-left: 20px;
+    height: 22px;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px; 
+}
+
+.botonLimpiar
+{
+    background-image: url('../img/16/iconLimpiar.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    border: 1px solid #707070;
+    cursor: pointer;
+    padding-left: 20px;
+    height: 22px;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px; 
+}
+
+.panelGridControl
+{
+    max-height: 150px;
+    overflow: auto;
+}
+
+.imgbuttonValidatorAD
+{
+    width: 38px;
+    height: 21px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/32/iconValidador.gif');
+}
+
+.imgCmdBuscarGarantia
+{
+    width: 22px;
+    height: 19px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/16/iconConsultaSol.gif');
+}
+
+.imgCmdBuscarGarantiaDisabled
+{
+    width: 22px;
+    height: 19px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/16/iconConsultaSol_dis.png');
+}
+
+.imgCmdBuscar
+{
+    width: 22px;
+    height: 19px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/16/iconConsultaSol.gif');
+}
+
+.imgCmdBuscarDisabled
+{
+    width: 22px;
+    height: 19px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/16/iconConsultaSol_dis.png');
+}
