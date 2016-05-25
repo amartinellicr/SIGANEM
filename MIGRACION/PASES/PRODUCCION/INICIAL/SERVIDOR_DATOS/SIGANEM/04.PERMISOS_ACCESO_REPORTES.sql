@@ -11,6 +11,8 @@ GO
 
 GRANT EXECUTE ON Reporte_Garantias_Fiduciarias_Especifica_Consulta TO RAP_AccesoReportes
 GO
+GRANT EXECUTE ON Reportes_Garantias_Fiduciarias_Total TO RAP_AccesoReportes
+GO
 GRANT EXECUTE ON Tipos_Identificaciones_RUC_Lista TO RAP_AccesoReportes
 GO
 GRANT EXECUTE ON Reporte_Garantias_Fiduciarias_Usuario_Consulta TO RAP_AccesoReportes

@@ -2891,6 +2891,11 @@
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>89d88555-a676-435b-84c4-a4dee5a20f4f</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="SIGANEM">
+      <DataSourceReference>SIGANEM</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>fccca1eb-8e72-4c22-904f-f3396bbe3792</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Principal">
@@ -3181,8 +3186,8 @@ WHERE Cod_Tipo_Garantia  IN (@Tipos_Garantias)</CommandText>
     </DataSet>
     <DataSet Name="Tipos_Garantias">
       <Query>
-        <DataSourceName>STAGE</DataSourceName>
-        <CommandText>SELECT Id_Tipo_Garantia, Des_Tipo_Garantia FROM USSGANEM2.dbo.TIPOS_GARANTIAS WHERE Id_Tipo_Garantia IN(2,3,4) ORDER BY Id_Tipo_Garantia</CommandText>
+        <DataSourceName>SIGANEM</DataSourceName>
+        <CommandText>SELECT Id_Tipo_Garantia, Des_Tipo_Garantia FROM dbo.TIPOS_GARANTIAS WHERE Id_Tipo_Garantia IN(2,3,4) ORDER BY Id_Tipo_Garantia</CommandText>
       </Query>
       <Fields>
         <Field Name="Id_Tipo_Garantia">

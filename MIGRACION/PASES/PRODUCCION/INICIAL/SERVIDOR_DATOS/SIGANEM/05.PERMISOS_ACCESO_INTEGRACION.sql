@@ -1,21 +1,8 @@
-USE [USSIGANEM]
+USE [SIGANEM]
 GO
 
 /* TABLAS */
 
-
---GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.bsmpc TO RAP_AccesoIntegracion
---GO
---GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.prmca TO RAP_AccesoIntegracion
---GO
---GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.prmcp TO RAP_AccesoIntegracion
---GO
---GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.prmoc TO RAP_AccesoIntegracion
---GO
---GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.ARCHIVOS TO RAP_AccesoIntegracion
---GO
---GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.SIEF_DEUDOR TO RAP_AccesoIntegracion
---GO
 
 /* VISTAS */
 

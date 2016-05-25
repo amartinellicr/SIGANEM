@@ -1956,6 +1956,11 @@ EXEC [dbo].[Reporte_Garantias_Reales_Cedulas]
     </ReportParameter>
     <ReportParameter Name="CodUsuario">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>999999999</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Codigo Usuario</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
