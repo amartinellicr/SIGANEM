@@ -19,7 +19,7 @@ CREATE PROCEDURE [dbo].[Operaciones_Garantias_Avales_Busqueda]
 )
 AS 
 /******************************************************************************************************************************************************
-<Nombre>Operaciones_Garantias_Reales_Busqueda</Nombre>
+<Nombre>Operaciones_Garantias_Avales_Busqueda</Nombre>
 <Sistema>N.A.</Sistema>
 <Descripción>Procedimiento almacenado que consulta la información de Garantías Aváles para relacionarla a las Operaciones</Descripción>
 <Entradas>
@@ -33,25 +33,30 @@ AS
 <Versión>1.0</Versión>
 <Historial>
     <Cambio>
-            <Autor></Autor>
-            <Requerimiento></Requerimiento>
-            <Fecha></Fecha>
-            <Descripción></Descripción>
+        <Autor></Autor>
+        <Requerimiento></Requerimiento>
+        <Fecha></Fecha>
+        <Descripción></Descripción>
     </Cambio>
 </Historial>
 ******************************************************************************************************************************************************/
 BEGIN 
        
-	SELECT	Id_Garantia_Aval,
-			Id_Tipo_Aval,
-			Numero_Aval,
-			Id_Tipo_Persona_Deudor,
-			Id_Deudor,
-			Monto_Avalado 
-	FROM	dbo.GARANTIAS_AVALES 
-	WHERE	Id_Tipo_Aval = @piId_Tipo_Aval
-			AND Numero_Aval = @psNumero_Aval 
-			AND Ind_Estado_Registro = 1
+	SELECT	GAV.Id_Garantia_Aval,
+			GAV.Id_Tipo_Aval,
+			GAV.Numero_Aval,
+			CONVERT(VARCHAR, TPE.Id_Tipo_Persona)+' - '+ TPE.Des_Tipo_Persona AS 'Tipo_Persona_Deudor',
+			TIA.Id_Avalista,
+			GAV.Monto_Avalado 
+	FROM	dbo.GARANTIAS_AVALES GAV
+		INNER JOIN dbo.TIPOS_AVALES TIA
+		ON TIA.Id_Tipo_Aval = GAV.Id_Tipo_Aval
+		LEFT JOIN dbo.TIPOS_PERSONAS TPE
+		ON TPE.Id_Tipo_Persona = TIA.Id_Tipo_Persona
+		AND TPE.Ind_Estado_Registro = 1
+	WHERE	GAV.Id_Tipo_Aval = @piId_Tipo_Aval
+			AND GAV.Numero_Aval = @psNumero_Aval 
+			AND GAV.Ind_Estado_Registro = 1
 
 END 
 

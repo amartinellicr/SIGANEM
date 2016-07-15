@@ -1,0 +1,13 @@
+Una vez recibida la confirmación de que el pase fue realizado, se debe ingresar a la Ruta del ambiente de Pruebas: https://desiganem:14001/Aplicacion/Login.aspx y hacer una revisión rápida de que la aplicación esta funcionando correctamente de acuerdo al diseño del requerimiento y dar respuesta a Stephanie con Copia a Gabriera de la certificación del Ambiente para que ellas procedan con la notificacion a los usuarios y demás.
+
+Subjet: SIGANEM- Pase a Ambiente Pruebas - B18S02 Garantias Operaciones / Realacion G.Avales - G.Fideicomisos
+
+Mensaje:
+
+uenas tardes Steph, 
+
+Se realizó la comprobación técnica del  Pase a Ambiente Pruebas B18S02 Garantias Operaciones / Realacion G.Avales - G.Fideicomisos en https://desiganem:14001/Aplicacion/Login.aspx y la app están funcionando correctamente.
+
+Pueden proceder con sus pruebas y notificaciones correspondientes.
+
+Saludos,

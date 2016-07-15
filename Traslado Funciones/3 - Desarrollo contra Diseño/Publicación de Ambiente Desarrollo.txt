@@ -1,0 +1,13 @@
+1- Publish WS y GUI
+
+2- Copiar del servidor a las carpetas bk_ws y bk_app que tengo en el escritorio para tener un respaldo de la ultima version
+
+3- Copiar de ws Todo excepto: PrecompiledApp y web  // Despues se pega en los servidores WS se reemplaza todo excepto el Web y un file.rar "respaldos84"
+
+-deSIGANEM (\\bcr0106ait83)
+-deSIGANEM (\\bcr0106ait84)
+
+4- Copiar del app Todo excepto: PrecompiledApp y web  // Despues se pega en los servidores app se reemplaza todo excepto el Web y una carpeta que se llama "aspnet_client"
+
+-deSIGANEM (\\bcr0106wit85)
+-deSIGANEM (\\bcr0106wit86)

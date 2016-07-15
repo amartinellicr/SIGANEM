@@ -1,0 +1,25 @@
+SE DEBE ACTUALIZAR EN EL SHAREPOINT
+
+3.2	Diagrama de Clases SIGANEM
+3.2.1	Clases Utilidades
+3.2.2	Clases Acceso Datos
+3.2.3	Clases Entidades
+3.2.4	Clases Lógica Negocio
+3.2.5	Clases Servicios Web
+
+
+5.5.4	Catálogos
+
+
+-Actualizar Diagramas
+-Lista de requeriminetos
+
+
+
+URL:
+
+https://grupomas365.sharepoint.com/teams/TeamCostaRica/siganem/default.aspx?RootFolder=%2Fteams%2FTeamCostaRica%2Fsiganem%2FShared%20Documents%2FDocumentacion%20Desarrollo%2FManual%20Tecnico&FolderCTID=0x01200044284B7DFCEC034CAC86FD144B587943&View=%7B014F9FA9-0CD7-4E01-ADC4-D006FB81E253%7D
+
+
+NOMBRE DEL ARCHIVO: 
+BCR-DTI-155-EST-2012-001-2012-1

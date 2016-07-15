@@ -1,0 +1,1 @@
+Los PNS reportados, serán filtrados por Stephanie para ver cuales corresponden y cuales no a nivel de desarrollo. Una vez atendidos, de ser necesario se solicita una nueva publicación de ambiente, se realizan pruebas y se notifica a Stephanie con Copia a Gabriela para la notificación a usuarios correspondiente

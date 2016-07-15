@@ -1,0 +1,7 @@
+- Prototipo: Lo realiza Stephanie, pero puede que te lo pidan de acuerdo al PRE-Diseño
+- Diseño de un requerimiento: Una vez levantado el RQ por parte de BCR-GMAS, se tiene que hacer el diseño tecnico
+- Desarrollo contra Diseño: 
+- Pruebas Tecnicas:
+- Pase a Pruebas:
+- Certificación de Ambiente:  
+- Actualización Manual Técnico:
