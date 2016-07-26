@@ -1,0 +1,58 @@
+﻿body
+{    
+	background-color: #FFFFFF;
+	font-family: sans-serif, Times New Roman;
+}
+
+div#header
+{
+    height: 50px;
+	font-size: 24px;
+	font-family: Tahoma;
+	text-align: center;
+	display: table-cell;
+	vertical-align: top;
+}
+
+.tituloMain
+{
+    text-align: center; 
+    font-weight: bold; 
+    color: #FF0000;
+}
+
+.tituloMensaje
+{
+    font-size: 20px;
+	font-weight: bold;
+}
+
+.tituloDetalle
+{
+    font-size: 20px;
+	font-weight: bold;
+	
+}
+
+.lineaMensaje
+{
+    text-align: left;    
+    width: 280px;
+}
+
+.texto
+{
+	padding-left: 0px auto;
+	padding-right: 0px auto;	
+}
+
+.detalle
+{
+    font-size: 12px;
+	font-family: Tahoma;
+}
+
+div #hacer, #ocurrio, #sesion 
+{
+	font-size: 12px;
+}

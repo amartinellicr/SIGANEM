@@ -1,0 +1,529 @@
+﻿.panelMenuLateral
+{
+    background-color: #E8ECF0;
+    height: 100%; 
+    width: 183px;
+    text-align : left; 
+    margin-top: 0px;
+}
+
+.tablaPrincipalMenuLateral
+{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.divArbolMenuLateral
+{
+    position: absolute; 
+    width: 183px;
+    bottom: 268px;
+    top: 0px;
+    background-color: #E8ECF0;
+}
+
+.divAreasMenuLateral
+{
+    position: absolute; 
+    width: 183px; 
+    height: 296px;
+    background-color: #E8ECF0;
+    overflow: auto; 
+    margin-left: 2px; 
+    border-top: 1px solid #C0C0C0;
+    bottom: 0px;
+}
+
+/**********AREAS*********/
+.tablaAreasMenuLateral
+{
+    height: 100%;
+    width: 80%;
+}
+
+.AreasMenuLateralReportes
+{
+    background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -351px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralReportes:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralReportesSeleccionado
+{
+    background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -351px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralBienesRealizables
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -273px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralBienesRealizables:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralBienesRealizablesSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -273px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralAdministracion
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -313px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralAdministracion:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralAdministracionSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -313px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralSeguimiento
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+	background-position: 0px -233px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralSeguimiento:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralSeguimientoSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -233px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralAbogados
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+	background-position: 0px -193px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralAbogados:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralAbogadosSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -193px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralContactoComercial
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+	background-position: 0px -2px;
+	vertical-align: middle;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+    background-color: #E8ECF0; 
+}
+
+.AreasMenuLateralContactoComercial:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralContactoComercialSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+	background-position: 0px -2px;
+	vertical-align: middle;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralValuaciones
+{
+    background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -38px;
+    vertical-align: middle;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+
+.AreasMenuLateralValuaciones:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralValuacionesSeleccionado
+{
+    background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -38px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralPolizas
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+	background-position: 0px -78px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralPolizas:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralPolizasSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -78px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralFormalizacion
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -117px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralFormalizacion:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralFormalizacionSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -117px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralFideicomisos
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: 0px -153px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralFideicomisos:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralFideicomisosSeleccionado
+{
+	background-image: url('../img/16/Lateral_sprite.png');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+	background-position: 0px -153px;
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+
+/******ARBOL DE OPCIONES*******/
+.panelMenuLateralArbol
+{
+    height: 90%;
+    width: 183px;
+}
+
+.AreasMenuLateralArbol
+{
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.AreasMenuLateralArbolNodo
+{
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 10.5px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.AreasMenuLateralArbolHoja
+{
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 10.5px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.AreasMenuLateralArbolHoja:hover
+{
+   
+    background-color : #FDEEB3;
+	width : 183px; 
+	height : 15px;
+	border : solid 1px #F1C43F;	
+	text-decoration: none;
+}

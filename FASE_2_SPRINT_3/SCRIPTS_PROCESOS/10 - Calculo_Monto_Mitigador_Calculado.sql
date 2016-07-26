@@ -483,8 +483,8 @@ BEGIN
 			SELECT 
 				GAROPER.Id_Garantia_Operacion,
 				Monto_Mitigador_Calculado = CASE
-												WHEN OPER.Id_Tipo_Operacion = 1 THEN ((ISNULL(OPER.Saldo_Colonizado, 0) * (ISNULL(GAROPER.Porcentaje_Aceptacion_BCR, 0))) / 100)
-												WHEN OPER.Id_Tipo_Operacion = 2 THEN ((ISNULL(OPER.Saldo_Original_Colonizado, 0) * (ISNULL(GAROPER.Porcentaje_Aceptacion_BCR, 0))) / 100)
+												WHEN OPER.Id_Tipo_Operacion = 1 THEN (((ISNULL(OPER.Saldo_Colonizado, 0) * (ISNULL(GAROPER.Porcentaje_Aceptacion_BCR, 0))) / 100) * (ISNULL(GAROPER.Porcentaje_Responsabilidad_SUGEF, 0)))
+												WHEN OPER.Id_Tipo_Operacion = 2 THEN (((ISNULL(OPER.Saldo_Original_Colonizado, 0) * (ISNULL(GAROPER.Porcentaje_Aceptacion_BCR, 0))) / 100) * (ISNULL(GAROPER.Porcentaje_Responsabilidad_SUGEF, 0)))
 												ELSE 0
 											END
 			FROM	dbo.GARANTIAS_OPERACIONES GAROPER

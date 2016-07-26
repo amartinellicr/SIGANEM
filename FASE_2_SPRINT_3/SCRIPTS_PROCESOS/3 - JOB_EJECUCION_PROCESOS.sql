@@ -1,18 +1,19 @@
 USE [msdb]
 GO
 
-/****** Object:  Job [SIGANEM - Ejecución Procesos]    Script Date: 24/05/2016 09:39:29 a.m. ******/
-BEGIN TRANSACTION
-DECLARE @ReturnCode INT
-SELECT @ReturnCode = 0
-
 /*
 SE ELIMINA EL JOB
 */
 
-IF EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name =N'SIGANEM - Ejecución Procesos')
-EXEC msdb.dbo.sp_delete_job @job_name=N'SIGANEM - Ejecución Procesos' @delete_unused_schedule=1
+IF EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name =N'SIGANEM - Ejecución Procesos Desarrollo F02SP03')
+EXEC msdb.dbo.sp_delete_job @job_name=N'SIGANEM - Ejecución Procesos Desarrollo F02SP03', @delete_unused_schedule=1
 GO
+
+/****** Object:  Job [SIGANEM - Ejecución Procesos Desarrollo F02SP03]    Script Date: 24/05/2016 09:39:29 a.m. ******/
+BEGIN TRANSACTION
+DECLARE @ReturnCode INT
+SELECT @ReturnCode = 0
+
 
 
 /****** Object:  JobCategory [[Uncategorized (Local)]]]    Script Date: 24/05/2016 09:39:29 a.m. ******/
@@ -24,7 +25,7 @@ IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
 END
 
 DECLARE @jobId BINARY(16)
-EXEC @ReturnCode =  msdb.dbo.sp_add_job @job_name=N'SIGANEM - Ejecución Procesos', 
+EXEC @ReturnCode =  msdb.dbo.sp_add_job @job_name=N'SIGANEM - Ejecución Procesos Desarrollo F02SP03', 
 		@enabled=1, 
 		@notify_level_eventlog=0, 
 		@notify_level_email=0, 
@@ -46,7 +47,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Deprecia
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTO_TASACION_ACTUALIZADA_TERRENO_NO_TERRENO.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTO_TASACION_ACTUALIZADA_TERRENO_NO_TERRENO.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -61,7 +62,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Actualiz
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\SALDO_OPERACIONES_CATEGORIA_DEUDOR.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\SALDO_OPERACIONES_CATEGORIA_DEUDOR.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -76,7 +77,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Actualiz
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTO_GRADO_GRAVAMEN.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTO_GRADO_GRAVAMEN.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -92,7 +93,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Coloniza
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTO_GRAVAMENES_COLONIZA.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTO_GRAVAMENES_COLONIZA.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -107,7 +108,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'd.	Colon
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTOS_PRIORIDADES_COLONIZADO.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTOS_PRIORIDADES_COLONIZADO.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -123,7 +124,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Coloniza
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTO_POLIZA_COLONIZA.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTO_POLIZA_COLONIZA.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -139,7 +140,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Coloniza
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\VALOR_MERCADO_COLONIZADO.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\VALOR_MERCADO_COLONIZADO.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -154,7 +155,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Actualiz
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\ACTUALIZA_VALOR_NOMINAL.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\ACTUALIZA_VALOR_NOMINAL.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -171,7 +172,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Actualiz
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\PORCENTAJE_ACEPTACION_SUGEF.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\PORCENTAJE_ACEPTACION_SUGEF.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -187,7 +188,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Actualiz
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\PORCENTAJE_ACEPTACION_FIDEICOMETIDA.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\PORCENTAJE_ACEPTACION_FIDEICOMETIDA.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -204,7 +205,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Actualiz
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\PORCENTAJE_RESPONSABILIDAD.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\PORCENTAJE_RESPONSABILIDAD.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -221,7 +222,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Calcula 
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTO_MITIGADOR_CALCULADO_FIDEICOMETIDA.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTO_MITIGADOR_CALCULADO_FIDEICOMETIDA.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -239,7 +240,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Calcula 
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Calculo_Automatico\MONTO_MITIGADOR_CALCULADO.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Calculo_Automatico_Desarrollo\MONTO_MITIGADOR_CALCULADO.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
@@ -254,7 +255,7 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Archivos
 		@retry_attempts=0, 
 		@retry_interval=0, 
 		@os_run_priority=0, @subsystem=N'SSIS', 
-		@command=N'/ISSERVER "\"\SSISDB\SIGANEM\SSIS_Archivos_Salida_SUGEF\ORQUESTADOR_ARCHIVOS_SALIDA_AUTOMATICO.dtsx\"" /SERVER "\"BCR0683SSIS43"\"SIGANEM,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
+		@command=N'/ISSERVER "\"\SSISDB\Desarrollo_SIGANEM\SSIS_Archivos_Salida_SUGEF_Desarrollo\ORQUESTADOR_ARCHIVOS_SALIDA_AUTOMATICO.dtsx\"" /SERVER "\"BCR0106WRO81,10000\"" /Par "\"$ServerOption::LOGGING_LEVEL(Int16)\"";1 /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /CALLERINFO SQLAGENT /REPORTING E', 
 		@database_name=N'master', 
 		@flags=0
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
