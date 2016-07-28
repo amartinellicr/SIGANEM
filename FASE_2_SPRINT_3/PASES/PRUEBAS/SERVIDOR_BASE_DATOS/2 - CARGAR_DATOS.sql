@@ -172,60 +172,73 @@ INSERT INTO [dbo].[ADMINISTRACIONES_CONTENIDOS]
   [Ind_Metodo_Insercion], [Fecha_Ingreso], [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion]
  )
 
-     VALUES
+     SELECT
 
-(24, 'IdFideicomisoBCR', NULL, 'Id Fideicomiso BCR', 'Fideico', NULL, 1, 1, 1, 0, NULL, 14, NULL, NULL, 
+24, 'IdFideicomisoBCR', NULL, 'Id Fideicomiso BCR', 'Fideico', NULL, 1, 1, 1, 0, NULL, 14, NULL, NULL, 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'TipoMonedaValorNominal', NULL, 'Tipo Moneda Valor Nominal', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'TipoMonedaValorNominal', NULL, 'Tipo Moneda Valor Nominal', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, NULL, NULL, 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'ValorNominal', NULL, 'Valor Nominal', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'ValorNominal', NULL, 'Valor Nominal', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, NULL, NULL, 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'ClaseGarantia', NULL, 'Clase Garantía', 'Fideico', NULL, 0, 0, 1, 1, '20 - Seguridades', NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'ClaseGarantia', NULL, 'Clase Garantía', 'Fideico', NULL, 0, 0, 1, 1, '20 - Seguridades', NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'ClasesGarantiasPRT17Lista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'IndInscripcion', NULL, 'Indicador Inscripción', 'Fideico', NULL, 0, 0, 1, 1, '0, - No Aplica', NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'IndInscripcion', NULL, 'Indicador Inscripción', 'Fideico', NULL, 0, 0, 1, 1, '0 - No Aplica', NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'TipoIndicadorInscripcionLista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'CodigoTenencia', NULL, 'Código Tenencia', 'Fideico', NULL, 0, 0, 1, 1, '11 - Fideicomiso de Garantía', NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'CodigoTenencia', NULL, 'Código Tenencia', 'Fideico', NULL, 0, 0, 1, 1, '11 - Fideicomiso de Garantía', NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'TenenciasPRT15Lista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'TipoMitigadorRiesgo', NULL, 'Tipo Mitigador Riesgo', 'Fideico', NULL, 0, 0, 1, 1, '24 - Fideicomiso de garantías', NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'TipoMitigadorRiesgo', NULL, 'Tipo Mitigador Riesgo', 'Fideico', NULL, 0, 0, 1, 1, '24 - Fideicomiso de garantías', NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'TiposMitigadoresRiesgosLista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'GradoGravamen', NULL, 'Grado Gravamen', 'Fideico', NULL, 0, 0, 1, 1, '1, - 1, grado', NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'GradoGravamen', NULL, 'Grado Gravamen', 'Fideico', NULL, 0, 0, 1, 1, '1 - 1 grado', NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'GradosGravamenesLista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'TipoDocumentoLegal', NULL, 'Tipo Documento Legal', 'Fideico', NULL, 0, 1, 1, 0, NULL, NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'TipoDocumentoLegal', NULL, 'Tipo Documento Legal', 'Fideico', NULL, 0, 1, 1, 0, NULL, NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'TiposDocumentosLegalesLista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'TipoMonedaMontoGraven', NULL, 'Tipo Moneda Monto Gravamen', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, NULL, NULL, 
+UNION ALL
+SELECT 24, 'TipoMonedaMontoGraven', NULL, 'Tipo Moneda Monto Gravamen', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, NULL, NULL, 
  'DROPDOWNLIST', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', 'MonedasLista', NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'MontoMitigador', NULL, 'Monto Mitigador', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, 1, '9999999999999999999999.99', 
+UNION ALL
+SELECT 24, 'MontoMitigador', NULL, 'Monto Mitigador', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, 1, '9999999999999999999999.99', 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'MontoGradoGravamen', NULL, 'Monto Grado Gravamen', 'Fideico', NULL, 1, 1, 1, NULL, 0, NULL, 1, '99999999999999999999.99', 
+UNION ALL
+SELECT 24, 'MontoGradoGravamen', NULL, 'Monto Grado Gravamen', 'Fideico', NULL, 1, 1, 1, NULL, 0, NULL, 1, '99999999999999999999.99', 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'PorcentajeResponsabilidadSUGEF', NULL, 'Porcentaje Responsabilidad SUGEF', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, 1, '999.99%', 
+UNION ALL
+SELECT 24, 'PorcentajeResponsabilidadSUGEF', NULL, 'Porcentaje Responsabilidad SUGEF', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, 1, '999.99%', 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL),
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
 
-(24, 'FechaPrescripcionGarantia', NULL, 'Fecha Prescripción Garantía', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, 1, 'DD/MM/AAAA', 
+UNION ALL
+SELECT 24, 'FechaPrescripcionGarantia', NULL, 'Fecha Prescripción Garantía', 'Fideico', NULL, 0, 0, 1, 0, NULL, NULL, 1, 'DD/MM/AAAA', 
  'TEXTBOX', NULL, NULL, NULL, NULL, NULL, NULL, 'mainTableBoxesCss', NULL, NULL, NULL, NULL, 
- 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL)
+ 'MANTENIMIENTO', GETDATE(), '999999999', NULL, NULL
