@@ -400,7 +400,7 @@ BEGIN
 			Validacion_7 = 0,
 			Validacion_8 = 0,
 			Validacion_9 = 0,
-			ISNULL(CAT.Porc_Aceptacion_Calificacion_Riesgo,CAT1.Porc_Aceptacion_Calificacion_Riesgo) Porcentaje_Aceptacion
+			ISNULL((ISNULL(CAT.Porc_Aceptacion_Calificacion_Riesgo,CAT1.Porc_Aceptacion_Calificacion_Riesgo)), CAT2.Porc_Aceptacion_Calificacion_Riesgo) Porcentaje_Aceptacion
 		FROM 
 			dbo.GARANTIAS_FIDEICOMETIDAS GARFID
 		INNER JOIN dbo.GARANTIAS_VALORES GAV
@@ -418,6 +418,11 @@ BEGIN
 			AND CAT1.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT1.Id_Categoria_Calificacion = 2 --NO APLICA CALIFICACION
 			AND CAT1.Ind_Estado_Registro = 1
+		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT2
+			ON CAT2.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
+			AND CAT2.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
+			AND CAT2.Id_Categoria_Calificacion = 1 --SIN CALIFICACION
+			AND CAT2.Ind_Estado_Registro = 1
 		INNER JOIN dbo.PARAMETROS_BIENES PAR
 			ON 1 = 1
 		WHERE
@@ -448,7 +453,7 @@ BEGIN
 		[Id_Garantia_Fideicomiso] [int] NOT NULL,
 		[Id_Operacion] [int] NOT NULL,
 		[Id_Fideicomiso_BCR] varchar(14) NOT NULL,
-		[Categoria_Riesgo_Deudor] varchar(2) NOT NULL
+		[Categoria_Riesgo_Deudor] varchar(2) NULL
 	) ON [PRIMARY]
 
 	/*SE OBTIENEN LOS FIEDICOMISOS QUE ESTÁN RELACIONADOS A MAS DE UNA OPERACIÓN Y/O CONTRATO*/
@@ -558,10 +563,11 @@ BEGIN
 	UNION
 	SELECT 
 		ACT.Id_Garantia_Fideicomiso,
-		CASE WHEN (Validacion_1 = 1 OR Validacion_2 = 1 OR Validacion_3 = 1) AND Validacion_5 = 0 AND GARFID.Ind_Deudor_Habita = 1 AND GARFID.Id_Garantia_Fideicomiso IS NULL THEN ACT.Porcentaje_Aceptacion_No_Terreno_SUGEF END Porcentaje_Aceptacion_No_Terreno_SUGEF
+		CASE WHEN (Validacion_1 = 1 OR Validacion_2 = 1 OR Validacion_3 = 1) AND Validacion_5 = 0 AND GARFID.Ind_Deudor_Habita = 1 AND GAROPER.Id_Fideicomiso IS NULL THEN ACT.Porcentaje_Aceptacion_No_Terreno_SUGEF END Porcentaje_Aceptacion_No_Terreno_SUGEF
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 		INNER JOIN dbo.GARANTIAS_FIDEICOMETIDAS GARFID
 		ON GARFID.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
+		AND GARFID.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.GARANTIAS_OPERACIONES GAROPER
 		ON GAROPER.Id_Fideicomiso = GARFID.Id_Fideicomiso
 		AND GAROPER.Ind_Estado_Registro = 1

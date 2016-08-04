@@ -1,0 +1,114 @@
+﻿/***************** FONDO *****************/
+.body
+{
+    background-color: #F7F8FA;
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    vertical-align:top;
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+/***************** TITULOS *****************/
+.titulo
+{
+    color: Black;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+.subTitulo
+{
+    color: Black;
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+.labelSubRelacion
+{
+    color: #000000;
+    font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+}
+/***************** TABLA PRINCIPAL *****************/
+.divPrincipalTitulo
+{
+    height:40px;
+    width:100%;
+    background-color: White;
+    border-bottom: 1px solid #C0C0C0; 
+}
+
+.divPrincipalSuperior
+{
+    top: 40px;
+    height:215px;
+    width:100%;
+    /*background-color: #E8ECF0;*/
+    background-color: #FFFFFF;
+}
+
+.divPrincipalSuperior.Mayor
+{
+    height:415px;
+}
+
+.divPrincipalPaginador
+{
+    height:25px;
+    top: 230px;
+    width:100%;
+    background-color: #F5F7F9;
+    border: 1px solid #C0C0C0;
+}
+
+.divPrincipalInferior
+{
+    top: 256px;
+    height:48px;
+    width:100%;
+    background-color: #E8ECF0;
+    text-align: center;
+    vertical-align: middle;
+    border-top: 1px solid #C0C0C0; 
+}
+
+.divPrincipalInferior.Mayor
+{
+    top: 456px;    
+}
+
+.panelPrincipalGrid
+{
+    height: 214px;
+    width: 100%;
+    
+}
+
+.panelPrincipalControles
+{
+    height: 214px;
+    width: 100%;
+    background-color: #E8ECF0;
+}    
+
+.panelPrincipalControles.Mayor
+{
+    height: 414px;
+}   
+
+/***************** BOTONES *****************/
+.botonAceptar
+{
+    font-family: Verdana;
+    font-size: 11px;
+}
+   
+ .botonCancelar
+{
+    font-family: Verdana;
+    font-size: 11px;
+}
