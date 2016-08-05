@@ -558,6 +558,7 @@ BEGIN
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 		INNER JOIN dbo.GARANTIAS_FIDEICOMETIDAS GARFID
 		ON GARFID.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
+		AND GARFID.Ind_Estado_Registro = 1
 	WHERE 
 		Cod_Tipo_Bien = 2
 	UNION
@@ -582,6 +583,7 @@ BEGIN
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 		INNER JOIN dbo.GARANTIAS_FIDEICOMETIDAS GARFID
 		ON GARFID.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
+		AND GARFID.Ind_Estado_Registro = 1
 		INNER JOIN dbo.GARANTIAS_OPERACIONES GAROPER
 		ON GAROPER.Id_Fideicomiso = GARFID.Id_Fideicomiso
 		AND GAROPER.Ind_Estado_Registro = 1
@@ -598,6 +600,7 @@ BEGIN
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 		INNER JOIN dbo.GARANTIAS_FIDEICOMETIDAS GARFID
 		ON GARFID.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
+		AND GARFID.Ind_Estado_Registro = 1
 		INNER JOIN dbo.GARANTIAS_OPERACIONES GAROPER
 		ON GAROPER.Id_Fideicomiso = GARFID.Id_Fideicomiso
 		AND GAROPER.Ind_Estado_Registro = 1
@@ -608,9 +611,16 @@ BEGIN
 		ON TMP.Id_Operacion = OPER.Id_Operacion
 		AND TMP.Id_Fideicomiso = GARFID.Id_Fideicomiso
 		AND TMP.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
-		INNER JOIN (SELECT Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor, COUNT(*) AS CANTIDAD_REGISTROS
-					FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMISO_OPERACION
-					GROUP BY Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor
+		INNER JOIN (SELECT A.Id_Fideicomiso_BCR, A.Categoria_Riesgo_Deudor, COUNT(*) AS CANTIDAD_REGISTROS
+					FROM (
+							SELECT Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor
+							FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMISO_OPERACION
+							GROUP BY Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor
+							HAVING COUNT(*) > 1) A
+						INNER JOIN dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMISO_OPERACION B
+						ON B.Id_Fideicomiso_BCR = A.Id_Fideicomiso_BCR
+					WHERE A.Categoria_Riesgo_Deudor <> B.Categoria_Riesgo_Deudor
+					GROUP BY A.Id_Fideicomiso_BCR, A.Categoria_Riesgo_Deudor
 					HAVING COUNT(*) > 1) TM1
 		ON TM1.Id_Fideicomiso_BCR = TMP.Id_Fideicomiso_BCR
 	WHERE 
@@ -929,6 +939,40 @@ BEGIN
 		ON GAR.Id_Garantia_Fideicomiso = ACT_1.Id_Garantia_Fideicomiso
 	WHERE Cod_Tipo_Bien IS NULL
 	AND Cod_Clase_Tipo_Bien IS NULL
+
+	/*SE ASIGNA EL VALOR NULL AL PORCENTAJE CUANDO EL FIDEICOMISO ESTA RELACIONADO A UNA OPERACIÓN Y ESTA NO POSEE LA CATEGORIA DEL DEUDOR ASIGNADA*/
+	UPDATE		GAR
+	SET			GAR.Porcentaje_Aceptacion_SUGEF = NULL,
+				GAR.Porcentaje_Aceptacion_No_Terreno_SUGEF = NULL
+	FROM		
+		dbo.GARANTIAS_FIDEICOMETIDAS GAR
+	INNER JOIN	AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT 
+		ON GAR.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
+	INNER JOIN dbo.GARANTIAS_OPERACIONES GAROPER
+		ON GAROPER.Id_Fideicomiso = GAR.Id_Fideicomiso
+		AND GAROPER.Ind_Estado_Registro = 1
+	INNER JOIN dbo.OPERACIONES OPER
+		ON OPER.Id_Operacion = GAROPER.Id_Operacion
+		AND OPER.Ind_Estado_Registro = 1
+	WHERE OPER.Categoria_Riesgo_Deudor IS NULL
+
+	/*SE ASIGNA EL VALOR NULL AL PORCENTAJE CUANDO LA GARANTIA REAL ASOCIADA AL FIDEICOMISO POSEE NULO EL MONTO DE LA POLIZA COLONIZADO*/
+	UPDATE		GAR
+	SET			GAR.Porcentaje_Aceptacion_No_Terreno_SUGEF = NULL
+	FROM		
+		dbo.GARANTIAS_FIDEICOMETIDAS GAR
+	INNER JOIN	AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT 
+		ON GAR.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
+	INNER JOIN dbo.GARANTIAS_REALES GAREA
+		ON GAREA.Id_Garantia_Real = GAR.Id_Garantia_Real
+		AND GAREA.Ind_Estado_Registro = 1
+	INNER JOIN dbo.GARANTIAS_REALES_POLIZAS GAREAPO
+		ON GAREAPO.Id_Garantia_Real = GAREA.Id_Garantia_Real
+		AND GAREAPO.Ind_Estado_Registro = 1
+	WHERE Cod_Tipo_Bien IS NOT NULL
+		AND Cod_Clase_Tipo_Bien IS NOT NULL
+		AND GAREAPO.Monto_Poliza_Colonizado IS NULL
+
 
 
 		SELECT 0 AS Error, '' AS Mensaje

@@ -302,12 +302,14 @@ WHERE Id_Parametro_Bien = 1
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '089944'
 WHERE Id_Garantia_Real = 2517
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160304',
-	Fecha_Ultima_Tasacion_Garantia = '20160304'
+	Fecha_Ultima_Tasacion_Garantia = '20160304',
+	Codigo_Bien = '091700'
 WHERE Id_Garantia_Real = 2518
 
 UPDATE dbo.GARANTIAS_REALES_POLIZAS
@@ -331,17 +333,36 @@ INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-24,             11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  76,               NULL,                NULL)
+1198,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  76,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-25,             11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  77,               NULL,                NULL)
+40930,          11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  77,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-1161,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  77,               NULL,                NULL)
+1108,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  77,               NULL,                NULL)
+
+
+--SELECT *
+--FROM dbo.OPERACIONES
+--WHERE Id_Operacion IN (40930, 1108)
+
+--delete from dbo.GARANTIAS_REALES_INSCRIPCIONES
+--from dbo.GARANTIAS_REALES_INSCRIPCIONES A
+--INNER JOIN dbo.GARANTIAS_OPERACIONES B
+--ON B.Id_Garantia_Operacion = A.Id_Garantia_Operacion
+--where B.Id_Fideicomiso in (76,77)
+
+--DELETE FROM dbo.GARANTIAS_OPERACIONES
+--where Id_Fideicomiso in (76,77)
+
+
+select *
+from dbo.GARANTIAS_OPERACIONES
+where Id_Fideicomiso in (76,77)
 
 
 
@@ -356,12 +377,14 @@ WHERE Id_Parametro_Bien = 1
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '092409'	
 WHERE Id_Garantia_Real = 2519
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160304',
-	Fecha_Ultima_Tasacion_Garantia = '20160304'
+	Fecha_Ultima_Tasacion_Garantia = '20160304',
+	Codigo_Bien = '093115'	
 WHERE Id_Garantia_Real = 2520
 
 UPDATE dbo.GARANTIAS_REALES_POLIZAS
@@ -385,18 +408,26 @@ INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-49,             11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  78,               NULL,                NULL)
+43417,          11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  78,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-25,             11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  79,               NULL,                NULL)
+43469,          11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  79,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-1161,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  79,               NULL,                NULL)
+1339,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  79,               NULL,                NULL)
 
+--delete from dbo.GARANTIAS_REALES_INSCRIPCIONES
+--from dbo.GARANTIAS_REALES_INSCRIPCIONES A
+--INNER JOIN dbo.GARANTIAS_OPERACIONES B
+--ON B.Id_Garantia_Operacion = A.Id_Garantia_Operacion
+--where B.Id_Fideicomiso in (78, 79)
+
+--DELETE FROM dbo.GARANTIAS_OPERACIONES
+--where Id_Fideicomiso in (78,79)
 
 --ESCENARIO CP19
 
@@ -408,7 +439,8 @@ WHERE Id_Parametro_Bien = 1
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '094278'
 WHERE Id_Garantia_Real = 2521
 
 UPDATE dbo.GARANTIAS_REALES
@@ -437,24 +469,31 @@ INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-28,             11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  80,               NULL,                NULL)
+1280,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  80,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-388,             11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  80,               NULL,                NULL)
+43433,          11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  80,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-13529,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  81,               NULL,                NULL)
+43459,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  81,               NULL,                NULL)
 
 
 INSERT [dbo].[GARANTIAS_OPERACIONES] (
 [Id_Operacion], [Id_Tipo_Garantia], [Id_Garantia_Fiduciaria], [Id_Garantia_Valor], [Id_Garantia_Real], [Ind_Estado_Replicado], [Id_Tipo_Moneda_Monto_Gravamen], [Monto_Grado_Gravamen],       [Id_Grado_Gravamen], [Fecha_Vencimiento_Garantia], [Fecha_Prescripcion_Garantia], [Fecha_Constitucion_Garantia], [Id_Clase_Garantia_PRT17], [Id_Tenencia_PRT_15], [Id_Tenencia_PRT_17], [Ind_Deudor_Habita], [Ind_Recomendacion_Perito], [Ind_Inspeccion_Garantia], [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Monto_Mitigador], [Porcentaje_Aceptacion_BCR],  [Porcentaje_Responsabilidad_SUGEF], [Partido], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Estado_Registro], [Ind_Accion_Registro], [Monto_Mitigador_Calculado], [Porcentaje_Responsabilidad_Legal], [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Id_Fideicomiso], [Id_Garantia_Aval], [Id_Tipo_Indicador_Inscripcion]) VALUES (
-44369,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  81,               NULL,                NULL)
+43648,           11,                 NULL,                     NULL,                 NULL,              0,                      NULL,                            CAST(0.00 AS Numeric(22, 2)), NULL,                NULL,                         NULL,                          NULL,                          21,                        NULL,                 NULL,                 0,                   0,                          0,                         NULL,                       NULL,                      NULL,              CAST(0.00 AS Numeric(5, 2)),  NULL,                               NULL,      N'MANTENIMIENTO',       CAST(N'2016-06-27 08:13:27.897' AS DateTime), N'114870238',          NULL,                        NULL,                              1,                     N'I',                  NULL,                        NULL,                               NULL,                                     NULL,                                  81,               NULL,                NULL)
 
+--delete from dbo.GARANTIAS_REALES_INSCRIPCIONES
+--from dbo.GARANTIAS_REALES_INSCRIPCIONES A
+--INNER JOIN dbo.GARANTIAS_OPERACIONES B
+--ON B.Id_Garantia_Operacion = A.Id_Garantia_Operacion
+--where B.Id_Fideicomiso in (80, 81)
 
+--DELETE FROM dbo.GARANTIAS_OPERACIONES
+--where Id_Fideicomiso in (80,81)
 
 
 --ESCENARIO CP20
@@ -586,12 +625,14 @@ WHERE Id_Fideicomiso = 88
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '018005'	
 WHERE Id_Garantia_Real = 2533
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160304',
-	Fecha_Ultima_Tasacion_Garantia = '20160304'
+	Fecha_Ultima_Tasacion_Garantia = '20160304',
+	Codigo_Bien = '032121'
 WHERE Id_Garantia_Real = 2537
 
 UPDATE dbo.GARANTIAS_REALES_POLIZAS
@@ -649,7 +690,8 @@ WHERE Id_Fideicomiso = 90
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '039794'
 WHERE Id_Garantia_Real = 2538
 
 UPDATE dbo.GARANTIAS_REALES
@@ -861,12 +903,16 @@ WHERE Id_Garantia_Real_Poliza = 989
 
 INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 [Id_Fideicomiso], [Id_Tipo_Garantia], [Id_Garantia_Real], [Id_Garantia_Valor], [Id_Dueno],         [Nombre_Dueno],                     [Id_Tipo_Moneda_Valor_Nominal], [Valor_Nominal],              [Monto_Mitigador],            [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Porcentaje_Aceptacion_SUGEF], [Porcentaje_Aceptacion_BCR],  [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Id_Tipo_Indicador_Inscripcion], [Fecha_Presentacion], [Id_Formato_Identificacion_Vehiculo], [Ind_Deudor_Habita], [Ind_Estado_Registro], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Accion_Registro]) VALUES (
-95,               3,                  2579,               NULL,                N'109470105',       N'Amanda Cascante Segura',          1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         1,                               '20160720',           NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
+95,               3,                  2579,               NULL,                N'109470105',       N'Amanda Cascante Segura',          1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         4,                               '20160720',           NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
 
 INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 [Id_Fideicomiso], [Id_Tipo_Garantia], [Id_Garantia_Real], [Id_Garantia_Valor], [Id_Dueno],         [Nombre_Dueno],                     [Id_Tipo_Moneda_Valor_Nominal], [Valor_Nominal],              [Monto_Mitigador],            [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Porcentaje_Aceptacion_SUGEF], [Porcentaje_Aceptacion_BCR],  [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Id_Tipo_Indicador_Inscripcion], [Fecha_Presentacion], [Id_Formato_Identificacion_Vehiculo], [Ind_Deudor_Habita], [Ind_Estado_Registro], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Accion_Registro]) VALUES (
-96,               3,                  2580,               NULL,                N'109470106',       N'Lesli Cascante Segura',           1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         1,                               '20160720',           NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
+96,               3,                  2580,               NULL,                N'109470106',       N'Lesli Cascante Segura',           1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         4,                               '20160720',           NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
 
+
+--UPDATE dbo.GARANTIAS_FIDEICOMETIDAS
+--SET Id_Tipo_Indicador_Inscripcion = 4
+--WHERE Id_Fideicomiso IN (95, 96)
 
 
 --ESCENARIO CP27
@@ -1257,7 +1303,12 @@ WHERE Id_Garantia_Real_Poliza = 1001
 
 INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 [Id_Fideicomiso], [Id_Tipo_Garantia], [Id_Garantia_Real], [Id_Garantia_Valor], [Id_Dueno],         [Nombre_Dueno],                     [Id_Tipo_Moneda_Valor_Nominal], [Valor_Nominal],              [Monto_Mitigador],            [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Porcentaje_Aceptacion_SUGEF], [Porcentaje_Aceptacion_BCR],  [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Id_Tipo_Indicador_Inscripcion], [Fecha_Presentacion], [Id_Formato_Identificacion_Vehiculo], [Ind_Deudor_Habita], [Ind_Estado_Registro], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Accion_Registro]) VALUES (
-109,              3,                  2595,               NULL,                N'109470109',       N'Joaquin Cascante Segura',         1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         1,                               NULL,                 NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
+109,              3,                  2595,               NULL,                N'109470109',       N'Joaquin Cascante Segura',         1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         4,                               '20160725',                 NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
+
+UPDATE dbo.GARANTIAS_FIDEICOMETIDAS
+SET Id_Tipo_Indicador_Inscripcion = 4,
+	Fecha_Presentacion = '20160725'
+WHERE Id_Fideicomiso = 109
 
 
 --ESCENARIO CP37
@@ -1354,7 +1405,6 @@ WHERE Id_Garantia_Real_Poliza = 11063
 INSERT [dbo].[GARANTIAS_FIDEICOMETIDAS] (
 [Id_Fideicomiso], [Id_Tipo_Garantia], [Id_Garantia_Real], [Id_Garantia_Valor], [Id_Dueno],         [Nombre_Dueno],                     [Id_Tipo_Moneda_Valor_Nominal], [Valor_Nominal],              [Monto_Mitigador],            [Porcentaje_Aceptacion_No_Terreno_SUGEF], [Porcentaje_Aceptacion_Terreno_SUGEF], [Porcentaje_Aceptacion_SUGEF], [Porcentaje_Aceptacion_BCR],  [Id_Tipo_Mitigador_Riesgo], [Id_Tipo_Documento_Legal], [Id_Tipo_Indicador_Inscripcion], [Fecha_Presentacion], [Id_Formato_Identificacion_Vehiculo], [Ind_Deudor_Habita], [Ind_Estado_Registro], [Ind_Metodo_Insercion], [Fecha_Ingreso],                              [Cod_Usuario_Ingreso], [Fecha_Ultima_Modificacion], [Cod_Usuario_Ultima_Modificacion], [Ind_Accion_Registro]) VALUES (
 112,              3,                  2599,               NULL,                N'109470109',       N'Joaquin Cascante Segura',         1,                              CAST(0.00 AS Numeric(24, 2)), CAST(0.00 AS Numeric(24, 2)), CAST(40.00 AS Decimal(5, 2)),             CAST(40.00 AS Decimal(5, 2)),          CAST(00.00 AS Numeric(5, 2)),  CAST(60.00 AS Numeric(5, 2)), 3,                          2,                         1,                               NULL,                 NULL,                                 1,                   1,                     N'MANTENIMIENTO',       CAST(N'2016-04-13 16:21:37.960' AS DateTime), N'113370655',          NULL,                        NULL,                              N'I')
-
 
 
 --ESCENARIO CP40
@@ -1462,7 +1512,8 @@ WHERE Id_Fideicomiso = 116
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '015418'
 WHERE Id_Garantia_Real = 2531
 
 
@@ -1486,7 +1537,8 @@ WHERE Id_Fideicomiso = 117
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '002347'	
 WHERE Id_Garantia_Real = 2534
 
 
@@ -1543,7 +1595,8 @@ WHERE Id_Fideicomiso = 119
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404'	,
+	Codigo_Bien = '029385'
 WHERE Id_Garantia_Real = 2904
 
 
@@ -1735,7 +1788,8 @@ WHERE Id_Fideicomiso = 125
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404'	,
+	Codigo_Bien = '039235'
 WHERE Id_Garantia_Real = 2913
 
 
@@ -1766,7 +1820,8 @@ WHERE Id_Fideicomiso = 126
 
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
-	Fecha_Ultima_Tasacion_Garantia = '20160404'	
+	Fecha_Ultima_Tasacion_Garantia = '20160404',
+	Codigo_Bien = '043996'	
 WHERE Id_Garantia_Real = 2914
 
 
@@ -1809,6 +1864,10 @@ UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultimo_Seguimiento_Garantia = '20160404',
 	Fecha_Ultima_Tasacion_Garantia = '20160404'	
 WHERE Id_Garantia_Real IN (2918, 2930)
+
+UPDATE dbo.GARANTIAS_REALES
+SET Codigo_Bien = '054144'	
+WHERE Id_Garantia_Real = 2918
 
 
 UPDATE dbo.GARANTIAS_REALES_POLIZAS
