@@ -666,7 +666,7 @@ BEGIN
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 	WHERE 
 		Cod_Tipo_Bien = 3
-		AND Cod_Clase_Tipo_Bien = 3
+		AND Cod_Clase_Tipo_Bien = 2
 	UNION
 	SELECT 
 		Id_Garantia_Fideicomiso,
@@ -675,7 +675,7 @@ BEGIN
 		     THEN 0 END Porcentaje_Aceptacion_No_Terreno_SUGEF
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 	WHERE 
-		Cod_Tipo_Bien = 2
+		Cod_Tipo_Bien = 3
 	UNION
 	SELECT 
 		ACT.Id_Garantia_Fideicomiso,
