@@ -171,7 +171,7 @@ ON F.Id_Garantia_Real = C.Id_Garantia_Real
 AND F.Ind_Estado_Registro = 1
 WHERE C.Ind_Estado_Registro = 1
 AND C.Estado_Registro_Garantia = 1
-AND E.Cod_Tipo_Bien = 2
+AND E.Cod_Tipo_Bien = 3
 AND D.Id_Garantia_Fideicomiso IS NULL
 AND D.Id_Garantia_Valor IS NULL
 AND D.Id_Garantia_Real IS NULL
@@ -195,7 +195,7 @@ AND A.Id_Fideicomiso_BCR NOT IN ('BCR04192016012', 'BCR22042016039', 'BCR2504201
 'BCR03312016010', 'BCR03312016011', 'BCR03312016012', 'BCR03312016014', 'BCR03312016015', 'BCR03312016016', 'BCR03312016017',
 'BCR03312016018', 'BCR03312016019', 'BCR03312016020', 'BCR03312016021', 'BCR03312016023')
 
-
+/*
 SELECT *
 FROM dbo.OPERACIONES A
 INNER JOIN dbo.GARANTIAS_OPERACIONES B
@@ -209,8 +209,8 @@ AND C.prmoc_pco_produ = A.Prod
 AND C.prmoc_pnu_oper = A.Numero
 WHERE A.Ind_Estado_Registro = 1
 AND A.Id_Tipo_Operacion = 1
---AND A.Categoria_Riesgo_Deudor IN ('A1', 'A2', 'B1', 'B2', 'C1')
-AND A.Categoria_Riesgo_Deudor IN ('C2', 'D', 'E')
+AND A.Categoria_Riesgo_Deudor IN ('A1', 'A2', 'B1', 'B2', 'C1')
+--AND A.Categoria_Riesgo_Deudor IN ('C2', 'D', 'E')
 AND C.prmoc_estado = 'A'
 AND C.prmoc_pnu_contr = 0
 AND NOT EXISTS  (SELECT 1 
@@ -241,6 +241,7 @@ AND NOT EXISTS  (SELECT 1
 				 WHERE C.Id_Operacion = A.Id_Operacion 
 				 AND C.Id_Fideicomiso IS NOT NULL)
 
+*/
 /*
 
 UPDATE dbo.GARANTIAS_FIDEICOMETIDAS
@@ -332,7 +333,7 @@ EXEC	@return_value = [dbo].[Garantias_Valores_Consulta_Detalle]
 
 */
 
-
+/*
 
 SELECT 
 	    GARFID.Id_Fideicomiso,	ACT.*,GARFID.Ind_Deudor_Habita,GAROPER.Id_Fideicomiso,
@@ -453,3 +454,4 @@ CASE WHEN ACT.Porcentaje_Aceptacion_No_Terreno_SUGEF IS NOT NULL
 	SELECT *
 	FROM dbo.GARANTIAS_FIDEICOMETIDAS
 	WHERE Id_Garantia_Fideicomiso IN (944, 945)
+	*/
