@@ -159,43 +159,50 @@ AND D.Id_Garantia_Real IS NULL
 */
 
 
-SELECT C.*
+SELECT H.Id_Fideicomiso, H.Id_Fideicomiso_BCR, C.Codigo_Bien, C.Id_Garantia_Real, C.Codigo_Bien, G.Id_Tipo_Moneda_Monto_Gravamen, G.Saldo_Grado_Gravamen, G.Saldo_Grado_Gravamen_Colonizado
 FROM dbo.GARANTIAS_REALES C
 INNER JOIN dbo.TIPOS_BIENES E
 ON E.Id_Tipo_Bien = C.Id_Tipo_Bien
 AND E.Ind_Estado_Registro = 1
-LEFT JOIN dbo.GARANTIAS_FIDEICOMETIDAS D
+INNER JOIN dbo.GARANTIAS_FIDEICOMETIDAS D
 ON D.Id_Garantia_Real = C.Id_Garantia_Real
 AND D.Ind_Estado_Registro = 1
-LEFT JOIN dbo.GARANTIAS_REALES_POLIZAS F
+INNER JOIN dbo.GARANTIAS_REALES_POLIZAS F
 ON F.Id_Garantia_Real = C.Id_Garantia_Real
 AND F.Ind_Estado_Registro = 1
+INNER JOIN dbo.GRAVAMENES G
+ON G.Id_Garantia_Real = C.Id_Garantia_Real
+AND G.Ind_Estado_Registro = 1
+INNER JOIN dbo.FIDEICOMISOS H
+ON H.Id_Fideicomiso = D.Id_Fideicomiso
+and H.Ind_Estado_Registro = 1
 WHERE C.Ind_Estado_Registro = 1
 AND C.Estado_Registro_Garantia = 1
-AND E.Cod_Tipo_Bien = 3
-AND C.Id_Clase_Tipo_Bien = 7
-AND D.Id_Garantia_Fideicomiso IS NULL
+AND E.Cod_Tipo_Bien = 1
+--AND C.Id_Clase_Tipo_Bien = 7
+AND D.Id_Garantia_Fideicomiso IS not NULL
 AND D.Id_Garantia_Valor IS NULL
-AND D.Id_Garantia_Real IS NULL
+AND D.Id_Garantia_Real IS not NULL
 AND C.Fecha_Ultima_Tasacion_Garantia IS NOT NULL
 AND F.Id_Garantia_Real_Poliza IS NOT NULL
+ORDER BY H.Id_Fideicomiso_BCR
 
 
 
 
-SELECT *
-FROM dbo.FIDEICOMISOS A
-LEFT JOIN dbo.GARANTIAS_FIDEICOMETIDAS B
-ON B.Id_Fideicomiso = A.Id_Fideicomiso
-AND B.Ind_Estado_Registro = 1
-WHERE A.Ind_Estado_Registro = 1
-AND B.Id_Fideicomiso IS NULL
-AND CONVERT(BIGINT, (dbo.Tramas_Obtener_Numericos(A.Id_Fideicomiso_BCR))) > 3312016023 
-AND A.Id_Fideicomiso_BCR NOT IN ('BCR04192016012', 'BCR22042016039', 'BCR25042016045', 'BCR04222016001', 'BCR22042016076',
-'BCR04152016020', 'BCR22042016057', 'BCR04012016035', 'BCR04012016037', 'BCR03312016013', 'BCR04012016023', 'BCR03312016022',
-'BCR04012016001', 'BCR03312016004' ,'BCR03312016005', 'BCR03312016006', 'BCR03312016007', 'BCR03312016008', 'BCR03312016009',
-'BCR03312016010', 'BCR03312016011', 'BCR03312016012', 'BCR03312016014', 'BCR03312016015', 'BCR03312016016', 'BCR03312016017',
-'BCR03312016018', 'BCR03312016019', 'BCR03312016020', 'BCR03312016021', 'BCR03312016023')
+--SELECT *
+--FROM dbo.FIDEICOMISOS A
+--LEFT JOIN dbo.GARANTIAS_FIDEICOMETIDAS B
+--ON B.Id_Fideicomiso = A.Id_Fideicomiso
+--AND B.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND B.Id_Fideicomiso IS NULL
+--AND CONVERT(BIGINT, (dbo.Tramas_Obtener_Numericos(A.Id_Fideicomiso_BCR))) > 3312016023 
+--AND A.Id_Fideicomiso_BCR NOT IN ('BCR04192016012', 'BCR22042016039', 'BCR25042016045', 'BCR04222016001', 'BCR22042016076',
+--'BCR04152016020', 'BCR22042016057', 'BCR04012016035', 'BCR04012016037', 'BCR03312016013', 'BCR04012016023', 'BCR03312016022',
+--'BCR04012016001', 'BCR03312016004' ,'BCR03312016005', 'BCR03312016006', 'BCR03312016007', 'BCR03312016008', 'BCR03312016009',
+--'BCR03312016010', 'BCR03312016011', 'BCR03312016012', 'BCR03312016014', 'BCR03312016015', 'BCR03312016016', 'BCR03312016017',
+--'BCR03312016018', 'BCR03312016019', 'BCR03312016020', 'BCR03312016021', 'BCR03312016023')
 
 /*
 SELECT *
@@ -271,6 +278,13 @@ USE [SIGANEM]
 GO
 
 DECLARE	@return_value int
+
+EXEC	@return_value = [dbo].[Garantias_Fideicometidas_Consulta_Grid_Interno]
+		@piId_Fideicomiso = 135
+
+EXEC	@return_value = [dbo].[Garantias_Fideicometidas_Consulta_Detalle]
+		@piId_Garantia_Fideicomiso = 1046
+
 
 EXEC	@return_value = [dbo].[Garantias_Reales_Consulta]
 		@piIndice_Inicio_Fila = 0,

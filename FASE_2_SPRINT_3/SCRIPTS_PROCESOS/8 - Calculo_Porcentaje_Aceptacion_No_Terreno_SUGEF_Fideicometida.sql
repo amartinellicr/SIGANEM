@@ -676,10 +676,11 @@ BEGIN
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 	WHERE 
 		Cod_Tipo_Bien = 3
+		AND Cod_Clase_Tipo_Bien = 2
 	UNION
 	SELECT 
 		ACT.Id_Garantia_Fideicomiso,
-		CASE WHEN (Validacion_1 = 1 OR Validacion_2 = 1 OR Validacion_3 = 1) AND Validacion_4 = 0 AND GARFID.Id_Garantia_Fideicomiso IS NULL THEN ACT.Porcentaje_Aceptacion_No_Terreno_SUGEF END Porcentaje_Aceptacion_No_Terreno_SUGEF
+		CASE WHEN (Validacion_1 = 1 OR Validacion_2 = 1 OR Validacion_3 = 1) AND Validacion_4 = 0 AND GAROPER.Id_Fideicomiso IS NULL THEN ACT.Porcentaje_Aceptacion_No_Terreno_SUGEF END Porcentaje_Aceptacion_No_Terreno_SUGEF
 	FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMETIDA ACT
 		INNER JOIN dbo.GARANTIAS_FIDEICOMETIDAS GARFID
 		ON GARFID.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
@@ -725,9 +726,16 @@ BEGIN
 		ON TMP.Id_Operacion = OPER.Id_Operacion
 		AND TMP.Id_Fideicomiso = GARFID.Id_Fideicomiso
 		AND TMP.Id_Garantia_Fideicomiso = ACT.Id_Garantia_Fideicomiso
-		INNER JOIN (SELECT Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor, COUNT(*) AS CANTIDAD_REGISTROS
-					FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMISO_OPERACION
-					GROUP BY Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor
+		INNER JOIN (SELECT A.Id_Fideicomiso_BCR, A.Categoria_Riesgo_Deudor, COUNT(*) AS CANTIDAD_REGISTROS
+					FROM (
+							SELECT Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor
+							FROM dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMISO_OPERACION
+							GROUP BY Id_Fideicomiso_BCR, Categoria_Riesgo_Deudor
+							HAVING COUNT(*) > 1) A
+						INNER JOIN dbo.AUX_GAR_PRC_ACP_NO_TERRENO_FIDEICOMISO_OPERACION B
+						ON B.Id_Fideicomiso_BCR = A.Id_Fideicomiso_BCR
+					WHERE A.Categoria_Riesgo_Deudor <> B.Categoria_Riesgo_Deudor
+					GROUP BY A.Id_Fideicomiso_BCR, A.Categoria_Riesgo_Deudor
 					HAVING COUNT(*) > 1) TM1
 		ON TM1.Id_Fideicomiso_BCR = TMP.Id_Fideicomiso_BCR
 	WHERE 
