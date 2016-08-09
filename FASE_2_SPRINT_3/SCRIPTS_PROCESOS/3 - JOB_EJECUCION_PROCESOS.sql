@@ -5,11 +5,11 @@ GO
 SE ELIMINA EL JOB
 */
 
-IF EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name =N'SIGANEM - Ejecución Procesos Desarrollo F02SP03')
-EXEC msdb.dbo.sp_delete_job @job_name=N'SIGANEM - Ejecución Procesos Desarrollo F02SP03', @delete_unused_schedule=1
+IF EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name =N'SIGANEM - Ejecución Procesos Desarrollo')
+EXEC msdb.dbo.sp_delete_job @job_name=N'SIGANEM - Ejecución Procesos Desarrollo', @delete_unused_schedule=1
 GO
 
-/****** Object:  Job [SIGANEM - Ejecución Procesos Desarrollo F02SP03]    Script Date: 24/05/2016 09:39:29 a.m. ******/
+/****** Object:  Job [SIGANEM - Ejecución Procesos Desarrollo]    Script Date: 24/05/2016 09:39:29 a.m. ******/
 BEGIN TRANSACTION
 DECLARE @ReturnCode INT
 SELECT @ReturnCode = 0
@@ -25,7 +25,7 @@ IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
 END
 
 DECLARE @jobId BINARY(16)
-EXEC @ReturnCode =  msdb.dbo.sp_add_job @job_name=N'SIGANEM - Ejecución Procesos Desarrollo F02SP03', 
+EXEC @ReturnCode =  msdb.dbo.sp_add_job @job_name=N'SIGANEM - Ejecución Procesos Desarrollo', 
 		@enabled=1, 
 		@notify_level_eventlog=0, 
 		@notify_level_email=0, 

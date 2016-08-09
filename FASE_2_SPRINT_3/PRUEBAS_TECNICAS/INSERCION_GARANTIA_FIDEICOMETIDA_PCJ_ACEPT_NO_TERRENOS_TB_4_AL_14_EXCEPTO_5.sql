@@ -143,8 +143,8 @@ WHERE Id_Garantia_Real = 3207
 
 UPDATE dbo.GARANTIAS_REALES_POLIZAS
 SET Fecha_Vencimiento = '20190930',
-	Monto_Poliza = 500000.00,
-	Monto_Poliza_Colonizado = 500000.00
+	Monto_Poliza = 50000.00,
+	Monto_Poliza_Colonizado = 50000.00
 WHERE Id_Garantia_Real_Poliza = 1355
 
 
@@ -256,9 +256,9 @@ WHERE Id_Garantia_Real = 3137
 
 
 UPDATE dbo.GARANTIAS_REALES_POLIZAS
-SET Fecha_Vencimiento = '20190930',
-	Monto_Poliza = 200000000.00,
-	Monto_Poliza_Colonizado = 200000000.00,
+SET Fecha_Vencimiento = '20150930',
+	Monto_Poliza = 200000000000.00,
+	Monto_Poliza_Colonizado = 200000000000.00,
 	Coberturas = 0
 WHERE Id_Garantia_Real_Poliza = 1308
 

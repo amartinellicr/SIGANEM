@@ -158,8 +158,52 @@ AND D.Id_Garantia_Real IS NULL
 
 */
 
+DECLARE @VALOR DECIMAL(6,2)
+	SELECT 
+		top 1 @VALOR = Valor 
+	FROM 
+		dbo.TIPOS_CAMBIOS TC
+	ORDER BY 
+		Fecha desc
 
-SELECT H.Id_Fideicomiso, H.Id_Fideicomiso_BCR, C.Codigo_Bien, C.Id_Garantia_Real, C.Codigo_Bien, G.Id_Tipo_Moneda_Monto_Gravamen, G.Saldo_Grado_Gravamen, G.Saldo_Grado_Gravamen_Colonizado
+SELECT 
+	
+	GARFID.Id_Garantia_Fideicomiso,
+	A.Id_Fideicomiso_BCR,
+	@VALOR,
+	TM.Cod_Tipo_Moneda,
+	GAV.Monto_Valor_Mercado,
+	GARFID.Porcentaje_Aceptacion_SUGEF,
+	Monto_Mitigador_Calculado = CASE 
+										WHEN (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)  IS NULL
+										THEN NULL
+										WHEN (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)  < 0
+										THEN 0
+										ELSE (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)
+								END
+FROM	dbo.GARANTIAS_FIDEICOMETIDAS GARFID
+INNER JOIN dbo.GARANTIAS_VALORES GAV
+	ON GAV.Id_Garantia_Valor = GARFID.Id_Garantia_Valor
+	AND GAV.Ind_Estado_Registro = 1
+INNER JOIN dbo.FIDEICOMISOS A
+ON A.Id_Fideicomiso = GARFID.Id_Fideicomiso
+AND A.Ind_Estado_Registro = 1
+LEFT JOIN dbo.TIPOS_MITIGADORES_RIESGOS TMR
+	ON TMR.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
+	AND TMR.Ind_Estado_Registro = 1
+LEFT JOIN dbo.TIPOS_MONEDAS TM
+	ON TM.Id_Tipo_Moneda = GAV.Id_Moneda_Valor_Mercado
+WHERE 
+	GARFID.Ind_Estado_Registro = 1
+AND TMR.Cod_Tipo_Mitigador_Riesgo = 0 --in (0, 11, 13,14,15)
+
+
+/*
+SELECT H.Id_Fideicomiso, H.Id_Fideicomiso_BCR, C.Codigo_Bien, C.Id_Garantia_Real, C.Codigo_Bien, 
+G.Id_Tipo_Moneda_Monto_Gravamen, G.Saldo_Grado_Gravamen, G.Saldo_Grado_Gravamen_Colonizado,
+C.Monto_Tasacion_Actualizada_Terreno, D.Porcentaje_Aceptacion_Terreno_SUGEF, 
+C.Monto_Tasacion_Actualizada_No_Terreno, D.Porcentaje_Aceptacion_No_Terreno_SUGEF,
+D.Monto_Mitigador, D.Valor_Nominal, C.Monto_Valor_Total_Cedula
 FROM dbo.GARANTIAS_REALES C
 INNER JOIN dbo.TIPOS_BIENES E
 ON E.Id_Tipo_Bien = C.Id_Tipo_Bien
@@ -179,14 +223,28 @@ and H.Ind_Estado_Registro = 1
 WHERE C.Ind_Estado_Registro = 1
 AND C.Estado_Registro_Garantia = 1
 AND E.Cod_Tipo_Bien = 1
---AND C.Id_Clase_Tipo_Bien = 7
+AND C.Id_Clase_Tipo_Bien = 1
 AND D.Id_Garantia_Fideicomiso IS not NULL
 AND D.Id_Garantia_Valor IS NULL
 AND D.Id_Garantia_Real IS not NULL
 AND C.Fecha_Ultima_Tasacion_Garantia IS NOT NULL
 AND F.Id_Garantia_Real_Poliza IS NOT NULL
+--AND D.Porcentaje_Aceptacion_Terreno_SUGEF > 0
+--AND D.Valor_Nominal > 0
+--AND D.Monto_Mitigador = 0
 ORDER BY H.Id_Fideicomiso_BCR
+*/
 
+
+/*
+SELECT *
+FROM dbo.CLASES_TIPOS_BIENES
+
+*/
+--UPDATE dbo.GRAVAMENES
+--SET Saldo_Grado_Gravamen = 150000.00,
+--	Saldo_Grado_Gravamen_Colonizado = 150000.00
+--WHERE Id_Garantia_Real = 3088
 
 
 
