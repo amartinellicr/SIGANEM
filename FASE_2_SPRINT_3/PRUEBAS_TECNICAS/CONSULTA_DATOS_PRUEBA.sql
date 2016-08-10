@@ -158,44 +158,44 @@ AND D.Id_Garantia_Real IS NULL
 
 */
 
-DECLARE @VALOR DECIMAL(6,2)
-	SELECT 
-		top 1 @VALOR = Valor 
-	FROM 
-		dbo.TIPOS_CAMBIOS TC
-	ORDER BY 
-		Fecha desc
+--DECLARE @VALOR DECIMAL(6,2)
+--	SELECT 
+--		top 1 @VALOR = Valor 
+--	FROM 
+--		dbo.TIPOS_CAMBIOS TC
+--	ORDER BY 
+--		Fecha desc
 
-SELECT 
+--SELECT 
 	
-	GARFID.Id_Garantia_Fideicomiso,
-	A.Id_Fideicomiso_BCR,
-	@VALOR,
-	TM.Cod_Tipo_Moneda,
-	GAV.Monto_Valor_Mercado,
-	GARFID.Porcentaje_Aceptacion_SUGEF,
-	Monto_Mitigador_Calculado = CASE 
-										WHEN (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)  IS NULL
-										THEN NULL
-										WHEN (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)  < 0
-										THEN 0
-										ELSE (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)
-								END
-FROM	dbo.GARANTIAS_FIDEICOMETIDAS GARFID
-INNER JOIN dbo.GARANTIAS_VALORES GAV
-	ON GAV.Id_Garantia_Valor = GARFID.Id_Garantia_Valor
-	AND GAV.Ind_Estado_Registro = 1
-INNER JOIN dbo.FIDEICOMISOS A
-ON A.Id_Fideicomiso = GARFID.Id_Fideicomiso
-AND A.Ind_Estado_Registro = 1
-LEFT JOIN dbo.TIPOS_MITIGADORES_RIESGOS TMR
-	ON TMR.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
-	AND TMR.Ind_Estado_Registro = 1
-LEFT JOIN dbo.TIPOS_MONEDAS TM
-	ON TM.Id_Tipo_Moneda = GAV.Id_Moneda_Valor_Mercado
-WHERE 
-	GARFID.Ind_Estado_Registro = 1
-AND TMR.Cod_Tipo_Mitigador_Riesgo = 0 --in (0, 11, 13,14,15)
+--	GARFID.Id_Garantia_Fideicomiso,
+--	A.Id_Fideicomiso_BCR,
+--	@VALOR,
+--	TM.Cod_Tipo_Moneda,
+--	GAV.Monto_Valor_Mercado,
+--	GARFID.Porcentaje_Aceptacion_SUGEF,
+--	Monto_Mitigador_Calculado = CASE 
+--										WHEN (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)  IS NULL
+--										THEN NULL
+--										WHEN (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)  < 0
+--										THEN 0
+--										ELSE (((CASE TM.Cod_Tipo_Moneda WHEN 2 THEN @VALOR ELSE 1 END * GAV.Monto_Valor_Mercado) * GARFID.Porcentaje_Aceptacion_SUGEF) / 100)
+--								END
+--FROM	dbo.GARANTIAS_FIDEICOMETIDAS GARFID
+--INNER JOIN dbo.GARANTIAS_VALORES GAV
+--	ON GAV.Id_Garantia_Valor = GARFID.Id_Garantia_Valor
+--	AND GAV.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS A
+--ON A.Id_Fideicomiso = GARFID.Id_Fideicomiso
+--AND A.Ind_Estado_Registro = 1
+--LEFT JOIN dbo.TIPOS_MITIGADORES_RIESGOS TMR
+--	ON TMR.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
+--	AND TMR.Ind_Estado_Registro = 1
+--LEFT JOIN dbo.TIPOS_MONEDAS TM
+--	ON TM.Id_Tipo_Moneda = GAV.Id_Moneda_Valor_Mercado
+--WHERE 
+--	GARFID.Ind_Estado_Registro = 1
+--AND TMR.Cod_Tipo_Mitigador_Riesgo = 0 --in (0, 11, 13,14,15)
 
 
 /*
@@ -326,6 +326,217 @@ WHERE Id_Fideicomiso IN (619, 938)
 UPDATE dbo.GARANTIAS_REALES
 SET Fecha_Ultima_Tasacion_Garantia = '20160728'
 WHERE Id_Garantia_Real IN (20108, 25843)
+
+
+
+--SELECT A.Id_Garantia_Fideicomiso, F.Id_Fideicomiso, F.Id_Fideicomiso_BCR, 
+--CASE WHEN A.Id_Garantia_Real IS NOT NULL THEN D.Codigo_Bien
+--	 WHEN A.Id_Garantia_Valor IS NOT NULL THEN E.Cod_Garantia_BCR
+--END AS CODIGO_BIEN, 
+--A.Id_Garantia_Real, A.Id_Garantia_Valor
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--INNER JOIN dbo.PRIORIDADES_FIDEICOMISOS B
+--ON B.Id_Fideicomiso = A.Id_Fideicomiso
+--AND B.Ind_Estado_Registro = 1
+--INNER JOIN GRADOS_PRIORIDADES C
+--ON C.Id_Grado_Prioridad = B.Id_Grado_Prioridad
+--AND C.Ind_Estado_Registro = 1
+--AND C.Id_Tipo_Moneda = 2
+--LEFT JOIN dbo.GARANTIAS_REALES D
+--ON D.Id_Garantia_Real = A.Id_Garantia_Real
+--AND D.Ind_Estado_Registro = 1
+--LEFT JOIN dbo.GARANTIAS_VALORES E
+--ON E.Id_Garantia_Valor = A.Id_Garantia_Valor
+--AND E.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+
+
+--SELECT F.Id_Fideicomiso_BCR,  
+--E.Cod_Garantia_BCR AS CODIGO_BIEN,
+--E.Id_Moneda_Valor_Mercado, E.Monto_Valor_Mercado, E.Monto_Valor_Mercado_Colonizado
+
+--SELECT COUNT(*) AS 'CANTIDAD_REGISTROS'
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--INNER JOIN dbo.GARANTIAS_VALORES E
+--ON E.Id_Garantia_Valor = A.Id_Garantia_Valor
+--AND E.Ind_Estado_Registro = 1
+--AND E.Id_Moneda_Valor_Mercado = 2
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+
+
+--DECLARE @VALOR DECIMAL(6,2) 
+--SELECT TOP 1 @VALOR = Valor 
+--FROM	dbo.TIPOS_CAMBIOS
+--ORDER BY Fecha DESC
+
+--SELECT COUNT(*) AS 'CANTIDAD_REGISTROS', @VALOR AS 'TIPO DE CAMBIO'
+--FROM dbo.GARANTIAS_VALORES
+--WHERE Ind_Estado_Registro = 1
+--AND Id_Moneda_Valor_Mercado = 2
+--AND (Monto_Valor_Mercado * @VALOR) <> Monto_Valor_Mercado_Colonizado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--SELECT COUNT(*) AS 'CANTIDAD_REGISTROS'
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--INNER JOIN dbo.PRIORIDADES_FIDEICOMISOS B
+--ON B.Id_Fideicomiso = A.Id_Fideicomiso
+--AND B.Ind_Estado_Registro = 1
+--INNER JOIN GRADOS_PRIORIDADES C
+--ON C.Id_Grado_Prioridad = B.Id_Grado_Prioridad
+--AND C.Ind_Estado_Registro = 1
+--AND C.Id_Tipo_Moneda = 2
+--LEFT JOIN dbo.GARANTIAS_REALES D
+--ON D.Id_Garantia_Real = A.Id_Garantia_Real
+--AND D.Ind_Estado_Registro = 1
+--LEFT JOIN dbo.GARANTIAS_VALORES E
+--ON E.Id_Garantia_Valor = A.Id_Garantia_Valor
+--AND E.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND (C.Saldo_Prioridad * @VALOR) <> C.Saldo_Prioridad_Colonizado
+----AND Id_Garantia_Fideicomiso IN (445, 623)
+----AND Id_Garantia_Fideicomiso IN (664, 863)
+
+
+
+
+--SELECT A.Id_Garantia_Fideicomiso, F.Id_Fideicomiso, F.Id_Fideicomiso_BCR, 
+--D.Codigo_Bien
+---- E.Cod_Garantia_BCR
+--  AS CODIGO_BIEN, 
+--A.Id_Garantia_Real, A.Id_Garantia_Valor
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--LEFT JOIN dbo.GARANTIAS_REALES D
+--ON D.Id_Garantia_Real = A.Id_Garantia_Real
+--AND D.Ind_Estado_Registro = 1
+----LEFT JOIN dbo.GARANTIAS_VALORES E
+----ON E.Id_Garantia_Valor = A.Id_Garantia_Valor
+----AND E.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND A.Valor_Nominal > 0
+--AND D.Monto_Ultima_Tasacion_Terreno > 0
+--AND D.Monto_Ultima_Tasacion_No_Terreno > 0
+--AND A.Porcentaje_Aceptacion_BCR > 0
+--AND A.Id_Garantia_Fideicomiso IN (912, 919)
+
+
+
+
+
+--SELECT F.Id_Fideicomiso_BCR, 
+--D.Codigo_Bien AS CODIGO_BIEN, 
+--(D.Monto_Ultima_Tasacion_Terreno + D.Monto_Ultima_Tasacion_No_Terreno) AS 'MONTO TOTAL AVALUO',
+--A.Porcentaje_Aceptacion_BCR,
+--A.Valor_Nominal,
+--F.Id_Fideicomiso
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--LEFT JOIN dbo.GARANTIAS_REALES D
+--ON D.Id_Garantia_Real = A.Id_Garantia_Real
+--AND D.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND A.Valor_Nominal > 0
+--AND D.Monto_Ultima_Tasacion_Terreno > 0
+--AND D.Monto_Ultima_Tasacion_No_Terreno > 0
+--AND A.Porcentaje_Aceptacion_BCR > 0
+--AND A.Id_Garantia_Fideicomiso IN (912, 919)
+
+
+--select *
+--from dbo.GARANTIAS_FIDEICOMETIDAS
+--where Id_Fideicomiso = 46
+
+
+--delete from dbo.GARANTIAS_FIDEICOMETIDAS
+--where Id_Garantia_Fideicomiso = 966 
+
+--SELECT A.Id_Garantia_Fideicomiso, F.Id_Fideicomiso, F.Id_Fideicomiso_BCR, 
+--E.Cod_Garantia_BCR
+--  AS CODIGO_BIEN, 
+--A.Id_Garantia_Real, A.Id_Garantia_Valor
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--LEFT JOIN dbo.GARANTIAS_VALORES E
+--ON E.Id_Garantia_Valor = A.Id_Garantia_Valor
+--AND E.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND A.Valor_Nominal > 0
+--AND E.Monto_Valor_Mercado_Colonizado > 0
+--AND A.Porcentaje_Aceptacion_BCR > 0
+--AND A.Id_Garantia_Fideicomiso IN (863, 976)
+
+
+
+
+
+
+
+--SELECT F.Id_Fideicomiso_BCR, 
+--E.Cod_Garantia_BCR AS CODIGO_BIEN, 
+--E.Monto_Valor_Mercado_Colonizado, A.Porcentaje_Aceptacion_BCR, A.Valor_Nominal, F.Id_Fideicomiso
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--LEFT JOIN dbo.GARANTIAS_VALORES E
+--ON E.Id_Garantia_Valor = A.Id_Garantia_Valor
+--AND E.Ind_Estado_Registro = 1
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND A.Valor_Nominal > 0
+--AND E.Monto_Valor_Mercado_Colonizado > 0
+--AND A.Porcentaje_Aceptacion_BCR > 0
+--AND A.Id_Garantia_Fideicomiso IN (863, 976)
+
+--select *
+--from dbo.GARANTIAS_FIDEICOMETIDAS
+--where Id_Fideicomiso = 1380
+
+
+--delete from dbo.GARANTIAS_FIDEICOMETIDAS
+--where Id_Garantia_Fideicomiso = 974 
+
+
+
+--SELECT F.Id_Fideicomiso_BCR,  
+-- A.Valor_Nominal
+--FROM dbo.GARANTIAS_FIDEICOMETIDAS A
+--INNER JOIN dbo.FIDEICOMISOS F
+--ON F.Id_Fideicomiso = A.Id_Fideicomiso
+--AND F.Ind_Estado_Registro = 1
+--WHERE A.Ind_Estado_Registro = 1
+--AND A.Valor_Nominal > 0
+--AND A.Porcentaje_Aceptacion_BCR > 0
+--AND A.Id_Garantia_Fideicomiso IN (919, 863)
 
 */
 
@@ -529,4 +740,43 @@ CASE WHEN ACT.Porcentaje_Aceptacion_No_Terreno_SUGEF IS NOT NULL
 	SELECT *
 	FROM dbo.GARANTIAS_FIDEICOMETIDAS
 	WHERE Id_Garantia_Fideicomiso IN (944, 945)
+
+
+	SELECT D.Id_Garantia_Aval, D.Numero_Aval,
+(CAST(O.Oficina AS VARCHAR) + '-' + CAST(O.Moneda AS VARCHAR) + '-' + CASE WHEN O.Id_Tipo_Operacion = 1 THEN CAST(O.Prod AS VARCHAR) + '-' ELSE '' END + CAST(O.Numero AS VARCHAR)) AS 'OPERACIONES_RELACIONADAS'
+, E.Id_Garantia_Operacion, E.Monto_Mitigador_Calculado
+FROM dbo.GARANTIAS_AVALES D
+INNER JOIN dbo.GARANTIAS_OPERACIONES E
+ON E.Id_Garantia_Aval = D.Id_Garantia_Aval
+AND E.Ind_Estado_Registro = 1
+INNER JOIN dbo.OPERACIONES O
+ON O.Id_Operacion = E.Id_Operacion
+AND O.Ind_Estado_Registro = 1
+--INNER JOIN dbo.prmoc K
+--ON K.prmoc_pco_ofici = O.Oficina
+--AND K.prmoc_pco_moned = O.Moneda
+--AND K.prmoc_pco_produ = O.Prod
+--AND K.prmoc_pnu_oper = O.Numero
+--AND K.prmoc_estado = 'A'
+--AND K.prmoc_pcoctamay <> 815
+--AND K.prmoc_pse_proces = 1
+--AND K.prmoc_pnu_contr = 0
+INNER JOIN dbo.prmca K
+ON K.prmca_pco_ofici = O.Oficina
+AND K.prmca_pco_moned = O.Moneda
+AND K.prmca_pnu_contr = O.Numero
+AND K.prmca_estado = 'A'
+AND K.prmca_pfe_defin > 20160809
+WHERE D.Ind_Estado_Registro = 1
+AND E.Monto_Mitigador_Calculado > 0
+AND E.Porcentaje_Aceptacion_BCR > 0
+ORDER BY D.Numero_Aval
+
+/*
+UPDATE dbo.GARANTIAS_OPERACIONES
+SET Porcentaje_Responsabilidad_SUGEF = 75
+WHERE Id_Garantia_Operacion = 59746 --59752
+*/
+
+
 	*/
