@@ -1,0 +1,68 @@
+﻿/*************************************************************************************************************************/
+/* PAGER COMMAND BUTTONS */
+.pagerCssMasterGrid 
+{ 
+    text-align: center; 
+}
+.pagerButtonFirstCssMasterGrid 
+{
+    width: 10px;
+    height: 10px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;	
+    background-image: url('../img/MasterGrid/MasterPager_sprite.png');
+ }
+.pagerButtonPrevCssMasterGrid  
+{
+    width: 10px;
+    height: 10px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: -10px 0px;	
+    background-image: url('../img/MasterGrid/MasterPager_sprite.png');
+ }
+.pagerButtonNextCssMasterGrid  
+{
+    width: 10px;
+    height: 10px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: -25px 0px;	
+    background-image: url('../img/MasterGrid/MasterPager_sprite.png');
+ }
+.pagerButtonLastCssMasterGrid  
+{
+    width: 10px;
+    height: 10px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: -36px 0px;
+    background-image: url('../img/MasterGrid/MasterPager_sprite.png');
+ }
+.pagerLabelCssMasterGrid  
+{
+    border-style: none;
+    font-family:  Verdana; 
+    font-size: 11px; 
+    color: #000000; 
+ }
+/*************************************************************************************************************************/
+/* PAGER STYLES DOWNLOAD */
+.pager { height: 100% }
+.pager .container { padding: 4px; }
+.pager .command { float: left; padding-right: 5px; font-family:  Verdana; font-size: 12px; }    
+.pager .info { font-size: 12px; font-family: Verdana; float: right; text-align:center; }
+.tablePager { background-color: #E0E0E0; position: absolute; top: 93%; left: 13%; padding-right: 10%; }
+.tdPagerRight{ text-align: left; font-family: Verdana; font-size: 11px; border-collapse: collapse; vertical-align: middle; }
+/*************************************************************************************************************************/
+.sliderRail { position:relative; height:22px; width:175px; }
+.sliderHandle { position:absolute; height:22px; width:10px; }

@@ -1,0 +1,296 @@
+﻿/*************************************************************************************************************************/
+/***************** FONDO *****************/
+/*************************************************************************************************************************/
+.body
+{
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    vertical-align:top;
+    font-family: Verdana;
+    background-color: #F7F8FA;
+    border-collapse: collapse;
+}
+/*************************************************************************************************************************/
+/***************** TITULOS *****************/
+/*************************************************************************************************************************/
+.mainTableBoxesCss
+{    
+    font-size: 11px;
+	font-family: Verdana;
+	text-align: left;
+}
+.labelTabError
+{
+	color: #FF0000;
+	font-family: Verdana;
+}
+.labelSub
+{
+    color: #798FA5;
+    font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+}
+.labelSub2
+{
+    color: #000000;
+    font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+}
+/*************************************************************************************************************************/
+/***************** CONTROLES *****************/
+/*************************************************************************************************************************/
+.mainPanel
+{
+    margin: 0 auto;
+    text-align: center;
+}
+.divConsultaOperacion
+{
+    width:100%;
+    height: 95px;
+    background-color: #F7F8FA;
+}
+.divConsultaSICC
+{
+    width: 100%;
+    height: 280px;
+    background-color: #F7F8FA;
+}
+.divConsultaGridGarantia
+{
+    width:100%;
+    height: auto;
+    background-color: #F7F8FA;
+}
+/*************************************************************************************************************************/
+/***************** BOTONES *****************/
+/*************************************************************************************************************************/
+.botonConsultarSICC
+{
+    height: 20px;
+    width: 125px;
+    cursor: hand;
+    text-align: left;
+    font-size: 10.5px;
+    padding-left: 25px;
+    font-family: Verdana;
+    vertical-align: bottom;
+    border: 1px solid #707070;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 5px 2px;
+    background-image: url('../img/16/iconConsultaSol.gif');
+}
+.botonValidarOperacion
+{
+    height: 20px;
+    width: 80px;
+    cursor: hand;
+    text-align: left;
+    font-size: 10.5px;
+    padding-left: 25px;
+    font-family: Verdana;
+    vertical-align: bottom;
+    border: 1px solid #707070;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 4px 0px;
+    background-image: url('../img/16/iconValidar.png');
+}
+/********************************************************************************************************/
+/*                                        GRID VIEW BUTTONS                                             */
+/********************************************************************************************************/
+.imgCmdAgregarSICC
+{
+    width: 22px;
+    height: 22px;
+    cursor: hand;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px 4px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Grid_sprite_16.png');
+}
+.imgCmdModificarSICC
+{
+    width: 22px;
+    height: 22px;
+    cursor: hand;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -35px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Grid_sprite_16.png');
+}
+.imgCmdEliminarSICC
+{
+    width: 22px;
+    height: 22px;
+    cursor: hand;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -72px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Grid_sprite_16.png');
+}
+.imgCmdBorrarSICC
+{
+    width: 22px;
+    height: 22px;
+    cursor: hand;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -110px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Grid_sprite_16.png');
+}
+.imgCmdActualizarSICC
+{
+    width: 22px;
+    height: 22px;
+    cursor: hand;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -150px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Grid_sprite_16.png');
+}
+/**********************************************************************************************************/
+/*                                            DISABLED BUTTONS                                            */
+/**********************************************************************************************************/
+.botonConsultarSICCDisabled
+{
+    height: 20px;
+    width: 125px;
+    cursor: nonoe;
+    text-align: left;
+    font-size: 10.5px;
+    padding-left: 25px;
+    font-family: Verdana;
+    vertical-align: bottom;
+    border: 1px solid #707070;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 5px 2px;
+    background-image: url('../img/16/iconConsultaSol_dis.png');
+}
+.botonValidarOperacionDisabled
+{
+    height: 20px;
+    width: 80px;
+    cursor: hand;
+    cursor: none;
+    text-align: left;
+    font-size: 10.5px;
+    padding-left: 25px;
+    font-family: Verdana;
+    vertical-align: bottom;
+    border: 1px solid #707070;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 4px 0px;
+    background-image: url('../img/16/iconValidar_dis.png');
+}/********************************************************************************************************/
+/*                                     GRID VIEW DISABLED BUTTONS                                        */
+/*********************************************************************************************************/
+.imgCmdAgregarSICCDisabled
+{
+    width: 22px;
+    height: 22px;
+    cursor: none;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px 4px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Disabled_Grid_sprite_16.png');
+}
+.imgCmdModificarSICCDisabled
+{
+    width: 22px;
+    height: 22px;
+    cursor: none;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -35px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Disabled_Grid_sprite_16.png');
+}
+.imgCmdEliminarSICCDisabled
+{
+    width: 22px;
+    height: 22px;
+    cursor: none;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -72px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Disabled_Grid_sprite_16.png');
+}
+.imgCmdBorrarSICCDisabled
+{
+    width: 22px;
+    height: 22px;
+    cursor: none;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -110px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Disabled_Grid_sprite_16.png');
+}
+.imgCmdActualizarSICCDisabled
+{
+    width: 22px;
+    height: 22px;
+    cursor: hand;
+    border-style: none;
+    background-repeat: no-repeat; 
+	background-position: 5px -150px;
+	background-color: transparent; 
+    background-image: url('../img/MasterGrid/Disabled_Grid_sprite_16.png');
+}
+/*************************************************************************************************************************/
+/***************** TABLA PRINCIPAL *****************/
+/*************************************************************************************************************************/
+.tdSeparatorSmall
+{
+    width: 2%;
+}
+.tdSeparatorCenter
+{
+    width: 100px;
+}
+.tdLineSeparator
+{
+    height: 6px;
+}
+.tdButtonSeparator
+{
+    width: 5px;
+}
+.tdColumnSeparator
+{
+    width: 42px;
+}
+.tdColumnSeparator2
+{
+    width: 75px;
+}
+.tdColumnDropDown
+{
+     width: 170px;
+}
+.tdColumnLabel
+{
+     width: 120px;
+}
+.tdColumnLabel0
+{
+     width: 120px;
+}
+.tdColumnLabel1
+{
+     width: 135px;
+}

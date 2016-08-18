@@ -1,0 +1,229 @@
+﻿/*************************************************************************************************************************/
+/***************** FONDO *****************/
+/*************************************************************************************************************************/
+.mainPanelRelacion
+{
+    margin: 0 auto;
+    text-align: center;
+}
+.panelPrincipalRelacion
+{
+    height: 100%;
+    width: 100%;
+}
+/*************************************************************************************************************************/
+/***************** TITULOS *****************/
+/*************************************************************************************************************************/
+.mainTableBoxesCss
+{    
+    font-size: 11px;
+	font-family: Verdana;
+	text-align: left;
+}
+.tituloRelacion
+{
+    color: Black;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 14px;
+}
+.labelSubRelacion
+{
+    color: #000000;
+    font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+}
+.labelTabErrorRelacion
+{
+	color: #FF0000;
+	font-family: Verdana;
+}
+/*************************************************************************************************************************/
+/***************** CONTENEDORES *****************/
+/*************************************************************************************************************************/
+.divPrincipalSuperiorFiduciarias
+{
+    top: 40px;
+    height:325px;
+    width:100%;
+    background-color: #FFFFFF;
+}
+.divPrincipalSuperiorValores
+{
+    top: 40px;
+    height:430px;
+    width:100%;
+    background-color: #FFFFFF;
+}
+.divPrincipalSuperiorReales
+{
+    top: 40px;
+    height:495px;
+    width:100%;
+    background-color: #FFFFFF;
+}
+.divPrincipalTituloRelacion
+{
+    height:20px;
+    width:100%;    
+    background-color: #E8ECF0;
+    border-bottom: 1px solid #C0C0C0; 
+}
+.divPrincipalInferiorRelacion
+{
+    height:40px;
+    width:100%;
+    background-color: #E8ECF0;
+    text-align: center;
+    vertical-align: middle;
+    border-top: 1px solid #C0C0C0; 
+}
+/*************************************************************************************************************************/
+/***************** TABLA CONTROLES *****************/
+/*************************************************************************************************************************/
+.tdSeparatorSmallRelacion
+{
+    width: 1.5%;
+}
+.tdLineSeparatorRelacion
+{
+    height: 6px;
+}
+.tdColumnLabel0Relacion
+{
+     width: 150px;
+     text-align: left;
+}
+.tdColumnLabel1Relacion
+{
+     width: 175px;
+     text-align: left;
+}
+.tdColumnGeneral0Relacion
+{
+     width: 125px;
+     text-align: left;
+}
+.tdColumnGeneral1Relacion
+{
+     width: 70px;
+     text-align: left;
+}
+.tdColumnGeneral2Relacion
+{
+     width: 105px;
+     text-align: left;
+}
+.tdColumnGeneralCombosRelacion
+{
+     width: 240px;
+     text-align: left;
+}
+/*************************************************************************************************************************/
+/***************** BOTONES *****************/
+/*************************************************************************************************************************/
+.botonConsultarRelacion
+{
+    height: 20px;
+    width: 90px;
+    cursor: hand;
+    text-align: left;
+    font-size: 10.5px;
+    padding-left: 25px;
+    font-family: Verdana;
+    vertical-align: bottom;
+    border: 1px solid #707070;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 5px 2px;
+    background-image: url('../img/16/iconConsultaSol.gif');
+}
+.botonAceptarRelacion
+{
+    font-size: 11px;
+    font-family: Verdana;
+ }
+   
+ .botonCancelarRelacion
+{
+    font-size: 11px;
+    font-family: Verdana;
+}
+.imgCmdBuscarGarantia
+{
+    width: 22px;
+    height: 19px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/16/iconConsultaSol.gif');
+}
+
+.botonConsultarRelacionDisabled
+{
+    height: 20px;
+    width: 90px;
+    cursor: hand;
+    text-align: left;
+    font-size: 10.5px;
+    padding-left: 25px;
+    font-family: Verdana;
+    vertical-align: bottom;
+    border: 1px solid #707070;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position: 5px 2px;
+    background-image: url('../img/16/iconConsultaSol_dis.png');
+}
+.imgCmdBuscarGarantiaDisabled
+{
+    width: 22px;
+    height: 19px;
+    cursor: hand;
+    border-style: none;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/16/iconConsultaSol_dis.png');
+}
+/*************************************************************************************************************************/
+/***************** MODAL *****************/
+/*************************************************************************************************************************/
+.modalBackgroundRelacion
+{
+    /*ESTILOS*/
+    background-color: #6E6E6E; /* IE 8 */
+    /*BROWSER*/
+    opacity: 0.6;
+    -moz-opacity: 0.6; /* Safari 1.x */
+    -khtml-opacity: 0.6; /* Good browsers */    
+    filter: alpha(opacity=80); /* Netscape */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 5-7 */
+}
+
+.modalPopupRelacion
+{
+    /*ESTILOS*/
+    border-width: 3px;
+    border-color: Gray;
+    border-style: solid;
+    background-color: #EFF5FB;
+    border: solid 1px #333333;
+    /*ALINEACION*/
+    margin: 0 auto;
+    padding: 3px;
+    text-align: center;
+    /*TAMANO*/
+    width: 250px;
+    /*BROWSER*/
+    behavior: url(ie-css3.htc); /* This lets IE know to call the script on all elements which get the 'box' class */
+    box-shadow: 10px 10px 20px #000; /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */    
+    border-radius: 15px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+    -moz-box-shadow: 10px 10px 20px #000; /* Firefox */
+    -webkit-box-shadow: 10px 10px 20px #000; /* Safari and Chrome */
+    -moz-border-radius: 15px; /* Firefox */
+    -webkit-border-radius: 15px; /* Safari and Chrome */
+}

@@ -1,0 +1,75 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="SubMain, App_Web_csgz2elm" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<%@ Register Src="~/Library/controls/wucMensajeInformar.ascx" TagName="MensajeInformar" TagPrefix="uc1" %>
+<%@ Register Src="~/Library/controls/wucMenuSuperiorDetalle.ascx" TagName="Ribbon" TagPrefix="uc2" %>
+<%@ Register Src="~/Library/controls/wucMenuLateralDetalle.ascx" TagName="MenuLateral" TagPrefix="uc3" %>
+<%@ Register Src="~/Library/controls/wucPropiedadesRegistro.ascx" tagname="PropiedadesRegistro" tagprefix="uc4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- MIMIC INTERNET EXPLORER -->        
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+
+    <link rel="Stylesheet" type="text/css" href="../MenuSuperiorDetalle.css" />
+    <link rel="Stylesheet" type="text/css" href="../MenuLateralDetalle.css" />
+    <link rel="Stylesheet" type="text/css" href="../LoadingControl.css" />
+    <link rel="Stylesheet" type="text/css" href="../MasterSubMain.css" />
+
+    <link rel="Stylesheet" type="text/css" href="../MensajePopUp.css" />
+    <link rel="Stylesheet" type="text/css" href="../ModalPopUp.css" />
+    <link rel="Stylesheet" type="text/css" href="../MasterGrid.css"/>
+    <link rel="Stylesheet" type="text/css" href="../Controles.css"/>
+
+    <link rel="Stylesheet" type="text/css" href="../PropiedadesRegistro.css"/>
+
+    <script src="../../scripts/Procesando.js" language="javascript" type="text/javascript"></script>
+
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <%--VALORES SESION--%>
+        <input type="hidden" id="idSesionOculto" runat="server" />
+        <input type="hidden" id="codUsuarioOculto" runat="server" />
+
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </asp:ToolkitScriptManager>
+
+        <div id="divRibbon">
+            <uc2:Ribbon ID="Ribbon1" runat="server" />
+        </div>
+        <div id="divContenido">
+            <div id="divContenidoSecciones">
+                <uc3:MenuLateral ID="MenuLateral1" runat="server" />
+            </div>
+            <div id="divContenidoDatos">
+                <div id="divContenidoDatosControles">
+                    <asp:Panel ID="Panel1" Height="100%" runat="server">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                        </asp:ContentPlaceHolder>
+                    </asp:Panel>
+                </div>
+                <uc4:PropiedadesRegistro ID="Propiedades1" runat="server" />
+            </div>
+        </div>
+
+        <asp:Panel runat="server" ID="popupInformar" Style="display: none; background-color: #FFFFFF;">
+            <uc1:MensajeInformar ID="InformarBox1" runat="server" />
+            <asp:LinkButton runat="server" ID="lkbModalInfo" CssClass="modalPopup" Style="visibility: hidden;" />
+            <asp:ModalPopupExtender ID="mpeInformarBox" runat="server" 
+                PopupControlID="popupInformar"
+                TargetControlID="lkbModalInfo" 
+                BackgroundCssClass="modalBackground" 
+                DropShadow="false"
+                RepositionMode="RepositionOnWindowResizeAndScroll" />
+        </asp:Panel>
+    </form>
+</body>
+</html>

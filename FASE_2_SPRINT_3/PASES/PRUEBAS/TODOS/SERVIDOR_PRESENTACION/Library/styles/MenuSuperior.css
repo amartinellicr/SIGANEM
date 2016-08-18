@@ -1,0 +1,850 @@
+﻿.panelWindows
+{
+	width : 100%; height : 132px;
+	background-color: #FFFFFF;
+	margin: 0px 0px 0px 0px;
+}
+
+.lblDatosUsuario
+{
+    font-family: Verdana;
+    font-size: 11px;
+    color: #333333;
+}
+
+.tabTitulo
+{
+    font-family: Verdana;
+    font-size: 11px;
+    color: Black;
+}
+
+/*RIBBON*/
+.Tab
+{
+	color: Black;
+	}
+
+.Tab .ajax__tab_header
+{
+    font-family:Verdana;
+    font-size: 11px;
+    margin-left: 0px; 
+}
+
+/*Body*/
+.Tab .ajax__tab_body
+{
+	background-image: url('../img/Ribbon/Ribbon_Background.png');
+	border:1px solid #C0C0C0;
+	border-bottom: 1px solid #C0C0C0;
+	font-family:Verdana;
+    font-size: 11px;
+}
+
+/*Tab Active*/
+.Tab .ajax__tab_active .ajax__tab_tab
+{
+   
+    height:23px;
+    background-color: White;
+}
+
+.Tab .ajax__tab_active .ajax__tab_inner
+{
+   background-color: White;
+}
+
+.Tab .ajax__tab_active .ajax__tab_outer
+{
+    background-color: White;
+}
+
+/*Tab Hover*/
+
+.Tab .ajax__tab_hover .ajax__tab_tab
+{
+   background-color: White;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_inner
+{
+    background-color: White;
+    
+}
+
+.Tab .ajax__tab_hover .ajax__tab_outer
+{
+    background-color: White;
+}
+
+/*Tab Inactive*/
+.Tab .ajax__tab_tab
+{
+    background-color: White;
+    height:23px;
+    border-bottom: 0 none;
+    border-left:1px solid #C0C0C0;
+    border-right:1px solid #C0C0C0;
+    border-top:1px solid #C0C0C0;
+    margin-right: 5px;
+}
+
+.Tab .ajax__tab_inner
+{
+    background-color: White;
+}
+
+.Tab .ajax__tab_outer
+{
+    background-color: White;
+}
+
+/*Tab Inactive*/
+.TabDesconectar
+{
+    background-color: White;
+    height:23px;
+    width: 93px;
+    border-bottom: 0 none;
+    border-left:1px solid #C0C0C0;
+    border-right:1px solid #C0C0C0;
+    border-top:1px solid #C0C0C0;
+    margin-right: 5px;
+}
+
+/*CONTROLES VERTICALES*/
+.tableControlContenedor
+{
+    height: 100%; 
+    margin-left: 4px;
+}
+
+.tableControl
+{
+    height:85px; 
+    width:62px;
+}
+
+.tdImgControl
+{
+    height:47px; 
+    vertical-align: top; 
+    text-align: center;
+}
+
+.tdLblControl
+{
+    height:35px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.tdSeparador
+{
+    height: 100%;
+    width: 12px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.labelButtons
+{
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+.divSeparador
+{
+  height : 78px;
+  width: 5px;
+  border-right: 1px solid #C0C0C0; 
+}
+
+.divTabsButtonsPreHover
+{
+    text-align: center;
+	width : 66px; 
+	height : 66px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.divTabsButtonsPreHoverDisabled
+{
+    text-align: center;
+	width : 66px; 
+	height : 66px;
+	cursor: auto ;
+	vertical-align: middle;
+	background-color : transparent;
+	border-style: none;
+}
+
+.divTabsButtonsPreHover:hover
+{
+	background-color : #FDEEB3;
+	width : 64px; 
+	height : 64px;
+	border : solid 1px #F1C43F;	
+}
+
+/***CONTROLES HORIZONTALES****/
+
+.tableControlHorizontal
+{
+    height:68px; 
+    width:77px;
+}
+
+.divTabsButtonsPreHoverDesconectar
+{
+    text-align: center;
+	width : 97px; 
+	height : 21px;
+	cursor: pointer;
+}
+
+.divTabsButtonsPreHoverDesconectar:hover
+{
+	background-color : #FDEEB3;
+	border : solid 1px #F1C43F;
+	width : 95px; 
+	height : 19px;
+	
+}
+
+.divTabsButtonsPreHoverHorizontalMasAcciones
+{
+    text-align: center;
+	width : 150px; 
+	height : 21px;
+	cursor: pointer;
+}
+
+.divTabsButtonsPreHoverHorizontalMasAcciones:hover
+{
+	background-color : #FDEEB3;
+	border : solid 1px #F1C43F;
+	width : 150px; 
+	height : 19px;
+	
+}
+
+.divTabsButtonsPreHoverHorizontal
+{
+    text-align: center;
+	width : 77px; 
+	height : 21px;
+	cursor: pointer;
+}
+
+.divTabsButtonsPreHoverHorizontal:hover
+{
+	background-color : #FDEEB3;
+	border : solid 1px #F1C43F;
+	width : 75px; 
+	height : 19px;
+	
+}
+
+.divTabsButtonsPreHoverHorizontalDisabled
+{
+    text-align: center;
+	width : 77px; 
+	height : 21px;
+	cursor: auto;
+	background-color : transparent;
+	border-style: none;
+}
+
+.tdImgControlHorizontal
+{
+    height:18px; 
+    width: 77px;
+    vertical-align: top; 
+    text-align: right;
+}
+
+.tdLblControlHorizontal
+{
+    height:20px;
+    width: 110px;
+    vertical-align: top;
+    text-align: left;
+}
+
+/****BOTONES*****/
+.menuSuperiorSpan
+{
+    color: #C0C0C0;
+    padding-bottom: 2px;
+}
+
+.menuSuperiorBotonAyudaGuardar
+{
+    background-image: url('../img/16/iconGuardar.png');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 120px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAyudaRegresar
+{
+    background-image: url('../img/16/Ribbon_sprite_16.png');	
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+	background-position: 0px 1px; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 120px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesExcel
+{
+    background-image: url('../img/16/Ribbon_sprite_16.png');	
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+	background-position: 0px -75px;	
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 75px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesExcelDisabled
+{
+    background-image: url('../img/16/Ribbon_sprite_16.png');	
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+	background-position: 0px -75px;	
+    cursor: auto;
+    padding-left: 20px;
+    height: 16px;
+    width: 75px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+
+.menuSuperiorBotonAccionesNuevoId
+{
+	background-image: url('../img/16/Ribbon_sprite_16.png');	
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+	background-position: 0px -38px;	
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 75px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesInicio
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -2px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesNuevo
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -52px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesNuevoDisabled
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -52px 0px;
+    cursor: auto ;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesModificar
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -96px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesModificarDisabled
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -96px 0px;
+    cursor: auto ;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesBorrar
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -146px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesBorrarDisabled
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -146px 0px;
+    cursor: auto ;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesActualizar
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -191.55px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesActualizarDisabled
+{
+	background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -191.55px 0px;
+    cursor: auto ;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+
+.menuSuperiorBotonAccionesAcciones
+{
+    background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -236px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 64px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesAccionesDisabled
+{
+    background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -236px 0px;
+    cursor: auto ;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesReportes
+{
+    background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -289px 0px;
+    cursor: pointer;
+    padding-top: 41px;
+    height: 62px;
+    width: 64px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesReportesDisabled
+{
+    background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -289px 0px;
+    cursor: auto ;
+    padding-top: 41px;
+    height: 62px;
+    width: 62px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+
+/*****POPUP MAS ACCIONES******/
+.popUpMasAcciones
+{
+    /*height:24px; */
+    width: 80px;
+    background-color: White;
+}
+
+.popUpMasAccionesTabla
+{
+    height: 100%;
+    width: 100%;
+}
+
+.menuSuperiorBotonAccionesConsultarTC
+{
+    background-image: url('../img/16/iconNotificar.gif');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesConsultarTCDisabled
+{
+    background-image: url('../img/16/iconNotificar.png');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesEjecutarTC
+{
+    background-image: url('../img/16/iconGestionar.gif');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesEjecutarTCDisabled
+{
+    background-image: url('../img/16/iconGestionar.gif');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesConsultarIPC
+{
+    background-image: url('../img/16/iconNotificar.gif');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesConsultarIPCDisabled
+{
+    background-image: url('../img/16/iconNotificar.png');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesEjecutarIPC
+{
+    background-image: url('../img/16/iconGestionar.gif');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesEjecutarIPCDisabled
+{
+    background-image: url('../img/16/iconGestionar.gif');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesCopiarRol
+{
+    background-image: url('../img/16/iconRoles.png');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesCopiarRolDisabled
+{
+    background-image: url('../img/16/iconRoles.png');
+    background-color: transparent; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity:0.3;
+}
+
+.menuSuperiorBotonAccionesGuardarNuevo
+{
+    background-image: url('../img/32/Ribbon_sprite_32.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+	background-position: -333px 0px;
+    cursor: pointer;
+    padding-top: 45px;
+    height: 60px;
+    width: 64px;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesDescargaArchivo
+{
+    background-image: url('../img/16/iconFideicom.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
+    cursor: pointer;
+    padding-left: 20px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.menuSuperiorBotonAccionesDescargaArchivoDisabled
+{
+    background-image: url('../img/16/iconFideicom.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: left;
+    cursor: pointer;
+    padding-left: 20px;
+    height: 16px;
+    width: 153px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+    opacity: 0.3;
+}
+
+
+

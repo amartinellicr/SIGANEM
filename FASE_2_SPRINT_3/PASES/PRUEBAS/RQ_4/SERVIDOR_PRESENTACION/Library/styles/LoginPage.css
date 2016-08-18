@@ -1,0 +1,157 @@
+﻿body
+{
+    font-family: sans-serif, Times New Roman;
+}
+/********************************************************************************************************/
+/*                                          Contenedores                                                */
+/********************************************************************************************************/
+.ImageContainer
+{
+    /*TAMANO*/
+    height: 100%;
+    width: 72%;
+    /*POSICION*/
+    top: 65px;
+    right: 0;
+    left: 0;
+    position: fixed;
+}
+
+.LoginContainer
+{    
+    /*TAMANO*/
+    height: 91%;
+    width: 25%;
+    /*POSICION*/
+    top: 4.5%;
+    left: 74%;
+    position: fixed;
+}
+
+.Footer
+{
+    /*TAMANO*/
+    width: 30%;
+    height: 7%;
+    /*POSICION*/
+    left: 72%;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    /*COLOR*/
+    Color: #585858;
+    /*FONT*/
+    padding-left: 15px;
+    font-size: 11px;
+}
+
+.Header
+{
+    /*TAMANO*/
+    width: 72%;
+    /*height: 9%;*/
+    /*POSICION*/
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+}
+.HeaderBCR
+{
+    /*TAMANO*/
+    width: 15%;
+    height: 7%;
+    /*POSICION*/
+    left: 79%;
+    top: 0;
+    position: fixed;
+}
+/********************************************************************************************************/
+/*                                           Separadores                                                */
+/********************************************************************************************************/
+.Separator
+{
+    /*TAMANO*/
+    height: 150px;
+}
+
+.SeparatorError
+{
+    /*TAMANO*/
+    height: 30px;
+}
+/********************************************************************************************************/
+/*                                    Componenes y Controles                                            */
+/********************************************************************************************************/
+.LoginTitle
+{
+    /*TAMANO*/
+    height: 40px;
+    /*ALINEACION*/
+    text-align: center;
+    vertical-align: middle;
+    /*COLOR*/
+    Color: #585858;
+    /*FONT*/    
+    font-size: 14px;
+}
+
+.LoginCredential
+{
+    /*ESTILOS*/
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.LoginTextbox
+{
+    /*FONT*/
+    font-size: 16px;
+    Color: #585858;
+}
+
+.Loginbutton
+{
+    /*TAMANO*/
+    height: 30px;
+    width: 75px;
+    /*FONT*/
+    font-size: 15px;
+    /*COLOR*/
+    color: #FFFFFF;
+    background-color: #0066FF;
+    /*ESTILOS*/
+    border: None;
+    font-family: sans-serif;
+}
+
+.Loginbutton:hover
+{
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #1975FF;
+}
+
+.LoginError
+{
+    /*ALINEACION*/
+    text-align: center;
+    vertical-align: middle;
+    /*FONT*/
+    Color: #ff3333;
+    font-size: 15px;
+}
+
+.WaterMarkTextBox
+{
+    font-size: 16px;
+    Color: #D8D8D8;
+}
+/********************************************************************************************************/
+/*                                              Imagenes                                                */
+/********************************************************************************************************/
+.imgPrincipal
+{
+    Width: 100%;
+    Height: 100%;
+}

@@ -1,0 +1,83 @@
+﻿USE [USSIGANEM]
+GO
+
+
+/*PERMISOS TABLAS*/
+
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_AVALES TO RAP_AccesoUSSIGANEM
+GO
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.FIDEICOMISOS TO RAP_AccesoUSSIGANEM
+GO
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_OPERACIONES TO RAP_AccesoUSSIGANEM
+GO
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_REALES TO RAP_AccesoUSSIGANEM
+GO
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_VALORES TO RAP_AccesoUSSIGANEM
+GO
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GRADOS_PRIORIDADES TO RAP_AccesoUSSIGANEM
+GO
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_FIDEICOMETIDAS TO RAP_AccesoUSSIGANEM
+GO
+
+
+
+/*PERMISOS SPs */
+
+GRANT EXECUTE ON Tipos_Garantias_Lista TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Operaciones_Garantias_Avales_Busqueda TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Actualiza TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Inserta TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Consulta_Detalle TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Consulta_Grid_Interno TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Elimina TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Operaciones_Garantias_Fideicomisos_Busqueda TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Operaciones_Actualiza TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Operaciones_Actualiza_Generales TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Operaciones_Elimina TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Estado_Replica TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Trama TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Operaciones_Porcentaje_Aceptacion_Sugef TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Parametros_Bienes_Consulta_Detalle TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Avales_Consulta_Detalle TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Avales_Elimina TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Garantias_Fideicometidas_Elimina TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Montos_Prioridades_Colonizado TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Valor_Mercado_Colonizado TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Actualiza_Valor_Nominal TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Porcentaje_Aceptacion_Terreno_SUGEF_Fideicometida TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Porcentaje_Aceptacion_No_Terreno_SUGEF_Fideicometida TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Monto_Mitigador_Calculado_Fideicometido TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Monto_Mitigador_Calculado TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Porcentaje_Responsabilidad_Escenario_A TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Porcentaje_Responsabilidad_Escenario_B TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Porcentaje_Responsabilidad_Escenario_C TO RAP_AccesoUSSIGANEM
+GO
+GRANT EXECUTE ON Calculo_Porcentaje_Responsabilidad_Escenario_D TO RAP_AccesoUSSIGANEM
+GO
