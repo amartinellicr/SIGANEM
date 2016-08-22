@@ -1,0 +1,7 @@
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.UT\obj\Debug\BCR.SIGANEM.UT.App_GlobalResources.Resource.resources
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.UT\obj\Debug\BCR.SIGANEM.UT.csproj.GenerateResource.Cache
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\Binarios\BCR.SIGANEM.UT.dll
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.UT\obj\Debug\BCR.SIGANEM.UT.dll
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.UT\obj\Debug\BCR.SIGANEM.UT.pdb
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\Binarios\BCR.SIGANEM.UT.pdb
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.UT\obj\Debug\BCR.SIGANEM.UT.csprojResolveAssemblyReference.cache

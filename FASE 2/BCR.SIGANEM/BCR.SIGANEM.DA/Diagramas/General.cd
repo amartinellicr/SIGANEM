@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BCR.SIGANEM.DA.BitacoraAcceso">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACQAAIAAACAEAAQAAAAAAIAAAAAAAAAAAAAgAAAggAA=</HashCode>
+      <FileName>Clases\BitacoraAcceso.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.DA.TransaccionAcceso">
+    <Position X="2.5" Y="1.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAACCEAAQAgEQAAAAAAAAAEIAAAAAkAAoAAAA=</HashCode>
+      <FileName>Clases\TransaccionAcceso.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BCR.SIGANEM.DA.IbitacoraAcceso">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAggAA=</HashCode>
+      <FileName>Clases\Interfaces\IbitacoraAcceso.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.DA.ItransaccionAcceso">
+    <Position X="2.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgEQAAAAAAAAAAIAAAAAEAAoAAAA=</HashCode>
+      <FileName>Clases\Interfaces\ItransaccionAcceso.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

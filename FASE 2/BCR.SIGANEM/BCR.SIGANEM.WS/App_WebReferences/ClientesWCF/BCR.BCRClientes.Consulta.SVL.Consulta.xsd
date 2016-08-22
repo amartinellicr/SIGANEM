@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="BCR.BCRClientes.Consulta.SVL.Consulta" elementFormDefault="qualified" targetNamespace="BCR.BCRClientes.Consulta.SVL.Consulta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.Consulta.ETL" />
+  <xs:element name="ConsultaDinamicaCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XMLConsulta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDinamicaClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.Consulta.ETL" minOccurs="0" name="ConsultaDinamicaClienteResult" nillable="true" type="q1:DatosSalida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

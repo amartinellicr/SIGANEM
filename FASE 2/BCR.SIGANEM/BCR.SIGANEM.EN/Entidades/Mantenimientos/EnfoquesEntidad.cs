@@ -1,0 +1,149 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BCR.SIGANEM.EN
+{
+    public class EnfoquesEntidad
+    {
+
+        #region PROPIEDADES
+
+        private int _idEnfoque;
+        public int IdEnfoque
+        {
+            get
+            {
+                return _idEnfoque;
+            }
+            set
+            {
+                _idEnfoque = value;
+            }
+        }
+
+        private int _codEnfoque;
+        public int CodEnfoque
+        {
+            get
+            {
+                return _codEnfoque;
+            }
+            set
+            {
+                _codEnfoque = value;
+            }
+        }
+
+        private string _desEnfoque;
+        public string DesEnfoque
+        {
+            get
+            {
+                return _desEnfoque;
+            }
+            set
+            {
+                _desEnfoque = value;
+            }
+        }
+
+        #region REQUERIMIENTO: 1-24381561
+
+        private string _IndMetodoInsercion;
+        public string IndMetodoInsercion
+        {
+            get
+            {
+                return _IndMetodoInsercion;
+            }
+            set
+            {
+                _IndMetodoInsercion = value;
+            }
+        }
+
+        private DateTime? _FechaIngreso;
+        public DateTime? FechaIngreso
+        {
+            get
+            {
+                return _FechaIngreso;
+            }
+            set
+            {
+                _FechaIngreso = value;
+            }
+        }
+
+        private string _CodUsuarioIngreso;
+        public string CodUsuarioIngreso
+        {
+            get
+            {
+                return _CodUsuarioIngreso;
+            }
+            set
+            {
+                _CodUsuarioIngreso = value;
+            }
+        }
+
+        private string _DesUsuarioIngreso;
+        public string DesUsuarioIngreso
+        {
+            get
+            {
+                return _DesUsuarioIngreso;
+            }
+            set
+            {
+                _DesUsuarioIngreso = value;
+            }
+        }
+
+        private DateTime? _FechaUltimaModificacion;
+        public DateTime? FechaUltimaModificacion
+        {
+            get
+            {
+                return _FechaUltimaModificacion;
+            }
+            set
+            {
+                _FechaUltimaModificacion = value;
+            }
+        }
+
+        private string _CodUsuarioUltimaModificacion;
+        public string CodUsuarioUltimaModificacion
+        {
+            get
+            {
+                return _CodUsuarioUltimaModificacion;
+            }
+            set
+            {
+                _CodUsuarioUltimaModificacion = value;
+            }
+        }
+
+        private string _DesUsuarioUltimaModificacion;
+        public string DesUsuarioUltimaModificacion
+        {
+            get
+            {
+                return _DesUsuarioUltimaModificacion;
+            }
+            set
+            {
+                _DesUsuarioUltimaModificacion = value;
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+    }
+}

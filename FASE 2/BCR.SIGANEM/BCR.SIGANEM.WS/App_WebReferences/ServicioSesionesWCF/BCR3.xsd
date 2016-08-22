@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RespuestaConsultaSesion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Respuesta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaExpiracion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdSesion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PeriodoExpiracion" type="xs:int" />
+          <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RespuestaConsultaSesion" nillable="true" type="tns:RespuestaConsultaSesion" />
+  <xs:complexType name="Respuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
+  <xs:complexType name="RespuestaSesion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Respuesta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdSesion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RespuestaSesion" nillable="true" type="tns:RespuestaSesion" />
+  <xs:complexType name="Variable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persistente" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Variable" nillable="true" type="tns:Variable" />
+  <xs:complexType name="ArrayOfVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Variable" nillable="true" type="tns:Variable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariable" nillable="true" type="tns:ArrayOfVariable" />
+  <xs:complexType name="RespuestaConsultaVariable">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Respuesta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Variable" nillable="true" type="tns:VariableConsultada" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RespuestaConsultaVariable" nillable="true" type="tns:RespuestaConsultaVariable" />
+  <xs:complexType name="VariableConsultada">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdSesion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persistente" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableConsultada" nillable="true" type="tns:VariableConsultada" />
+  <xs:complexType name="RespuestaConsultaListaVariable">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Respuesta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfVariableConsultada" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RespuestaConsultaListaVariable" nillable="true" type="tns:RespuestaConsultaListaVariable" />
+  <xs:complexType name="ArrayOfVariableConsultada">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableConsultada" nillable="true" type="tns:VariableConsultada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariableConsultada" nillable="true" type="tns:ArrayOfVariableConsultada" />
+  <xs:complexType name="ActualizarVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActualizarVariable" nillable="true" type="tns:ActualizarVariable" />
+  <xs:complexType name="ArrayOfActualizarVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActualizarVariable" nillable="true" type="tns:ActualizarVariable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActualizarVariable" nillable="true" type="tns:ArrayOfActualizarVariable" />
+</xs:schema>

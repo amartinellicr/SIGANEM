@@ -1,0 +1,38 @@
+﻿.overlay
+{
+    /*POSICION*/
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 98;
+    position: fixed; 
+    /*ESTILOS*/
+    background-color: #383838;
+    filter: alpha(opacity=70);
+    opacity: 0.8;
+}
+.overlayContent
+{
+    /*TAMANO*/
+    width: 100px;
+    height: 80px; 
+    /*ESTILOS*/
+    z-index: 99;
+    margin: 250px auto;
+}
+.overlayContent h2
+{
+    /*FONT*/
+    font-size: 15px;
+    font-family: sans-serif, Times New Roman;
+    font-weight: bold; 
+    /*ESTILOS*/
+    color: #FFFFFF;
+}
+.overlayContent img
+{
+    /*TAMANO*/
+    width: 80px;
+    height: 80px;
+}

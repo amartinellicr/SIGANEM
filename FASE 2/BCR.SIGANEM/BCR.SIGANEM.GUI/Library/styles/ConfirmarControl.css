@@ -1,0 +1,36 @@
+﻿.buttonPopUpMsg
+{
+    /*ESTILOS*/
+    border: None;
+    width: 80px;
+    height: 30px; 
+    /*COLOR*/    
+    color: #FFFFFF; 
+    background: #0066FF;
+    /*FONT*/
+    font-size: 15px;
+    font-family: sans-serif, Times New Roman;
+}
+
+.buttonPopUpMsg:hover
+{
+    cursor: pointer;
+    color: #FFFFFF; 
+    background: #1975FF;
+}
+
+.MensajePopUpMsg
+{
+    /*FONT*/
+    font-size: 15px;
+    font-family: sans-serif, Times New Roman;
+}
+
+.TituloPopUpMsg
+{
+    /*COLOR*/
+    color: #FFFFFF; 
+    /*FONT*/
+    font-size: 14px;
+    font-family: sans-serif, Times New Roman, Tahoma;
+}

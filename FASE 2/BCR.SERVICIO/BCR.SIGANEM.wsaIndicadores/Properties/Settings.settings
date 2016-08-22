@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BCR.SIGANEM.wsaIndicadores.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Culture" Type="System.String" Scope="User">
+      <Value Profile="(Default)">es-ES</Value>
+    </Setting>
+    <Setting Name="SistemaTC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">317</Value>
+    </Setting>
+    <Setting Name="SistemaIPC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">979</Value>
+    </Setting>
+    <Setting Name="IntervaloEjecucion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SiganemIndicadoresWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://desiganem-app:12000/SiganemIndicadoresWS.asmx</Value>
+    </Setting>
+    <Setting Name="NombreServicio" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BCR.deSIGANEM.wsaIndicadores</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

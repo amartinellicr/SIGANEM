@@ -1,0 +1,159 @@
+﻿using System;
+using System.Text;
+using System.Collections.Generic;
+
+
+namespace BCR.SIGANEM.EN
+{
+    public class RolesEntidad
+    {
+
+        #region PROPIEDADES
+
+        /// <summary>
+        /// Propiedad: Consecutivo de la tabla
+        /// </summary>
+        private int _idRol;
+        public int IdRol
+        {
+            get
+            {
+                return _idRol;
+            }
+            set
+            {
+                _idRol = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad: Codigo del Rol del usuario
+        /// </summary>
+        private int _codRol;
+        public int CodRol
+        {
+            get
+            {
+                return _codRol;
+            }
+            set
+            {
+                _codRol = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad: Descripcion del Rol
+        /// </summary>
+        private string _desRol;
+        public string DesRole
+        {
+            get
+            {
+                return _desRol;
+            }
+            set
+            {
+                _desRol = value;
+            }
+        }
+
+        #region REQUERIMIENTO: 1-24381561
+
+        private string _IndMetodoInsercion;
+        public string IndMetodoInsercion
+        {
+            get
+            {
+                return _IndMetodoInsercion;
+            }
+            set
+            {
+                _IndMetodoInsercion = value;
+            }
+        }
+
+        private DateTime? _FechaIngreso;
+        public DateTime? FechaIngreso
+        {
+            get
+            {
+                return _FechaIngreso;
+            }
+            set
+            {
+                _FechaIngreso = value;
+            }
+        }
+
+        private string _CodUsuarioIngreso;
+        public string CodUsuarioIngreso
+        {
+            get
+            {
+                return _CodUsuarioIngreso;
+            }
+            set
+            {
+                _CodUsuarioIngreso = value;
+            }
+        }
+
+        private string _DesUsuarioIngreso;
+        public string DesUsuarioIngreso
+        {
+            get
+            {
+                return _DesUsuarioIngreso;
+            }
+            set
+            {
+                _DesUsuarioIngreso = value;
+            }
+        }
+
+        private DateTime? _FechaUltimaModificacion;
+        public DateTime? FechaUltimaModificacion
+        {
+            get
+            {
+                return _FechaUltimaModificacion;
+            }
+            set
+            {
+                _FechaUltimaModificacion = value;
+            }
+        }
+
+        private string _CodUsuarioUltimaModificacion;
+        public string CodUsuarioUltimaModificacion
+        {
+            get
+            {
+                return _CodUsuarioUltimaModificacion;
+            }
+            set
+            {
+                _CodUsuarioUltimaModificacion = value;
+            }
+        }
+
+        private string _DesUsuarioUltimaModificacion;
+        public string DesUsuarioUltimaModificacion
+        {
+            get
+            {
+                return _DesUsuarioUltimaModificacion;
+            }
+            set
+            {
+                _DesUsuarioUltimaModificacion = value;
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+    }
+}

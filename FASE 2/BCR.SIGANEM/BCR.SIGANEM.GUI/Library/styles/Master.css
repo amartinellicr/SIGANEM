@@ -1,0 +1,87 @@
+﻿body, form 
+{
+    height: 100%; 
+    width: 100%; 
+    margin: 0px 0px 0px 0px;
+}
+
+#divEncabezado
+{
+    height: 173px;
+    width: 100%; 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    background-color: #E8ECF0;
+}
+
+#divEncabezadoLogo
+{
+    background-color: White;
+    width: 67%; 
+    float: left;
+}
+
+#divEncabezadoDatos
+{
+    background-color: White; 
+    width: 32.9%; 
+    float: left; 
+    left: 98%; 
+    height: 39px;
+}
+
+#divContenido
+{
+    position: absolute; 
+    top: 173px; 
+    left: 0; 
+    bottom: 0px; 
+    right: 0;
+}
+
+#divContenidoMenu
+{
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    bottom: 0px; 
+    right: 0; 
+    background-color: #E8ECF0; 
+    float: left;
+    width: 186px;
+}
+
+#divContenidoControles
+{
+    position: absolute; 
+    top: 0px; 
+    left: 186px; 
+    bottom: 0px; 
+    right: 0; 
+    background-color: #E8ECF0; 
+    padding: 10px;
+}
+
+#divContenidoControlesDatos
+{
+    background-color: White; 
+    position: absolute; 
+    top: 3px; 
+    left: 3px; 
+    bottom: 3px;
+    right: 3px; 
+    border: 1px solid #C0C0C0;
+}
+
+#divContenidoControlesDatosGrid
+{
+    height: 95%; 
+    overflow: auto;
+}
+
+#divContenidoControlesDatosPaginacion
+{
+    height: 5%; 
+    top: 95%;
+}

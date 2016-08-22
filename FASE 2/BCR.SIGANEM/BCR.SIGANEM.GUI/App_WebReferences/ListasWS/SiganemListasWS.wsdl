@@ -1,0 +1,3471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bancobcr.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bancobcr.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB LISTAS</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://bancobcr.com/">
+      <s:element name="ActivosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfListaEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListaEntidad" nillable="true" type="tns:ListaEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListaEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AdministracionesContenidosConsultaPantallas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PantallasEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPantalla" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodPantalla" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TituloPantalla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesPantalla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutaPantalla" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PadreOrigen" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubPadreOrigen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pestana" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AdministracionesContenidosConsultaPantallasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdministracionesContenidosConsultaPantallasResult" type="tns:PantallasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdministracionesContenidosConsultaPestanas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdministracionesContenidosConsultaPestanasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdministracionesContenidosConsultaPestanasResult" type="tns:ArrayOfNodoMenuEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNodoMenuEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NodoMenuEntidad" nillable="true" type="tns:NodoMenuEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NodoMenuEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AdministracionesContenidosConsultaControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdministracionesContenidosConsultaControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdministracionesContenidosConsultaControlResult" type="tns:ArrayOfControlEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfControlEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ControlEntidad" nillable="true" type="tns:ControlEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ControlEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdAdministracionContenido" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodPantalla" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombrePropiedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreColumna" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesColumna" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreTab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndRequerido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndModificar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndVisible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndValorDefecto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorDefecto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LongitudMaxima" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mascara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorMascara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoContenido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorMinimo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorMaximo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreServicioWeb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorServicioWeb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextoServicioWeb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoObjeto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CssTipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MetodoServicioWeb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GrupoValidacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombrePropiedadAsociada" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Orden" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalificacionesEmpresasCalificadorasCategoriaRiesgoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalificacionesEmpresasCalificadorasCategoriaRiesgoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalificacionesEmpresasCalificadorasCategoriaRiesgoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalificacionesEmpresasCalificadorasCalificacionLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalificacionesEmpresasCalificadorasCalificacionListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalificacionesEmpresasCalificadorasCalificacionListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CantonesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CantonesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CantonesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoriasCalificacionesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoriasCalificacionesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoriasCalificacionesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoriasRiesgosEmpresasCalificadorasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CategoriasRiesgosEmpresasCalificadorasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoriasRiesgosEmpresasCalificadorasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesAeronavesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesAeronavesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesAeronavesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesBuquesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesBuquesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesBuquesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesGarantiasPRT17Lista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesGarantiasPRT17ListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesGarantiasPRT17ListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesTiposBienesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesTiposBienesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesTiposBienesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesTiposBienesClasesGarantiasPrt17Lista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idTipoBien" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codClaseTipoBien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesTiposBienesClasesGarantiasPrt17ListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesTiposBienesClasesGarantiasPrt17ListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesVehiculosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesVehiculosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesVehiculosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesVehiculosLista2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClasesVehiculosLista2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClasesVehiculosLista2Result" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigosDuplicadosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigosDuplicadosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigosDuplicadosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigosHorizontalidadLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigosHorizontalidadListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigosHorizontalidadListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DistritosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DistritosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DistritosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosEmisorLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosEmisorListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisionesInstrumentosEmisorListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosISINLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosISINListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisionesInstrumentosISINListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosSerieLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosSerieListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisionesInstrumentosSerieListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosTipoClasificacionPremioLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosTipoClasificacionPremioListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisionesInstrumentosTipoClasificacionPremioListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosFechaVencimientoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosFechaVencimientoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisionesInstrumentosFechaVencimientoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosMonedaLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisionesInstrumentosMonedaListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisionesInstrumentosMonedaListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisoresLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmisoresListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmisoresListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmpresasCalificadorasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmpresasCalificadorasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpresasCalificadorasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstadosGarantiasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstadosGarantiasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstadosGarantiasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GradosGravamenesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GradosGravamenesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GradosGravamenesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IndicadoresMonedasExtranjerasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IndicadoresMonedasExtranjerasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndicadoresMonedasExtranjerasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstrumentosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosFiltradoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosFiltradoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstrumentosFiltradoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosEmisionesFiltradoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosEmisionesFiltradoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstrumentosEmisionesFiltradoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosTipoInstrumentoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstrumentosTipoInstrumentoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstrumentosTipoInstrumentoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MonedasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MonedasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MonedasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlazosCalificacionesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlazosCalificacionesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PlazosCalificacionesListaResult">
+              <s:complexType>
+                <s:annotation>
+                  <s:appinfo>
+                    <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </s:appinfo>
+                </s:annotation>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlazosCalificacionesListas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlazosCalificacionesListasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PlazosCalificacionesListasResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolizasTiposLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolizasTiposListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PolizasTiposListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProvinciasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProvinciasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProvinciasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegimenesFiscalizacionesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegimenesFiscalizacionesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegimenesFiscalizacionesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TenenciasPRT15Lista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TenenciasPRT15ListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenenciasPRT15ListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TenenciasPRT17Lista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TenenciasPRT17ListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenenciasPRT17ListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposAlmacenesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposAlmacenesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposAlmacenesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposAsignacionesCalificacionesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposAsignacionesCalificacionesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposAsignacionesCalificacionesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposAvalesFianzasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposAvalesFianzasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposAvalesFianzasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoAvalLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoAvalListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoAvalListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposBienesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposBienesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposBienesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposClasificacionesInstrumentosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposClasificacionesInstrumentosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposClasificacionesInstrumentosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposClasificacionesInstrumentosListaEntidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposClasificacionesInstrumentosListaEntidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposClasificacionesInstrumentosListaEntidadResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposDocumentosLegalesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposDocumentosLegalesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposDocumentosLegalesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposEntidadesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposEntidadesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposEntidadesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposEstadosAvaluosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposEstadosAvaluosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposEstadosAvaluosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposGarantiasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposGarantiasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposGarantiasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposGradosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposGradosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposGradosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposGruposFinancierosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposGruposFinancierosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposGruposFinancierosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposIdentificacionesRUCLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposIdentificacionesRUCListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposIdentificacionesRUCListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposInstrumentosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposInstrumentosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposInstrumentosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposInstrumentosFiltradoInstrumentosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposInstrumentosFiltradoInstrumentosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposInstrumentosFiltradoInstrumentosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposLiquidezLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposLiquidezListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposLiquidezListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposMitigadoresRiesgosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposMitigadoresRiesgosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposMitigadoresRiesgosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposMonedasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposMonedasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposMonedasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposPersonasLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposPersonasListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposPersonasListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposPersonasLista123">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposPersonasLista123Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposPersonasLista123Result" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposServiciosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposServiciosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposServiciosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposTasadoresLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposTasadoresListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposTasadoresListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposValoresLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposValoresListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposValoresListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposValoresTenenciasTiposInstrumentosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idTipoInstrumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idTipoValor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposValoresTenenciasTiposInstrumentosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposValoresTenenciasTiposInstrumentosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZonasTasadoresLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZonasTasadoresListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZonasTasadoresListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefaultInternoExternoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefaultInternoExternoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DefaultInternoExternoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefaultSiNoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DefaultSiNoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DefaultSiNoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GarantiasRealesFechaVencimientoAvaluoSUGEF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GarantiasRealesFechaVencimientoAvaluoSUGEFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GarantiasRealesFechaVencimientoAvaluoSUGEFResult" type="tns:ListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GarantiasOperacionesTipoOperacionLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GarantiasOperacionesTipoOperacionListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GarantiasOperacionesTipoOperacionListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GarantiasOperacionesTipoIdentificacionLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GarantiasOperacionesTipoIdentificacionListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GarantiasOperacionesTipoIdentificacionListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoIndicadorInscripcionLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoIndicadorInscripcionListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoIndicadorInscripcionListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumentoFideicomisoLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumentoFideicomisoListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocumentoFideicomisoListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcesosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcesosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcesosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArchivosLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArchivosListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArchivosListaResult" type="tns:ArrayOfListaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ActivosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivosLista" />
+  </wsdl:message>
+  <wsdl:message name="ActivosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdministracionesContenidosConsultaPantallasSoapIn">
+    <wsdl:part name="parameters" element="tns:AdministracionesContenidosConsultaPantallas" />
+  </wsdl:message>
+  <wsdl:message name="AdministracionesContenidosConsultaPantallasSoapOut">
+    <wsdl:part name="parameters" element="tns:AdministracionesContenidosConsultaPantallasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdministracionesContenidosConsultaPestanasSoapIn">
+    <wsdl:part name="parameters" element="tns:AdministracionesContenidosConsultaPestanas" />
+  </wsdl:message>
+  <wsdl:message name="AdministracionesContenidosConsultaPestanasSoapOut">
+    <wsdl:part name="parameters" element="tns:AdministracionesContenidosConsultaPestanasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdministracionesContenidosConsultaControlSoapIn">
+    <wsdl:part name="parameters" element="tns:AdministracionesContenidosConsultaControl" />
+  </wsdl:message>
+  <wsdl:message name="AdministracionesContenidosConsultaControlSoapOut">
+    <wsdl:part name="parameters" element="tns:AdministracionesContenidosConsultaControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalificacionesEmpresasCalificadorasCategoriaRiesgoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CalificacionesEmpresasCalificadorasCategoriaRiesgoLista" />
+  </wsdl:message>
+  <wsdl:message name="CalificacionesEmpresasCalificadorasCategoriaRiesgoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CalificacionesEmpresasCalificadorasCategoriaRiesgoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalificacionesEmpresasCalificadorasCalificacionListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CalificacionesEmpresasCalificadorasCalificacionLista" />
+  </wsdl:message>
+  <wsdl:message name="CalificacionesEmpresasCalificadorasCalificacionListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CalificacionesEmpresasCalificadorasCalificacionListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CantonesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CantonesLista" />
+  </wsdl:message>
+  <wsdl:message name="CantonesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CantonesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasCalificacionesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CategoriasCalificacionesLista" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasCalificacionesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoriasCalificacionesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasRiesgosEmpresasCalificadorasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CategoriasRiesgosEmpresasCalificadorasLista" />
+  </wsdl:message>
+  <wsdl:message name="CategoriasRiesgosEmpresasCalificadorasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CategoriasRiesgosEmpresasCalificadorasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesAeronavesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesAeronavesLista" />
+  </wsdl:message>
+  <wsdl:message name="ClasesAeronavesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesAeronavesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesBuquesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesBuquesLista" />
+  </wsdl:message>
+  <wsdl:message name="ClasesBuquesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesBuquesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesGarantiasPRT17ListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesGarantiasPRT17Lista" />
+  </wsdl:message>
+  <wsdl:message name="ClasesGarantiasPRT17ListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesGarantiasPRT17ListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesTiposBienesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesTiposBienesLista" />
+  </wsdl:message>
+  <wsdl:message name="ClasesTiposBienesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesTiposBienesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesTiposBienesClasesGarantiasPrt17ListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesTiposBienesClasesGarantiasPrt17Lista" />
+  </wsdl:message>
+  <wsdl:message name="ClasesTiposBienesClasesGarantiasPrt17ListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesTiposBienesClasesGarantiasPrt17ListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesVehiculosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesVehiculosLista" />
+  </wsdl:message>
+  <wsdl:message name="ClasesVehiculosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesVehiculosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClasesVehiculosLista2SoapIn">
+    <wsdl:part name="parameters" element="tns:ClasesVehiculosLista2" />
+  </wsdl:message>
+  <wsdl:message name="ClasesVehiculosLista2SoapOut">
+    <wsdl:part name="parameters" element="tns:ClasesVehiculosLista2Response" />
+  </wsdl:message>
+  <wsdl:message name="CodigosDuplicadosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CodigosDuplicadosLista" />
+  </wsdl:message>
+  <wsdl:message name="CodigosDuplicadosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CodigosDuplicadosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodigosHorizontalidadListaSoapIn">
+    <wsdl:part name="parameters" element="tns:CodigosHorizontalidadLista" />
+  </wsdl:message>
+  <wsdl:message name="CodigosHorizontalidadListaSoapOut">
+    <wsdl:part name="parameters" element="tns:CodigosHorizontalidadListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DistritosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:DistritosLista" />
+  </wsdl:message>
+  <wsdl:message name="DistritosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:DistritosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosEmisorListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosEmisorLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosEmisorListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosEmisorListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosISINListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosISINLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosISINListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosISINListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosSerieListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosSerieLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosSerieListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosSerieListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosTipoClasificacionPremioListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosTipoClasificacionPremioLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosTipoClasificacionPremioListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosTipoClasificacionPremioListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosFechaVencimientoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosFechaVencimientoLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosFechaVencimientoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosFechaVencimientoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosMonedaListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosMonedaLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisionesInstrumentosMonedaListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisionesInstrumentosMonedaListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmisoresListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmisoresLista" />
+  </wsdl:message>
+  <wsdl:message name="EmisoresListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmisoresListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmpresasCalificadorasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmpresasCalificadorasLista" />
+  </wsdl:message>
+  <wsdl:message name="EmpresasCalificadorasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmpresasCalificadorasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstadosGarantiasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:EstadosGarantiasLista" />
+  </wsdl:message>
+  <wsdl:message name="EstadosGarantiasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:EstadosGarantiasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GradosGravamenesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:GradosGravamenesLista" />
+  </wsdl:message>
+  <wsdl:message name="GradosGravamenesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:GradosGravamenesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndicadoresMonedasExtranjerasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:IndicadoresMonedasExtranjerasLista" />
+  </wsdl:message>
+  <wsdl:message name="IndicadoresMonedasExtranjerasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:IndicadoresMonedasExtranjerasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:InstrumentosLista" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:InstrumentosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosFiltradoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:InstrumentosFiltradoLista" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosFiltradoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:InstrumentosFiltradoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosEmisionesFiltradoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:InstrumentosEmisionesFiltradoLista" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosEmisionesFiltradoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:InstrumentosEmisionesFiltradoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosTipoInstrumentoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:InstrumentosTipoInstrumentoLista" />
+  </wsdl:message>
+  <wsdl:message name="InstrumentosTipoInstrumentoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:InstrumentosTipoInstrumentoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MonedasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:MonedasLista" />
+  </wsdl:message>
+  <wsdl:message name="MonedasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:MonedasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PlazosCalificacionesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:PlazosCalificacionesLista" />
+  </wsdl:message>
+  <wsdl:message name="PlazosCalificacionesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:PlazosCalificacionesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PlazosCalificacionesListasSoapIn">
+    <wsdl:part name="parameters" element="tns:PlazosCalificacionesListas" />
+  </wsdl:message>
+  <wsdl:message name="PlazosCalificacionesListasSoapOut">
+    <wsdl:part name="parameters" element="tns:PlazosCalificacionesListasResponse" />
+  </wsdl:message>
+  <wsdl:message name="PolizasTiposListaSoapIn">
+    <wsdl:part name="parameters" element="tns:PolizasTiposLista" />
+  </wsdl:message>
+  <wsdl:message name="PolizasTiposListaSoapOut">
+    <wsdl:part name="parameters" element="tns:PolizasTiposListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProvinciasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ProvinciasLista" />
+  </wsdl:message>
+  <wsdl:message name="ProvinciasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ProvinciasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegimenesFiscalizacionesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegimenesFiscalizacionesLista" />
+  </wsdl:message>
+  <wsdl:message name="RegimenesFiscalizacionesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegimenesFiscalizacionesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TenenciasPRT15ListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TenenciasPRT15Lista" />
+  </wsdl:message>
+  <wsdl:message name="TenenciasPRT15ListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TenenciasPRT15ListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TenenciasPRT17ListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TenenciasPRT17Lista" />
+  </wsdl:message>
+  <wsdl:message name="TenenciasPRT17ListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TenenciasPRT17ListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposAlmacenesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposAlmacenesLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposAlmacenesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposAlmacenesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposAsignacionesCalificacionesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposAsignacionesCalificacionesLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposAsignacionesCalificacionesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposAsignacionesCalificacionesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposAvalesFianzasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposAvalesFianzasLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposAvalesFianzasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposAvalesFianzasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoAvalListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoAvalLista" />
+  </wsdl:message>
+  <wsdl:message name="TipoAvalListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoAvalListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposBienesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposBienesLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposBienesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposBienesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposClasificacionesInstrumentosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposClasificacionesInstrumentosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposClasificacionesInstrumentosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposClasificacionesInstrumentosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposClasificacionesInstrumentosListaEntidadSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposClasificacionesInstrumentosListaEntidad" />
+  </wsdl:message>
+  <wsdl:message name="TiposClasificacionesInstrumentosListaEntidadSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposClasificacionesInstrumentosListaEntidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposDocumentosLegalesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposDocumentosLegalesLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposDocumentosLegalesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposDocumentosLegalesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposEntidadesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposEntidadesLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposEntidadesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposEntidadesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposEstadosAvaluosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposEstadosAvaluosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposEstadosAvaluosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposEstadosAvaluosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposGarantiasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposGarantiasLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposGarantiasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposGarantiasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposGradosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposGradosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposGradosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposGradosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposGruposFinancierosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposGruposFinancierosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposGruposFinancierosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposGruposFinancierosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposIdentificacionesRUCListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposIdentificacionesRUCLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposIdentificacionesRUCListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposIdentificacionesRUCListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposInstrumentosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposInstrumentosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposInstrumentosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposInstrumentosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposInstrumentosFiltradoInstrumentosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposInstrumentosFiltradoInstrumentosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposInstrumentosFiltradoInstrumentosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposInstrumentosFiltradoInstrumentosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposLiquidezListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposLiquidezLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposLiquidezListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposLiquidezListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposMitigadoresRiesgosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposMitigadoresRiesgosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposMitigadoresRiesgosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposMitigadoresRiesgosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposMonedasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposMonedasLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposMonedasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposMonedasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposPersonasListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposPersonasLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposPersonasListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposPersonasListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposPersonasLista123SoapIn">
+    <wsdl:part name="parameters" element="tns:TiposPersonasLista123" />
+  </wsdl:message>
+  <wsdl:message name="TiposPersonasLista123SoapOut">
+    <wsdl:part name="parameters" element="tns:TiposPersonasLista123Response" />
+  </wsdl:message>
+  <wsdl:message name="TiposServiciosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposServiciosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposServiciosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposServiciosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposTasadoresListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposTasadoresLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposTasadoresListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposTasadoresListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposValoresListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposValoresLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposValoresListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposValoresListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposValoresTenenciasTiposInstrumentosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposValoresTenenciasTiposInstrumentosLista" />
+  </wsdl:message>
+  <wsdl:message name="TiposValoresTenenciasTiposInstrumentosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposValoresTenenciasTiposInstrumentosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZonasTasadoresListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ZonasTasadoresLista" />
+  </wsdl:message>
+  <wsdl:message name="ZonasTasadoresListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ZonasTasadoresListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DefaultInternoExternoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:DefaultInternoExternoLista" />
+  </wsdl:message>
+  <wsdl:message name="DefaultInternoExternoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:DefaultInternoExternoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DefaultSiNoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:DefaultSiNoLista" />
+  </wsdl:message>
+  <wsdl:message name="DefaultSiNoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:DefaultSiNoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesLista" />
+  </wsdl:message>
+  <wsdl:message name="RolesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GarantiasRealesFechaVencimientoAvaluoSUGEFSoapIn">
+    <wsdl:part name="parameters" element="tns:GarantiasRealesFechaVencimientoAvaluoSUGEF" />
+  </wsdl:message>
+  <wsdl:message name="GarantiasRealesFechaVencimientoAvaluoSUGEFSoapOut">
+    <wsdl:part name="parameters" element="tns:GarantiasRealesFechaVencimientoAvaluoSUGEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GarantiasOperacionesTipoOperacionListaSoapIn">
+    <wsdl:part name="parameters" element="tns:GarantiasOperacionesTipoOperacionLista" />
+  </wsdl:message>
+  <wsdl:message name="GarantiasOperacionesTipoOperacionListaSoapOut">
+    <wsdl:part name="parameters" element="tns:GarantiasOperacionesTipoOperacionListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GarantiasOperacionesTipoIdentificacionListaSoapIn">
+    <wsdl:part name="parameters" element="tns:GarantiasOperacionesTipoIdentificacionLista" />
+  </wsdl:message>
+  <wsdl:message name="GarantiasOperacionesTipoIdentificacionListaSoapOut">
+    <wsdl:part name="parameters" element="tns:GarantiasOperacionesTipoIdentificacionListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoIndicadorInscripcionListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoIndicadorInscripcionLista" />
+  </wsdl:message>
+  <wsdl:message name="TipoIndicadorInscripcionListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoIndicadorInscripcionListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumentoFideicomisoListaSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoDocumentoFideicomisoLista" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumentoFideicomisoListaSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoDocumentoFideicomisoListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcesosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcesosLista" />
+  </wsdl:message>
+  <wsdl:message name="ProcesosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcesosListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ArchivosListaSoapIn">
+    <wsdl:part name="parameters" element="tns:ArchivosLista" />
+  </wsdl:message>
+  <wsdl:message name="ArchivosListaSoapOut">
+    <wsdl:part name="parameters" element="tns:ArchivosListaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SiganemListasWSSoap">
+    <wsdl:operation name="ActivosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE ACTIVOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ActivosListaSoapIn" />
+      <wsdl:output message="tns:ActivosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaPantallas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: OBTIENE EL CODIGO Y NOMBRE DE LA PANTALLA</wsdl:documentation>
+      <wsdl:input message="tns:AdministracionesContenidosConsultaPantallasSoapIn" />
+      <wsdl:output message="tns:AdministracionesContenidosConsultaPantallasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaPestanas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: OBTIENE LAS PESTANAS DE LA PANTALLA</wsdl:documentation>
+      <wsdl:input message="tns:AdministracionesContenidosConsultaPestanasSoapIn" />
+      <wsdl:output message="tns:AdministracionesContenidosConsultaPestanasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaControl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: OBTIENE LOS CONTROLES DE LA PANTALLA</wsdl:documentation>
+      <wsdl:input message="tns:AdministracionesContenidosConsultaControlSoapIn" />
+      <wsdl:output message="tns:AdministracionesContenidosConsultaControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalificacionesEmpresasCalificadorasCategoriaRiesgoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CALIFICACIONES EMPRESAS CALIFICADORAS CON LA CATEGORIA DE RIESGO PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CalificacionesEmpresasCalificadorasCategoriaRiesgoListaSoapIn" />
+      <wsdl:output message="tns:CalificacionesEmpresasCalificadorasCategoriaRiesgoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalificacionesEmpresasCalificadorasCalificacionLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CALIFICACIONES EMPRESAS CALIFICADORAS CON LA CALIFICACION PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CalificacionesEmpresasCalificadorasCalificacionListaSoapIn" />
+      <wsdl:output message="tns:CalificacionesEmpresasCalificadorasCalificacionListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CantonesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CANTONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CantonesListaSoapIn" />
+      <wsdl:output message="tns:CantonesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CategoriasCalificacionesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CATEGORIAS CALIFICACIONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CategoriasCalificacionesListaSoapIn" />
+      <wsdl:output message="tns:CategoriasCalificacionesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CategoriasRiesgosEmpresasCalificadorasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CATEGORIAS RIESGOS EMPRESAS CALIFICADORAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CategoriasRiesgosEmpresasCalificadorasListaSoapIn" />
+      <wsdl:output message="tns:CategoriasRiesgosEmpresasCalificadorasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesAeronavesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASES AERONAVES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesAeronavesListaSoapIn" />
+      <wsdl:output message="tns:ClasesAeronavesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesBuquesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASES BUQUES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesBuquesListaSoapIn" />
+      <wsdl:output message="tns:ClasesBuquesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesGarantiasPRT17Lista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASES CLASES GARANTIAS PRT17 PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesGarantiasPRT17ListaSoapIn" />
+      <wsdl:output message="tns:ClasesGarantiasPRT17ListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesTiposBienesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASES TIPOS DE BIENES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesTiposBienesListaSoapIn" />
+      <wsdl:output message="tns:ClasesTiposBienesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesTiposBienesClasesGarantiasPrt17Lista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASE GARANTIAS PRT 17 SEGUN EL TIPO BIEN PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesTiposBienesClasesGarantiasPrt17ListaSoapIn" />
+      <wsdl:output message="tns:ClasesTiposBienesClasesGarantiasPrt17ListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesVehiculosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASES VEHICULOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesVehiculosListaSoapIn" />
+      <wsdl:output message="tns:ClasesVehiculosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClasesVehiculosLista2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CLASES VEHICULOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ClasesVehiculosLista2SoapIn" />
+      <wsdl:output message="tns:ClasesVehiculosLista2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodigosDuplicadosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CODIGOS DUPLICADOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CodigosDuplicadosListaSoapIn" />
+      <wsdl:output message="tns:CodigosDuplicadosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodigosHorizontalidadLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE CODIGOS DUPLICADOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:CodigosHorizontalidadListaSoapIn" />
+      <wsdl:output message="tns:CodigosHorizontalidadListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DistritosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE DISTRITOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:DistritosListaSoapIn" />
+      <wsdl:output message="tns:DistritosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosEmisorLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisionesInstrumentosEmisorListaSoapIn" />
+      <wsdl:output message="tns:EmisionesInstrumentosEmisorListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosISINLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisionesInstrumentosISINListaSoapIn" />
+      <wsdl:output message="tns:EmisionesInstrumentosISINListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosSerieLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisionesInstrumentosSerieListaSoapIn" />
+      <wsdl:output message="tns:EmisionesInstrumentosSerieListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosTipoClasificacionPremioLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisionesInstrumentosTipoClasificacionPremioListaSoapIn" />
+      <wsdl:output message="tns:EmisionesInstrumentosTipoClasificacionPremioListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosFechaVencimientoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisionesInstrumentosFechaVencimientoListaSoapIn" />
+      <wsdl:output message="tns:EmisionesInstrumentosFechaVencimientoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosMonedaLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisionesInstrumentosMonedaListaSoapIn" />
+      <wsdl:output message="tns:EmisionesInstrumentosMonedaListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmisoresLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMISORES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmisoresListaSoapIn" />
+      <wsdl:output message="tns:EmisoresListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmpresasCalificadorasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE EMPRESAS CALIFICADORAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EmpresasCalificadorasListaSoapIn" />
+      <wsdl:output message="tns:EmpresasCalificadorasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstadosGarantiasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE ESTADOS GARANTIAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:EstadosGarantiasListaSoapIn" />
+      <wsdl:output message="tns:EstadosGarantiasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GradosGravamenesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE GRADOS GRAVAMENES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:GradosGravamenesListaSoapIn" />
+      <wsdl:output message="tns:GradosGravamenesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndicadoresMonedasExtranjerasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE INDICADORES MONEDAS EXTRANJERAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:IndicadoresMonedasExtranjerasListaSoapIn" />
+      <wsdl:output message="tns:IndicadoresMonedasExtranjerasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:InstrumentosListaSoapIn" />
+      <wsdl:output message="tns:InstrumentosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosFiltradoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:InstrumentosFiltradoListaSoapIn" />
+      <wsdl:output message="tns:InstrumentosFiltradoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosEmisionesFiltradoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE INSTRUMENTOS PARA UNA LISTA SEGÚN LAS EMISIONES</wsdl:documentation>
+      <wsdl:input message="tns:InstrumentosEmisionesFiltradoListaSoapIn" />
+      <wsdl:output message="tns:InstrumentosEmisionesFiltradoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosTipoInstrumentoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE INSTRUMENTOS PARA UNA LISTA POR TIPO DE INSTRUMENTO</wsdl:documentation>
+      <wsdl:input message="tns:InstrumentosTipoInstrumentoListaSoapIn" />
+      <wsdl:output message="tns:InstrumentosTipoInstrumentoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MonedasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE MONEDAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:MonedasListaSoapIn" />
+      <wsdl:output message="tns:MonedasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlazosCalificacionesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE PLAZOS CALIFICACIONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:PlazosCalificacionesListaSoapIn" />
+      <wsdl:output message="tns:PlazosCalificacionesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlazosCalificacionesListas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE PLAZOS CALIFICACIONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:PlazosCalificacionesListasSoapIn" />
+      <wsdl:output message="tns:PlazosCalificacionesListasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PolizasTiposLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE POLIZAS LISTA PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:PolizasTiposListaSoapIn" />
+      <wsdl:output message="tns:PolizasTiposListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvinciasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE PROVINCIAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ProvinciasListaSoapIn" />
+      <wsdl:output message="tns:ProvinciasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegimenesFiscalizacionesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE REGÍMENES FISCALIZACIONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:RegimenesFiscalizacionesListaSoapIn" />
+      <wsdl:output message="tns:RegimenesFiscalizacionesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TenenciasPRT15Lista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TENENCIAS PRT15 PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TenenciasPRT15ListaSoapIn" />
+      <wsdl:output message="tns:TenenciasPRT15ListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TenenciasPRT17Lista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TENENCIAS PRT15 PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TenenciasPRT17ListaSoapIn" />
+      <wsdl:output message="tns:TenenciasPRT17ListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposAlmacenesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS ALMACENES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposAlmacenesListaSoapIn" />
+      <wsdl:output message="tns:TiposAlmacenesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposAsignacionesCalificacionesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS ASIGNACIONES CALIFICACIONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposAsignacionesCalificacionesListaSoapIn" />
+      <wsdl:output message="tns:TiposAsignacionesCalificacionesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposAvalesFianzasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS AVALES FIANZAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposAvalesFianzasListaSoapIn" />
+      <wsdl:output message="tns:TiposAvalesFianzasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoAvalLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS AVALES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TipoAvalListaSoapIn" />
+      <wsdl:output message="tns:TipoAvalListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposBienesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS BIENES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposBienesListaSoapIn" />
+      <wsdl:output message="tns:TiposBienesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposClasificacionesInstrumentosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS CLASIFICACIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposClasificacionesInstrumentosListaSoapIn" />
+      <wsdl:output message="tns:TiposClasificacionesInstrumentosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposClasificacionesInstrumentosListaEntidad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS CLASIFICACIONES INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposClasificacionesInstrumentosListaEntidadSoapIn" />
+      <wsdl:output message="tns:TiposClasificacionesInstrumentosListaEntidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumentosLegalesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS DOCUMENTOS LEGALES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposDocumentosLegalesListaSoapIn" />
+      <wsdl:output message="tns:TiposDocumentosLegalesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposEntidadesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS ENTIDADES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposEntidadesListaSoapIn" />
+      <wsdl:output message="tns:TiposEntidadesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposEstadosAvaluosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS ESTADOS AVALUOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposEstadosAvaluosListaSoapIn" />
+      <wsdl:output message="tns:TiposEstadosAvaluosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposGarantiasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS GARANTIAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposGarantiasListaSoapIn" />
+      <wsdl:output message="tns:TiposGarantiasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposGradosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS GRADOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposGradosListaSoapIn" />
+      <wsdl:output message="tns:TiposGradosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposGruposFinancierosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS GRUPOS FINANCIEROS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposGruposFinancierosListaSoapIn" />
+      <wsdl:output message="tns:TiposGruposFinancierosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposIdentificacionesRUCLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS IDENTIFICACIONES RUC PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposIdentificacionesRUCListaSoapIn" />
+      <wsdl:output message="tns:TiposIdentificacionesRUCListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposInstrumentosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS DE INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposInstrumentosListaSoapIn" />
+      <wsdl:output message="tns:TiposInstrumentosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposInstrumentosFiltradoInstrumentosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS DE INSTRUMENTOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposInstrumentosFiltradoInstrumentosListaSoapIn" />
+      <wsdl:output message="tns:TiposInstrumentosFiltradoInstrumentosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposLiquidezLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS LIQUIDEZ PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposLiquidezListaSoapIn" />
+      <wsdl:output message="tns:TiposLiquidezListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposMitigadoresRiesgosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS MITIGADORES RIESGOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposMitigadoresRiesgosListaSoapIn" />
+      <wsdl:output message="tns:TiposMitigadoresRiesgosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposMonedasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS MONEDAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposMonedasListaSoapIn" />
+      <wsdl:output message="tns:TiposMonedasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposPersonasLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS PERSONAS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposPersonasListaSoapIn" />
+      <wsdl:output message="tns:TiposPersonasListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposPersonasLista123">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS PERSONAS TIPOS 1, 2 y 3 PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposPersonasLista123SoapIn" />
+      <wsdl:output message="tns:TiposPersonasLista123SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposServiciosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS SERVICIOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposServiciosListaSoapIn" />
+      <wsdl:output message="tns:TiposServiciosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposTasadoresLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS TASADORES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposTasadoresListaSoapIn" />
+      <wsdl:output message="tns:TiposTasadoresListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposValoresLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPOS VALORES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposValoresListaSoapIn" />
+      <wsdl:output message="tns:TiposValoresListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposValoresTenenciasTiposInstrumentosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TENENCIA PRT17 SEGGUN TIPO VALOR  TIPO INSTRUMENTO PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TiposValoresTenenciasTiposInstrumentosListaSoapIn" />
+      <wsdl:output message="tns:TiposValoresTenenciasTiposInstrumentosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZonasTasadoresLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE ZONAS TASADORES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ZonasTasadoresListaSoapIn" />
+      <wsdl:output message="tns:ZonasTasadoresListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DefaultInternoExternoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS GENERICO (INTERNO / EXTERNO) PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:DefaultInternoExternoListaSoapIn" />
+      <wsdl:output message="tns:DefaultInternoExternoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DefaultSiNoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS GENERICO (SI / NO) PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:DefaultSiNoListaSoapIn" />
+      <wsdl:output message="tns:DefaultSiNoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE ROLES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:RolesListaSoapIn" />
+      <wsdl:output message="tns:RolesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasRealesFechaVencimientoAvaluoSUGEF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE PARAMETROS PARA LA FECHA VENCIMIENTO AVALUO SUGEF</wsdl:documentation>
+      <wsdl:input message="tns:GarantiasRealesFechaVencimientoAvaluoSUGEFSoapIn" />
+      <wsdl:output message="tns:GarantiasRealesFechaVencimientoAvaluoSUGEFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasOperacionesTipoOperacionLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPO OPERACION PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:GarantiasOperacionesTipoOperacionListaSoapIn" />
+      <wsdl:output message="tns:GarantiasOperacionesTipoOperacionListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasOperacionesTipoIdentificacionLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPO OPERACION PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:GarantiasOperacionesTipoIdentificacionListaSoapIn" />
+      <wsdl:output message="tns:GarantiasOperacionesTipoIdentificacionListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoIndicadorInscripcionLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPO INDICADORES INSCRIPCIONES PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TipoIndicadorInscripcionListaSoapIn" />
+      <wsdl:output message="tns:TipoIndicadorInscripcionListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoFideicomisoLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE TIPO DOCUMENTO FIDEICOMISO PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:TipoDocumentoFideicomisoListaSoapIn" />
+      <wsdl:output message="tns:TipoDocumentoFideicomisoListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE PROCESOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ProcesosListaSoapIn" />
+      <wsdl:output message="tns:ProcesosListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchivosLista">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE ARVHIVOS PARA UNA LISTA</wsdl:documentation>
+      <wsdl:input message="tns:ArchivosListaSoapIn" />
+      <wsdl:output message="tns:ArchivosListaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SiganemListasWSSoap" type="tns:SiganemListasWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActivosLista">
+      <soap:operation soapAction="http://bancobcr.com/ActivosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaPantallas">
+      <soap:operation soapAction="http://bancobcr.com/AdministracionesContenidosConsultaPantallas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaPestanas">
+      <soap:operation soapAction="http://bancobcr.com/AdministracionesContenidosConsultaPestanas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaControl">
+      <soap:operation soapAction="http://bancobcr.com/AdministracionesContenidosConsultaControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalificacionesEmpresasCalificadorasCategoriaRiesgoLista">
+      <soap:operation soapAction="http://bancobcr.com/CalificacionesEmpresasCalificadorasCategoriaRiesgoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalificacionesEmpresasCalificadorasCalificacionLista">
+      <soap:operation soapAction="http://bancobcr.com/CalificacionesEmpresasCalificadorasCalificacionLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantonesLista">
+      <soap:operation soapAction="http://bancobcr.com/CantonesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoriasCalificacionesLista">
+      <soap:operation soapAction="http://bancobcr.com/CategoriasCalificacionesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoriasRiesgosEmpresasCalificadorasLista">
+      <soap:operation soapAction="http://bancobcr.com/CategoriasRiesgosEmpresasCalificadorasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesAeronavesLista">
+      <soap:operation soapAction="http://bancobcr.com/ClasesAeronavesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesBuquesLista">
+      <soap:operation soapAction="http://bancobcr.com/ClasesBuquesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesGarantiasPRT17Lista">
+      <soap:operation soapAction="http://bancobcr.com/ClasesGarantiasPRT17Lista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesTiposBienesLista">
+      <soap:operation soapAction="http://bancobcr.com/ClasesTiposBienesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesTiposBienesClasesGarantiasPrt17Lista">
+      <soap:operation soapAction="http://bancobcr.com/ClasesTiposBienesClasesGarantiasPrt17Lista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesVehiculosLista">
+      <soap:operation soapAction="http://bancobcr.com/ClasesVehiculosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesVehiculosLista2">
+      <soap:operation soapAction="http://bancobcr.com/ClasesVehiculosLista2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigosDuplicadosLista">
+      <soap:operation soapAction="http://bancobcr.com/CodigosDuplicadosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigosHorizontalidadLista">
+      <soap:operation soapAction="http://bancobcr.com/CodigosHorizontalidadLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DistritosLista">
+      <soap:operation soapAction="http://bancobcr.com/DistritosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosEmisorLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisionesInstrumentosEmisorLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosISINLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisionesInstrumentosISINLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosSerieLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisionesInstrumentosSerieLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosTipoClasificacionPremioLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisionesInstrumentosTipoClasificacionPremioLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosFechaVencimientoLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisionesInstrumentosFechaVencimientoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosMonedaLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisionesInstrumentosMonedaLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisoresLista">
+      <soap:operation soapAction="http://bancobcr.com/EmisoresLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmpresasCalificadorasLista">
+      <soap:operation soapAction="http://bancobcr.com/EmpresasCalificadorasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstadosGarantiasLista">
+      <soap:operation soapAction="http://bancobcr.com/EstadosGarantiasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GradosGravamenesLista">
+      <soap:operation soapAction="http://bancobcr.com/GradosGravamenesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicadoresMonedasExtranjerasLista">
+      <soap:operation soapAction="http://bancobcr.com/IndicadoresMonedasExtranjerasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosLista">
+      <soap:operation soapAction="http://bancobcr.com/InstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosFiltradoLista">
+      <soap:operation soapAction="http://bancobcr.com/InstrumentosFiltradoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosEmisionesFiltradoLista">
+      <soap:operation soapAction="http://bancobcr.com/InstrumentosEmisionesFiltradoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosTipoInstrumentoLista">
+      <soap:operation soapAction="http://bancobcr.com/InstrumentosTipoInstrumentoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonedasLista">
+      <soap:operation soapAction="http://bancobcr.com/MonedasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlazosCalificacionesLista">
+      <soap:operation soapAction="http://bancobcr.com/PlazosCalificacionesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlazosCalificacionesListas">
+      <soap:operation soapAction="http://bancobcr.com/PlazosCalificacionesListas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolizasTiposLista">
+      <soap:operation soapAction="http://bancobcr.com/PolizasTiposLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvinciasLista">
+      <soap:operation soapAction="http://bancobcr.com/ProvinciasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegimenesFiscalizacionesLista">
+      <soap:operation soapAction="http://bancobcr.com/RegimenesFiscalizacionesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TenenciasPRT15Lista">
+      <soap:operation soapAction="http://bancobcr.com/TenenciasPRT15Lista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TenenciasPRT17Lista">
+      <soap:operation soapAction="http://bancobcr.com/TenenciasPRT17Lista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposAlmacenesLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposAlmacenesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposAsignacionesCalificacionesLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposAsignacionesCalificacionesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposAvalesFianzasLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposAvalesFianzasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoAvalLista">
+      <soap:operation soapAction="http://bancobcr.com/TipoAvalLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposBienesLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposBienesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposClasificacionesInstrumentosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposClasificacionesInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposClasificacionesInstrumentosListaEntidad">
+      <soap:operation soapAction="http://bancobcr.com/TiposClasificacionesInstrumentosListaEntidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumentosLegalesLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposDocumentosLegalesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposEntidadesLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposEntidadesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposEstadosAvaluosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposEstadosAvaluosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposGarantiasLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposGarantiasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposGradosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposGradosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposGruposFinancierosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposGruposFinancierosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposIdentificacionesRUCLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposIdentificacionesRUCLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposInstrumentosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposInstrumentosFiltradoInstrumentosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposInstrumentosFiltradoInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposLiquidezLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposLiquidezLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposMitigadoresRiesgosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposMitigadoresRiesgosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposMonedasLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposMonedasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposPersonasLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposPersonasLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposPersonasLista123">
+      <soap:operation soapAction="http://bancobcr.com/TiposPersonasLista123" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposServiciosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposServiciosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposTasadoresLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposTasadoresLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposValoresLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposValoresLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposValoresTenenciasTiposInstrumentosLista">
+      <soap:operation soapAction="http://bancobcr.com/TiposValoresTenenciasTiposInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZonasTasadoresLista">
+      <soap:operation soapAction="http://bancobcr.com/ZonasTasadoresLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefaultInternoExternoLista">
+      <soap:operation soapAction="http://bancobcr.com/DefaultInternoExternoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefaultSiNoLista">
+      <soap:operation soapAction="http://bancobcr.com/DefaultSiNoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesLista">
+      <soap:operation soapAction="http://bancobcr.com/RolesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasRealesFechaVencimientoAvaluoSUGEF">
+      <soap:operation soapAction="http://bancobcr.com/GarantiasRealesFechaVencimientoAvaluoSUGEF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasOperacionesTipoOperacionLista">
+      <soap:operation soapAction="http://bancobcr.com/GarantiasOperacionesTipoOperacionLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasOperacionesTipoIdentificacionLista">
+      <soap:operation soapAction="http://bancobcr.com/GarantiasOperacionesTipoIdentificacionLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoIndicadorInscripcionLista">
+      <soap:operation soapAction="http://bancobcr.com/TipoIndicadorInscripcionLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoFideicomisoLista">
+      <soap:operation soapAction="http://bancobcr.com/TipoDocumentoFideicomisoLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesosLista">
+      <soap:operation soapAction="http://bancobcr.com/ProcesosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchivosLista">
+      <soap:operation soapAction="http://bancobcr.com/ArchivosLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SiganemListasWSSoap12" type="tns:SiganemListasWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActivosLista">
+      <soap12:operation soapAction="http://bancobcr.com/ActivosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaPantallas">
+      <soap12:operation soapAction="http://bancobcr.com/AdministracionesContenidosConsultaPantallas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaPestanas">
+      <soap12:operation soapAction="http://bancobcr.com/AdministracionesContenidosConsultaPestanas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministracionesContenidosConsultaControl">
+      <soap12:operation soapAction="http://bancobcr.com/AdministracionesContenidosConsultaControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalificacionesEmpresasCalificadorasCategoriaRiesgoLista">
+      <soap12:operation soapAction="http://bancobcr.com/CalificacionesEmpresasCalificadorasCategoriaRiesgoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalificacionesEmpresasCalificadorasCalificacionLista">
+      <soap12:operation soapAction="http://bancobcr.com/CalificacionesEmpresasCalificadorasCalificacionLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantonesLista">
+      <soap12:operation soapAction="http://bancobcr.com/CantonesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoriasCalificacionesLista">
+      <soap12:operation soapAction="http://bancobcr.com/CategoriasCalificacionesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CategoriasRiesgosEmpresasCalificadorasLista">
+      <soap12:operation soapAction="http://bancobcr.com/CategoriasRiesgosEmpresasCalificadorasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesAeronavesLista">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesAeronavesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesBuquesLista">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesBuquesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesGarantiasPRT17Lista">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesGarantiasPRT17Lista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesTiposBienesLista">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesTiposBienesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesTiposBienesClasesGarantiasPrt17Lista">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesTiposBienesClasesGarantiasPrt17Lista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesVehiculosLista">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesVehiculosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClasesVehiculosLista2">
+      <soap12:operation soapAction="http://bancobcr.com/ClasesVehiculosLista2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigosDuplicadosLista">
+      <soap12:operation soapAction="http://bancobcr.com/CodigosDuplicadosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigosHorizontalidadLista">
+      <soap12:operation soapAction="http://bancobcr.com/CodigosHorizontalidadLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DistritosLista">
+      <soap12:operation soapAction="http://bancobcr.com/DistritosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosEmisorLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisionesInstrumentosEmisorLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosISINLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisionesInstrumentosISINLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosSerieLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisionesInstrumentosSerieLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosTipoClasificacionPremioLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisionesInstrumentosTipoClasificacionPremioLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosFechaVencimientoLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisionesInstrumentosFechaVencimientoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisionesInstrumentosMonedaLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisionesInstrumentosMonedaLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmisoresLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmisoresLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmpresasCalificadorasLista">
+      <soap12:operation soapAction="http://bancobcr.com/EmpresasCalificadorasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstadosGarantiasLista">
+      <soap12:operation soapAction="http://bancobcr.com/EstadosGarantiasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GradosGravamenesLista">
+      <soap12:operation soapAction="http://bancobcr.com/GradosGravamenesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicadoresMonedasExtranjerasLista">
+      <soap12:operation soapAction="http://bancobcr.com/IndicadoresMonedasExtranjerasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosLista">
+      <soap12:operation soapAction="http://bancobcr.com/InstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosFiltradoLista">
+      <soap12:operation soapAction="http://bancobcr.com/InstrumentosFiltradoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosEmisionesFiltradoLista">
+      <soap12:operation soapAction="http://bancobcr.com/InstrumentosEmisionesFiltradoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstrumentosTipoInstrumentoLista">
+      <soap12:operation soapAction="http://bancobcr.com/InstrumentosTipoInstrumentoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonedasLista">
+      <soap12:operation soapAction="http://bancobcr.com/MonedasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlazosCalificacionesLista">
+      <soap12:operation soapAction="http://bancobcr.com/PlazosCalificacionesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlazosCalificacionesListas">
+      <soap12:operation soapAction="http://bancobcr.com/PlazosCalificacionesListas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolizasTiposLista">
+      <soap12:operation soapAction="http://bancobcr.com/PolizasTiposLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvinciasLista">
+      <soap12:operation soapAction="http://bancobcr.com/ProvinciasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegimenesFiscalizacionesLista">
+      <soap12:operation soapAction="http://bancobcr.com/RegimenesFiscalizacionesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TenenciasPRT15Lista">
+      <soap12:operation soapAction="http://bancobcr.com/TenenciasPRT15Lista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TenenciasPRT17Lista">
+      <soap12:operation soapAction="http://bancobcr.com/TenenciasPRT17Lista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposAlmacenesLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposAlmacenesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposAsignacionesCalificacionesLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposAsignacionesCalificacionesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposAvalesFianzasLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposAvalesFianzasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoAvalLista">
+      <soap12:operation soapAction="http://bancobcr.com/TipoAvalLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposBienesLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposBienesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposClasificacionesInstrumentosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposClasificacionesInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposClasificacionesInstrumentosListaEntidad">
+      <soap12:operation soapAction="http://bancobcr.com/TiposClasificacionesInstrumentosListaEntidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumentosLegalesLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposDocumentosLegalesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposEntidadesLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposEntidadesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposEstadosAvaluosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposEstadosAvaluosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposGarantiasLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposGarantiasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposGradosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposGradosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposGruposFinancierosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposGruposFinancierosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposIdentificacionesRUCLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposIdentificacionesRUCLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposInstrumentosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposInstrumentosFiltradoInstrumentosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposInstrumentosFiltradoInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposLiquidezLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposLiquidezLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposMitigadoresRiesgosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposMitigadoresRiesgosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposMonedasLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposMonedasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposPersonasLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposPersonasLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposPersonasLista123">
+      <soap12:operation soapAction="http://bancobcr.com/TiposPersonasLista123" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposServiciosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposServiciosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposTasadoresLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposTasadoresLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposValoresLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposValoresLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposValoresTenenciasTiposInstrumentosLista">
+      <soap12:operation soapAction="http://bancobcr.com/TiposValoresTenenciasTiposInstrumentosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZonasTasadoresLista">
+      <soap12:operation soapAction="http://bancobcr.com/ZonasTasadoresLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefaultInternoExternoLista">
+      <soap12:operation soapAction="http://bancobcr.com/DefaultInternoExternoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DefaultSiNoLista">
+      <soap12:operation soapAction="http://bancobcr.com/DefaultSiNoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesLista">
+      <soap12:operation soapAction="http://bancobcr.com/RolesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasRealesFechaVencimientoAvaluoSUGEF">
+      <soap12:operation soapAction="http://bancobcr.com/GarantiasRealesFechaVencimientoAvaluoSUGEF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasOperacionesTipoOperacionLista">
+      <soap12:operation soapAction="http://bancobcr.com/GarantiasOperacionesTipoOperacionLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarantiasOperacionesTipoIdentificacionLista">
+      <soap12:operation soapAction="http://bancobcr.com/GarantiasOperacionesTipoIdentificacionLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoIndicadorInscripcionLista">
+      <soap12:operation soapAction="http://bancobcr.com/TipoIndicadorInscripcionLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoFideicomisoLista">
+      <soap12:operation soapAction="http://bancobcr.com/TipoDocumentoFideicomisoLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesosLista">
+      <soap12:operation soapAction="http://bancobcr.com/ProcesosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchivosLista">
+      <soap12:operation soapAction="http://bancobcr.com/ArchivosLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiganemListasWS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB LISTAS</wsdl:documentation>
+    <wsdl:port name="SiganemListasWSSoap" binding="tns:SiganemListasWSSoap">
+      <soap:address location="http://localhost:62784/BCR.SIGANEM.WS/SiganemListasWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SiganemListasWSSoap12" binding="tns:SiganemListasWSSoap12">
+      <soap12:address location="http://localhost:62784/BCR.SIGANEM.WS/SiganemListasWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97884003-2388-4D2F-B260-7C91CC3C7F23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCR.SIGANEM.EN</RootNamespace>
+    <AssemblyName>BCR.SIGANEM.EN</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binarios\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BCR.SIGANEM.EN.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\Bitacora\BitacorasEntidad.cs" />
+    <Compile Include="Entidades\Controles\ControlEntidad.cs" />
+    <Compile Include="Entidades\Controles\ListaEntidad.cs" />
+    <Compile Include="Entidades\Controles\NodoMenuEntidad.cs" />
+    <Compile Include="Entidades\Garantias\BCRClientesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasFideicomisosAdjuntosEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasFideicomisosEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasFideicomisosFideicometidasEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasAvalesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasFideicomisosPrioridadesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasGravemenesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasOperacionesRelacionEntidad.cs" />
+    <Compile Include="Entidades\Garantias\InscripcionGarantiasRealesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\MobiliariaGarantiasRealesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\PolizaClienteEntidad.cs" />
+    <Compile Include="Entidades\Garantias\PolizaEntidad.cs" />
+    <Compile Include="Entidades\Garantias\RespuestaSICCEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CategoriasCalificacionesTiposMitigadoresRiesgosEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasValoresRespuestaISINEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasValoresRespuestaCDPEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposAvalesEntidad.cs" />
+    <Compile Include="Entidades\Procesos\ArchivoDescargaEntidad.cs" />
+    <Compile Include="Entidades\Procesos\BitacoraProcesosConsulta.cs" />
+    <Compile Include="Entidades\Procesos\BitacoraProcesosDetalle.cs" />
+    <Compile Include="Entidades\Procesos\ProcesosEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\TiposCambiosEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\IndicesPreciosConsumidorEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposMitigadoresRiesgosEntidad.cs" />
+    <Compile Include="Entidades\Reportes\ReportesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasOperacionesConsultaEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasOperacionesClientesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasOperacionesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasOperacionesCedulasEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasRealesCedulasEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasRealesTasadoresEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasRealesEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasFiduciariasEntidad.cs" />
+    <Compile Include="Entidades\Garantias\GarantiasValoresEntidad.cs" />
+    <Compile Include="Entidades\Garantias\RUCClientesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ActivosEntidad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\Mantenimientos\AplicablesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\BienesValorarEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CajasBreakersEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CanalizacionesElectricasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CanoasBajantesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CantidadesFincasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CantonesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CategoriasCalificacionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CategoriasRiesgosDeudoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CerrajeriasPiezasSanitariasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CielosRasosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ClasesAeronavesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ClasesBuquesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ClasesGarantiasPrt17Entidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ClasesVehiculosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CodigosDuplicadosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CodigosHorizontalidadEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ColindantesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CategoriasRiesgosEmpresasCalificadorasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CalificacionesEmpresasCalificadorasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CaracteristicasTasadoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\PlazosCalificacionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EmpresasCalificadorasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ReportesSeguiEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposAvalesFianzasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ReportesRolesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\FiscalizadoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposIdentificacionesRUCEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposServiciosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ZonasTasadoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\DistribucionesZonasTasadoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\NotariosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TasadoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MaterialesExternosTapichelesEntidad.cs" />
+    <Compile Include="Entidades\Mensajes\RespuestaEntidad.cs" />
+    <Compile Include="Entidades\Parametros\ParametrosTotalFilasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\CubiertasTechosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\DecisionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\DelimitacionesLinderosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\DerechosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\DistritosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EmisionesInstrumentosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EmisoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EnchapesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EnfoquesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EntidadesEntidad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\Mantenimientos\EntrepisosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EscalerasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EstadosAvaluosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EstadosConstruccionesEntidad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\Mantenimientos\EstadosInstalacionesElectricasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\EstructurasTechosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\FormasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\GradosGravamenesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\GruposFinancierosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\GruposRiesgosDeudoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\IndicacionesAjustesAreasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\IndicadoresGeneradoresDivisasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\IndicadoresMonedasExtranjerasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\InstrumentosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\InterruptoresInstalacionesElectricasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\LotesSegregadosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MaterialesConstruccionesPredominantesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MaterialesExternosInternosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MaterialesPisosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MaterialesPuertasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MaterialesViasAccesoEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\MonedasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\NivelesSocioeconomicosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\NivelesTerrenoEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\NumerosLineasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\OrientacionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\PendientesEntidad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\Mantenimientos\PinturasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\PlanesInversionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ProvinciasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\PuntosReferenciasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\RegimenesFiscalizacionesEntidad.cs" />
+    <Compile Include="Entidades\Parametros\ParametrosConsultaEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\SeccionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\SistemasConstructivosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\SituacionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\SolicitantesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TenenciasPrt15Entidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TenenciasPrt17Entidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposAdjudicacionesBienesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposAsignacionesCalificacionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposBienesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposCapacidadesPagosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposCarterasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposCasosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposClasificacionesInstrumentosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposComportamientosPagosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposConstruccionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposDocumentosLegalesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposEmisoresEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposEntidadesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposEstadosAvaluosEntidad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entidades\Mantenimientos\TiposGarantiasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposGradosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposGruposFinancierosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposIndicadoresInscripcionesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposIngresosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposInmueblesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposInstrumentosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposLiquidezEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposMonedasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposPersonasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposPolizasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TiposZonasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\TopografiasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\UnidadesEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\UsosSuelosActualEntornosEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\VentanasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\VerjasEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\ViasAccesoEntidad.cs" />
+    <Compile Include="Entidades\Mantenimientos\VoltajesInstalacionesElectricasEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\ParametrosBienesEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\PantallasRolesEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\PantallasEntidad.cs" />
+    <Compile Include="Entidades\Mensajes\MensajesEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\RolesEntidad.cs" />
+    <Compile Include="Entidades\Seguridad\TiposRolesEntidad.cs" />
+    <Compile Include="Entidades\Sesion\ListaItemsBCREntidad.cs" />
+    <Compile Include="Entidades\Sesion\SessionVariablesBCR.cs" />
+    <Compile Include="Entidades\Sesion\VariablesSesionEntidad.cs" />
+    <Compile Include="Entidades\WinService\AppSettingEntidad.cs" />
+    <Compile Include="Entidades\WinService\IndicadorEconomicoEntidad.cs" />
+    <Compile Include="Entidades\WinService\RespuestaIndicadoresEntidad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entidades\Seguridad\UsuariosEntidad.cs" />
+    <Compile Include="Entidades\Sesion\SessionBCREntidad.cs" />
+    <Compile Include="Entidades\Mensajes\TipoMensajesEntidad.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BCR.SIGANEM.EN.pfx" />
+    <None Include="Diagramas\Entidades.cd" />
+    <None Include="Diagramas\Garantias.cd" />
+    <None Include="Diagramas\Mantenimientos.cd" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\BCR.SIGANEM.EN.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\BCR.SIGANEM.EN.dll" />
+    <Content Include="obj\Debug\BCR.SIGANEM.EN.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Enum Name="BCR.SIGANEM.UT.EnumTituloMensaje">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\EnumTituloMensaje.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BCR.SIGANEM.UT.EnumTipoBitacora">
+    <Position X="4.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAEAAAAgAAAAAAAAAAAAAgIAAAAAAggAAAAQAAAQ=</HashCode>
+      <FileName>Enums\EnumTipoBitacora.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BCR.SIGANEM.UT.EnumTipoComparacion">
+    <Position X="6.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAChAAAAAAAAAACAIAAAA=</HashCode>
+      <FileName>Enums\EnumTipoComparacion.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BCR.SIGANEM.UT.EnumTipoControl">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAUAIAAIBAAAAACAQIAAAAAEBEAQAAAgAgAAEAAAAA=</HashCode>
+      <FileName>Enums\EnumTipoControl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BCR.SIGANEM.UT.EnumTipoMensaje">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAQAIACBAAAAAAAAAAIAAAAQCgABAAAAgAA=</HashCode>
+      <FileName>Enums\EnumTipoMensaje.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

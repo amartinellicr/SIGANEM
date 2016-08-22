@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BCR.SIGANEM.BL.BitacoraNegocio">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAACAAQAAAAAAAIGQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Bitacora\BitacoraNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.UsuariosNegocio">
+    <Position X="2.75" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQCAAEAAAAQAAAAAKAAwAgAAECgAAADAAAgAIAAQAA=</HashCode>
+      <FileName>Clases\Seguridad\UsuariosNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.SitemapNegocio">
+    <Position X="5" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAQAAAABQgAAAAAgACAAAAIAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\SitemapNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.MensajesNegocio">
+    <Position X="0.5" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQQAAAAAAACAAAAIAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Clases\Seguridad\MensajesNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.RolesNegocio">
+    <Position X="2.75" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIQAEgAAAAACQAAAJAAAAAAAIAAAAAAAAYAAA=</HashCode>
+      <FileName>Clases\Seguridad\RolesNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.MantenimientosNegocio">
+    <Position X="5" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>////////////////1////3////97///+v9/u+/fb//8=</HashCode>
+      <FileName>Clases\Mantenimientos\MantenimientosNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.GarantiasNegocio">
+    <Position X="7.25" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gCwtxE2D1ggCog4ELSBSAkLCmAEQgQsGAgwhAIIQA9I=</HashCode>
+      <FileName>Clases\Garantias\GarantiasNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.ParametrosBienesNegocio">
+    <Position X="7.25" Y="1.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAABAUAAAAAAAADAAAAIAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\ParametrosBienesNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.IndicadoresEconomicosNegocio">
+    <Position X="0.5" Y="8.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAgAQAQAhAIAQAACABABIAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\IndicadoresEconomicosNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BCR.SIGANEM.BL.ProcesosNegocio">
+    <Position X="3.5" Y="8.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAABAQAACAAAAIQIAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Procesos\ProcesosNegocio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BCR.SIGANEM.BL.IbitacoraNegocio">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Bitacora\Interface\IbitacoraNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IsitemapNegocio">
+    <Position X="5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAAAABAgAAAAAgAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IsitemapNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IusuariosNegocio">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAEAAAAQAAAAAAAAQAgAAECgAAADAAAAAIAAQAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IusuariosNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.ImensajesNegocio">
+    <Position X="0.5" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\ImensajesNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IrolesNegocio">
+    <Position X="2.75" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAEgAAAAAAQAAABAAAAAAAIAAAAAAAAYAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IrolesNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.ImantenimientoNegocio">
+    <Position X="5" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>////////v///////1////3////97///+v9/u+/fb//8=</HashCode>
+      <FileName>Clases\Mantenimientos\Interface\ImantenimientoNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IgarantiasNegocio">
+    <Position X="7.25" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gCwtxE2D1ggCog4ELSBSAkDCmAEQgQsGAgwhAIIQA9I=</HashCode>
+      <FileName>Clases\Garantias\Interface\IgarantiasNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IparametrosBienesNegocio">
+    <Position X="7.25" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAEAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IparametrosBienesNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IindicadoresEconomicosNegocio">
+    <Position X="0.5" Y="7" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAAAhAIAAAAAABABIAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IindicadoresEconomicosNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IprocesosNegocio">
+    <Position X="3.5" Y="7" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAQAAAAAAAAQIAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Procesos\Interface\IprocesosNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
