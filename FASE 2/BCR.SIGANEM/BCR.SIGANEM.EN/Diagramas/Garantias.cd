@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BCR.SIGANEM.EN.GarantiasFiduciariasEntidad">
+    <Position X="0.5" Y="0.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EABIMxSSACAAAEChADEkWAAAoYAggBkACARECBIAAQA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasFiduciariasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasValoresEntidad">
+    <Position X="0.5" Y="9.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>UBBOMs6yAQkIQASFkDOEOIFBgYYAACwAHgZET2q1BRc=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasValoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.BCRClientesEntidad">
+    <Position X="7.5" Y="2.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QIAAAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Garantias\BCRClientesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasRealesTasadoresEntidad">
+    <Position X="0.5" Y="2.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAEAAAAAAAAAEAgAAgAABAACBAAAACIIAAAiA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasRealesTasadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasRealesEntidad">
+    <Position X="0.5" Y="4" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AOAAHIbSDBIAQiHLBDQEXAwYoQcMBgxoAwVECKOaO8Q=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasRealesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasRealesCedulasEntidad">
+    <Position X="0.5" Y="6" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAGASTAAIAAApBABEMGAAAoAABCgjAAgREIAkAAAE=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasRealesCedulasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasOperacionesCedulasEntidad">
+    <Position X="7.5" Y="4" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEASSAAAAAAABABAEGAAAgAAAAAgAAABEAAAAAAA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasOperacionesCedulasEntidad.cs</FileName>
+      <NewMemberFileName>Entidades\Garantias\GarantiasRealesCedulasEntidad.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasOperacionesEntidad">
+    <Position X="4" Y="4" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAAAEASSAICAAAARghAFGGAIgAAAAAggAAFkAAAAAAg=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasOperacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasOperacionesClientesEntidad">
+    <Position X="4" Y="6" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAIEASSAABAAShhIBJEGAACiEAUIAjAAgJFCQgABiQ=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasOperacionesClientesEntidad.cs</FileName>
+      <NewMemberFileName>Entidades\Garantias\GarantiasOperacionesEntidad.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasOperacionesConsultaEntidad">
+    <Position X="7.5" Y="6" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACQAQAAABAAAAAAAYAAAEAAAAAAAAAAAQIAAAAABgAA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasOperacionesConsultaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.RUCClientesEntidad">
+    <Position X="4" Y="2.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAgAACAAAEAAAIAEAAAQAAAgA=</HashCode>
+      <FileName>Entidades\Garantias\RUCClientesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasOperacionesRelacionEntidad">
+    <Position X="0.5" Y="7.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>azJAnM32waBGQVTrkxBUeukx4yaoCh3IMg7UTiuaUVc=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasOperacionesRelacionEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasValoresRespuestaCDPEntidad">
+    <Position X="4" Y="7.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAEAAAAAAAqACEAAAAAAAAAAAQAgAAAgEAA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasValoresRespuestaCDPEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasValoresRespuestaISINEntidad">
+    <Position X="7.5" Y="7.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAQEAQAQAAAIEAIFAAAAAAAAAFAAAAAIABRA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasValoresRespuestaISINEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.RespuestaSICCEntidad">
+    <Position X="4" Y="0.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAACAAAAAAAAAEQAAAAAAAAABEAA=</HashCode>
+      <FileName>Entidades\Garantias\RespuestaSICCEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasGravemenesEntidad">
+    <Position X="4" Y="9.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACEEASSAIAAAAABGBMEGQBAoIAQAgiAAgDEIIEQACA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasGravemenesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.InscripcionGarantiasRealesEntidad">
+    <Position X="7.5" Y="9.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>yIAokgSSAQCEAQgJEBAEGAAJgACQIAmEAgVWJiEBFCg=</HashCode>
+      <FileName>Entidades\Garantias\InscripcionGarantiasRealesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PolizaEntidad">
+    <Position X="0.5" Y="10.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgkAzSgCAAQIABABMEGADigAAA4UgBAYBEIAEAIIA=</HashCode>
+      <FileName>Entidades\Garantias\PolizaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PolizaClienteEntidad">
+    <Position X="4" Y="10.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAAACAAAAAIACAACQIoAAEWCQAABAAACIAAgAiQAY=</HashCode>
+      <FileName>Entidades\Garantias\PolizaClienteEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MobiliariaGarantiasRealesEntidad">
+    <Position X="11" Y="10.75" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAAAkgayCgKAAQAFALAEGgAJgAAAAAgEAgFUAgEAAAg=</HashCode>
+      <FileName>Entidades\Garantias\MobiliariaGarantiasRealesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasFideicomisosAdjuntosEntidad">
+    <Position X="4" Y="12.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAEECCUAAAQAAREAAECAAggAAAgABAEBAAAAQwBAA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasFideicomisosAdjuntosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasFideicomisosEntidad">
+    <Position X="0.5" Y="12.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEACSVKEAAAABEAMECAAwgAAAQEBAEBACAAIghAQ=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasFideicomisosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasFideicomisosFideicometidasEntidad">
+    <Position X="11" Y="12.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IggAFKSGUIFAIIDBEAQGKWgggEBIAADIVhAIAgM4BAg=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasFideicomisosFideicometidasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GarantiasFideicomisosPrioridadesEntidad">
+    <Position X="7.5" Y="12.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BIKAEASC0AABAAABGAYEKAFgkBAQKCBAFBACEAAgBAA=</HashCode>
+      <FileName>Entidades\Garantias\GarantiasFideicomisosPrioridadesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

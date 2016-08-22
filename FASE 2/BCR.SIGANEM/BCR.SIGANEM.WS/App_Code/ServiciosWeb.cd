@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SiganemBCRClientesWS">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAACGAAQAAAAAIIA=</HashCode>
+      <FileName>App_Code\SiganemBCRClientesWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemConfiguracionWS">
+    <Position X="0.5" Y="2.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>/P2nv5/6v3f//fcz1/9+/3/f9fJ53//uvFPO4/fan3s=</HashCode>
+      <FileName>App_Code\SiganemConfiguracionWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemGarantiasWS">
+    <Position X="3" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>oCwsxEMDlgQDAA4EDSISAsAAEAFQlAsEAAAhAIIAIRY=</HashCode>
+      <FileName>App_Code\SiganemGarantiasWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemSeguridadWS">
+    <Position X="3" Y="2.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAMCgAVtEglgIAAgABQByBJBAABgEEKLAAAABJEKIAA=</HashCode>
+      <FileName>App_Code\SiganemSeguridadWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemSesionesWCF">
+    <Position X="5.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAAAAACAAIAAAAAIAAAAAAAAIgHAAgAAAKQAAAAKIAg=</HashCode>
+      <FileName>App_Code\SiganemSesionesWCF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemListasWS">
+    <Position X="5.5" Y="2.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>FKxpICIMYABjgAQJAACAAAwGTQhCGRYAAQAgmnCSOPE=</HashCode>
+      <FileName>App_Code\SiganemListasWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemConsultasWS">
+    <Position X="0.5" Y="4" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>e1P9//53v+v+//3/1d99emd+r/1y+dX2Mw0m8/fRf38=</HashCode>
+      <FileName>App_Code\SiganemConsultasWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SiganemIndicadoresWS">
+    <Position X="3" Y="4" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAQAAAgAAQABAAAEAAAAAAAAIBAFAAAAAAAIAAAAAQ=</HashCode>
+      <FileName>App_Code\SiganemIndicadoresWS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

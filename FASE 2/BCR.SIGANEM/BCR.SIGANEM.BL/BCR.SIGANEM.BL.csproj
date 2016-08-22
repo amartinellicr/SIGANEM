@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1AE0F85-5897-4C18-9C8E-B115434653D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCR.SIGANEM.BL</RootNamespace>
+    <AssemblyName>BCR.SIGANEM.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binarios\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BCR.SIGANEM.BL.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCR.SIGANEM.DA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e2a70a9db7cbf83a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binarios\BCR.SIGANEM.DA.dll</HintPath>
+    </Reference>
+    <Reference Include="BCR.SIGANEM.EN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06f5928fc547932c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binarios\BCR.SIGANEM.EN.dll</HintPath>
+    </Reference>
+    <Reference Include="BCR.SIGANEM.UT, Version=1.0.0.0, Culture=neutral, PublicKeyToken=03c5ae19ac4de5f1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binarios\BCR.SIGANEM.UT.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Bitacora\BitacoraNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Bitacora\Interface\IbitacoraNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Garantias\Interface\IgarantiasNegocio.cs" />
+    <Compile Include="Clases\Garantias\GarantiasNegocio.cs" />
+    <Compile Include="Clases\Mantenimientos\Interface\ImantenimientoNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Mantenimientos\MantenimientosNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Procesos\Interface\IprocesosNegocio.cs" />
+    <Compile Include="Clases\Procesos\ProcesosNegocio.cs" />
+    <Compile Include="Clases\Reportes\ReportesNegocio.cs" />
+    <Compile Include="Clases\Reportes\Interface\IreportesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\IndicadoresEconomicosNegocio.cs" />
+    <Compile Include="Clases\Seguridad\Interface\IindicadoresEconomicosNegocio.cs" />
+    <Compile Include="Clases\Seguridad\Interface\IparametrosBienesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\ParametrosBienesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\Interface\ImensajesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\Interface\IsitemapNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Seguridad\Interface\IrolesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\Interface\IusuariosNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Seguridad\MensajesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\SitemapNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clases\Seguridad\RolesNegocio.cs" />
+    <Compile Include="Clases\Seguridad\UsuariosNegocio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BCR.SIGANEM.BL.pfx" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Diagramas\Clases.cd" />
+    <None Include="Diagramas\General.cd" />
+    <None Include="Diagramas\Interfaces.cd" />
+    <None Include="obj\Debug\BCR.SIGANEM.BL.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\BCR.SIGANEM.BL.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

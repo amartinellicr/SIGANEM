@@ -1,0 +1,137 @@
+﻿.panelMenuLateralDetalle
+{
+    background-color: #E8ECF0;
+    height: 100%; 
+    width: 183px;
+    text-align : left; 
+    margin-top: 0px;
+}
+
+.tablaPrincipalMenuLateralDetalle
+{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.divArbolMenuLateralDetalle
+{
+    position: absolute; 
+    width: 183px; 
+    height: 89%; 
+    background-color: #E8ECF0;
+}
+
+.divAreasMenuLateralDetalle
+{
+    position: absolute; 
+    width: 183px; 
+    top: 92%; 
+/*    height: 10%; */
+    background-color: #E8ECF0;
+    overflow: auto; 
+    margin-left: 2px; 
+    border-top: 1px solid #C0C0C0;
+}
+
+/**********AREAS*********/
+.tablaAreasMenuLateralDetalle
+{
+    height: 100%;
+    width: 80%;
+}
+
+.AreasMenuLateralDetalleBoton
+{
+    background-image: url('../img/16/iconContacto.gif');
+    background-color: #E8ECF0; 
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.AreasMenuLateralDetalleBoton:hover
+{
+    background-color : #686868;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+
+.AreasMenuLateralDetalleBotonSeleccionado
+{
+    background-image: url('../img/16/iconContacto.gif');
+    cursor: hand; 
+    background-repeat: no-repeat; 
+    background-position: left; 
+    padding-left: 20px;
+    height: 29px;
+    width: 181px;
+    border-style: none;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10.5px;
+    font-weight: bold;    
+    background-color : #686868;
+	border: 1px solid #A5ACB5;
+	color: #FFFFFF;
+}
+
+/******ARBOL DE OPCIONES*******/
+.panelMenuLateralDetalleArbol
+{
+    height: 100%;
+    width: 183px;
+}
+
+.AreasMenuLateralDetalleArbol
+{
+    font-family: Verdana;
+    font-size: 10.5px;
+    color: #333333;
+}
+
+.AreasMenuLateralDetalleArbolNodo
+{
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 10.5px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.AreasMenuLateralDetalleArbolHoja
+{
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 10.5px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.AreasMenuLateralDetalleArbolHoja:hover
+{
+   
+    background-color : #FDEEB3;
+	width : 183px; 
+	height : 15px;
+	border : solid 1px #F1C43F;	
+	text-decoration: none;
+}
+
+.AreasMenuLateralDetalleArbolAnclas
+{
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 10.5px;
+    color: #333333;
+    text-decoration: none;
+}

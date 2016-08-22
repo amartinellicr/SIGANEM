@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SvAdministrarSesiones" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ISvAdministrarSesiones_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" />
+      <xsd:import schemaLocation="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISvAdministrarSesiones_CrearSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearSesion" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_CrearSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ActualizarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ActualizarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_CrearVariable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearVariable" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_CrearVariable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearVariableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_CrearListaVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearListaVariables" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_CrearListaVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearListaVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarVariable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariable" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarVariable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarListaVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarListaVariables" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarListaVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarListaVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarVariablesSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariablesSesion" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ConsultarVariablesSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariablesSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ActualizarVariable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarVariable" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ActualizarVariable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarVariableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ActualizarListaVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarListaVariables" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_ActualizarListaVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarListaVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarVariable_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariable" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarVariable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarListaVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarListaVariables" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarListaVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarListaVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarVariablesNoPersistentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariablesNoPersistentes" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarVariablesNoPersistentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariablesNoPersistentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarVariablesSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariablesSesion" />
+  </wsdl:message>
+  <wsdl:message name="ISvAdministrarSesiones_EliminarVariablesSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariablesSesionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISvAdministrarSesiones">
+    <wsdl:operation name="CrearSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/CrearSesion" message="tns:ISvAdministrarSesiones_CrearSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/CrearSesionResponse" message="tns:ISvAdministrarSesiones_CrearSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarSesion" message="tns:ISvAdministrarSesiones_ConsultarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarSesionResponse" message="tns:ISvAdministrarSesiones_ConsultarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ActualizarSesion" message="tns:ISvAdministrarSesiones_ActualizarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ActualizarSesionResponse" message="tns:ISvAdministrarSesiones_ActualizarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarSesion" message="tns:ISvAdministrarSesiones_EliminarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarSesionResponse" message="tns:ISvAdministrarSesiones_EliminarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearVariable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/CrearVariable" message="tns:ISvAdministrarSesiones_CrearVariable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/CrearVariableResponse" message="tns:ISvAdministrarSesiones_CrearVariable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearListaVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/CrearListaVariables" message="tns:ISvAdministrarSesiones_CrearListaVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/CrearListaVariablesResponse" message="tns:ISvAdministrarSesiones_CrearListaVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariable" message="tns:ISvAdministrarSesiones_ConsultarVariable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariableResponse" message="tns:ISvAdministrarSesiones_ConsultarVariable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarListaVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarListaVariables" message="tns:ISvAdministrarSesiones_ConsultarListaVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarListaVariablesResponse" message="tns:ISvAdministrarSesiones_ConsultarListaVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariablesSesion" message="tns:ISvAdministrarSesiones_ConsultarVariablesSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariablesSesionResponse" message="tns:ISvAdministrarSesiones_ConsultarVariablesSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVariable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ActualizarVariable" message="tns:ISvAdministrarSesiones_ActualizarVariable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ActualizarVariableResponse" message="tns:ISvAdministrarSesiones_ActualizarVariable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarListaVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ActualizarListaVariables" message="tns:ISvAdministrarSesiones_ActualizarListaVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/ActualizarListaVariablesResponse" message="tns:ISvAdministrarSesiones_ActualizarListaVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarVariable" message="tns:ISvAdministrarSesiones_EliminarVariable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarVariableResponse" message="tns:ISvAdministrarSesiones_EliminarVariable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarListaVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarListaVariables" message="tns:ISvAdministrarSesiones_EliminarListaVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarListaVariablesResponse" message="tns:ISvAdministrarSesiones_EliminarListaVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariablesNoPersistentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesNoPersistentes" message="tns:ISvAdministrarSesiones_EliminarVariablesNoPersistentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesNoPersistentesResponse" message="tns:ISvAdministrarSesiones_EliminarVariablesNoPersistentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariablesSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesSesion" message="tns:ISvAdministrarSesiones_EliminarVariablesSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesSesionResponse" message="tns:ISvAdministrarSesiones_EliminarVariablesSesion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISvAdministrarSesiones" type="tns:ISvAdministrarSesiones">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearSesion">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/CrearSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSesion">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSesion">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ActualizarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearVariable">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/CrearVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearListaVariables">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/CrearListaVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariable">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarListaVariables">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarListaVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesSesion">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariablesSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVariable">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ActualizarVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarListaVariables">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ActualizarListaVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariable">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarListaVariables">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarListaVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariablesNoPersistentes">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesNoPersistentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariablesSesion">
+      <soap:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISvAdministrarSesiones" type="tns:ISvAdministrarSesiones">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISvAdministrarSesiones_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CrearSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/CrearSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ActualizarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearVariable">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/CrearVariable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearListaVariables">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/CrearListaVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariable">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarListaVariables">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarListaVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ConsultarVariablesSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVariable">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ActualizarVariable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarListaVariables">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/ActualizarListaVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariable">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarVariable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarListaVariables">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarListaVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariablesNoPersistentes">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesNoPersistentes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariablesSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISvAdministrarSesiones/EliminarVariablesSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SvAdministrarSesiones">
+    <wsdl:port name="BasicHttpBinding_ISvAdministrarSesiones" binding="tns:BasicHttpBinding_ISvAdministrarSesiones">
+      <soap:address location="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISvAdministrarSesiones" binding="tns:NetTcpBinding_ISvAdministrarSesiones">
+      <soap12:address location="net.tcp://bcr0106asg91.bcr.fi.cr:19001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://bcr0106asg91.bcr.fi.cr:19001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.ServicioConsulta.ETL" />
+  <xs:element name="ConsultarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TipoIdentificacion" type="xs:int" />
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Sistema" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DireccionIP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.ServicioConsulta.ETL" minOccurs="0" name="ConsultarClienteResult" nillable="true" type="q1:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarClienteXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TipoIdentificacion" type="xs:int" />
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Sistema" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DireccionIP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarClienteXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarClienteXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTiposId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.ServicioConsulta.ETL" minOccurs="0" name="TipoConsulta" type="q2:TipoConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTiposIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.ServicioConsulta.ETL" minOccurs="0" name="ConsultarTiposIdResult" nillable="true" type="q3:RespuestaTipoId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTiposIdXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BCR.BCRClientes.ServicioConsulta.ETL" minOccurs="0" name="TipoConsulta" type="q4:TipoConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarTiposIdXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarTiposIdXMLResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDatosCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pConsulta" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDatosClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarDatosClienteResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

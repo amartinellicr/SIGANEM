@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bancobcr.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bancobcr.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB INDICADORES ECONOMICOS BCCR</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://bancobcr.com/">
+      <s:element name="ValidaConexionWebServiceIndicadores">
+        <s:complexType />
+      </s:element>
+      <s:element name="ValidaConexionWebServiceIndicadoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaConexionWebServiceIndicadoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaIndicadorEconomicoTC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:IndicadorEconomicoEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IndicadorEconomicoEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Indicador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreBanco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubNiveles" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BitacorasEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodAccion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodModulo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodEmpresa" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodSistema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatoActualizado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatoEliminado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatoNuevo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesRegistro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaIndicadorEconomicoTCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaIndicadorEconomicoTCResult" type="tns:ArrayOfRespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRespuestaEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RespuestaEntidad" nillable="true" type="tns:RespuestaEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestaEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ValorEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorEstadoCadena" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorError" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorErrorCadena" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaIndicadorEconomicoIPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:IndicadorEconomicoEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaIndicadorEconomicoIPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaIndicadorEconomicoIPCResult" type="tns:ArrayOfRespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraEjecucionServicioBitacora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraEjecucionServicioBitacoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistraEjecucionServicioBitacoraResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidaConexionWebServiceIndicadoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaConexionWebServiceIndicadores" />
+  </wsdl:message>
+  <wsdl:message name="ValidaConexionWebServiceIndicadoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaConexionWebServiceIndicadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndicadorEconomicoTCSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaIndicadorEconomicoTC" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndicadorEconomicoTCSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaIndicadorEconomicoTCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndicadorEconomicoIPCSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaIndicadorEconomicoIPC" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndicadorEconomicoIPCSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaIndicadorEconomicoIPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraEjecucionServicioBitacoraSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraEjecucionServicioBitacora" />
+  </wsdl:message>
+  <wsdl:message name="RegistraEjecucionServicioBitacoraSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraEjecucionServicioBitacoraResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SiganemIndicadoresWSSoap">
+    <wsdl:operation name="ValidaConexionWebServiceIndicadores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: VALIDA LA CONEXION CON EL SERVICIO DEL BCCR</wsdl:documentation>
+      <wsdl:input message="tns:ValidaConexionWebServiceIndicadoresSoapIn" />
+      <wsdl:output message="tns:ValidaConexionWebServiceIndicadoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndicadorEconomicoTC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: CONSULTA UN INDICADOR ECONOMICO TIPO CAMBIO DEL BCCR</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaIndicadorEconomicoTCSoapIn" />
+      <wsdl:output message="tns:ConsultaIndicadorEconomicoTCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndicadorEconomicoIPC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: CONSULTA UN INDICADOR ECONOMICO IPC DEL BCCR</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaIndicadorEconomicoIPCSoapIn" />
+      <wsdl:output message="tns:ConsultaIndicadorEconomicoIPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraEjecucionServicioBitacora">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: REGISTRA LA EJECUCION DEL SERVICIO PARA LOS INDICADORES</wsdl:documentation>
+      <wsdl:input message="tns:RegistraEjecucionServicioBitacoraSoapIn" />
+      <wsdl:output message="tns:RegistraEjecucionServicioBitacoraSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SiganemIndicadoresWSSoap" type="tns:SiganemIndicadoresWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaConexionWebServiceIndicadores">
+      <soap:operation soapAction="http://bancobcr.com/ValidaConexionWebServiceIndicadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndicadorEconomicoTC">
+      <soap:operation soapAction="http://bancobcr.com/ConsultaIndicadorEconomicoTC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndicadorEconomicoIPC">
+      <soap:operation soapAction="http://bancobcr.com/ConsultaIndicadorEconomicoIPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraEjecucionServicioBitacora">
+      <soap:operation soapAction="http://bancobcr.com/RegistraEjecucionServicioBitacora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SiganemIndicadoresWSSoap12" type="tns:SiganemIndicadoresWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaConexionWebServiceIndicadores">
+      <soap12:operation soapAction="http://bancobcr.com/ValidaConexionWebServiceIndicadores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndicadorEconomicoTC">
+      <soap12:operation soapAction="http://bancobcr.com/ConsultaIndicadorEconomicoTC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndicadorEconomicoIPC">
+      <soap12:operation soapAction="http://bancobcr.com/ConsultaIndicadorEconomicoIPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraEjecucionServicioBitacora">
+      <soap12:operation soapAction="http://bancobcr.com/RegistraEjecucionServicioBitacora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiganemIndicadoresWS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB INDICADORES ECONOMICOS BCCR</wsdl:documentation>
+    <wsdl:port name="SiganemIndicadoresWSSoap" binding="tns:SiganemIndicadoresWSSoap">
+      <soap:address location="http://desiganem-app:12000/SiganemIndicadoresWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SiganemIndicadoresWSSoap12" binding="tns:SiganemIndicadoresWSSoap12">
+      <soap12:address location="http://desiganem-app:12000/SiganemIndicadoresWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

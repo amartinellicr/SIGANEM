@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="BCR.SIGANEM.BL.IbitacoraNegocio">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Bitacora\Interface\IbitacoraNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IusuariosNegocio">
+    <Position X="2.25" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAEAAAAQAAAAAAAAQAgAAECgAAADAAAAAIAAQAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IusuariosNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IsitemapNegocio">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAAAABAgAAAAAgAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IsitemapNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.ImensajesNegocio">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\ImensajesNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IrolesNegocio">
+    <Position X="2.75" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAEgAAAAAAQAAABAAAAAAAIAAAAAAAAYAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IrolesNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.ImantenimientoNegocio">
+    <Position X="5.25" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>////////v///////1////3////97///+v9/u+/fb//8=</HashCode>
+      <FileName>Clases\Mantenimientos\Interface\ImantenimientoNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IgarantiasNegocio">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gCwtxE2D1ggCog4ELSBSAkDCmAEQgQsGAgwhAIIQA9I=</HashCode>
+      <FileName>Clases\Garantias\Interface\IgarantiasNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IparametrosBienesNegocio">
+    <Position X="7" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAEAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IparametrosBienesNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IindicadoresEconomicosNegocio">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAAAhAIAAAAAABABIAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Seguridad\Interface\IindicadoresEconomicosNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BCR.SIGANEM.BL.IprocesosNegocio">
+    <Position X="3.25" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAQAAAAAAAAQIAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Procesos\Interface\IprocesosNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
