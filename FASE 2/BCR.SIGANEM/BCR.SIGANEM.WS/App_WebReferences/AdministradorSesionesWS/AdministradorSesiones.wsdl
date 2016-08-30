@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bcr.fi.cr/webservices/sesiones" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bcr.fi.cr/webservices/sesiones" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provee los servicios necesarios para la Administración de Sesiones de Aplicaciones Web Intranet en Alta Disponibilidad @ Banco de Costa Rica</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://bcr.fi.cr/webservices/sesiones">
+      <s:element name="ExisteSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteSesionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSesionResult" type="tns:DataEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Registro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Excepcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsValido" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoEstaVacio" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreServidor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RenovarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenovarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenovarSesionResult" type="tns:DataEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarSesionResult" type="tns:DataEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteItemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoItem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValorItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearItemResult" type="tns:DataEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoItem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValorItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarItemResult" type="tns:DataEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarItemResult" type="tns:DataEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraerItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraerItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraerItemResult" type="tns:ListaSesionesItems" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListaSesionesItems">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DataEntity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Listado" type="tns:ArrayOfDatosSesionesItems" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatosSesionesItems">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatosSesionesItems" nillable="true" type="tns:DatosSesionesItems" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosSesionesItems">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoSistema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoItem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorItem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TraerVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="TraerVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraerVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExisteSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteSesion" />
+  </wsdl:message>
+  <wsdl:message name="ExisteSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSesion" />
+  </wsdl:message>
+  <wsdl:message name="CrearSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RenovarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:RenovarSesion" />
+  </wsdl:message>
+  <wsdl:message name="RenovarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:RenovarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarSesion" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteItem" />
+  </wsdl:message>
+  <wsdl:message name="ExisteItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearItemSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearItem" />
+  </wsdl:message>
+  <wsdl:message name="CrearItemSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarItem" />
+  </wsdl:message>
+  <wsdl:message name="ModificarItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarItemSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarItem" />
+  </wsdl:message>
+  <wsdl:message name="EliminarItemSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraerItemSoapIn">
+    <wsdl:part name="parameters" element="tns:TraerItem" />
+  </wsdl:message>
+  <wsdl:message name="TraerItemSoapOut">
+    <wsdl:part name="parameters" element="tns:TraerItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraerVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:TraerVersion" />
+  </wsdl:message>
+  <wsdl:message name="TraerVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:TraerVersionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Administrador_x0020_de_x0020_SesionesSoap">
+    <wsdl:operation name="ExisteSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite validar si existe una sesion activa para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:ExisteSesionSoapIn" />
+      <wsdl:output message="tns:ExisteSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite la creacion de una sesion para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:CrearSesionSoapIn" />
+      <wsdl:output message="tns:CrearSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RenovarSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite renovar la fecha de expiración para mantener una sesion activa para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:RenovarSesionSoapIn" />
+      <wsdl:output message="tns:RenovarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite eliminar una sesion para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:EliminarSesionSoapIn" />
+      <wsdl:output message="tns:EliminarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite validar si existe un item en una sesion activa para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:ExisteItemSoapIn" />
+      <wsdl:output message="tns:ExisteItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite guardar el valor indicado en un item de sesion para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:CrearItemSoapIn" />
+      <wsdl:output message="tns:CrearItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite actualizar el valor almacenado en un item de sesion para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:ModificarItemSoapIn" />
+      <wsdl:output message="tns:ModificarItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite eliminar el valor almacenado en un item de sesion para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:EliminarItemSoapIn" />
+      <wsdl:output message="tns:EliminarItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite traer el valor almacenado en un item de sesion para un usuario en el contexto de un sistema definido.</wsdl:documentation>
+      <wsdl:input message="tns:TraerItemSoapIn" />
+      <wsdl:output message="tns:TraerItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite consultar la versión del servicio instalado.</wsdl:documentation>
+      <wsdl:input message="tns:TraerVersionSoapIn" />
+      <wsdl:output message="tns:TraerVersionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Administrador_x0020_de_x0020_SesionesSoap" type="tns:Administrador_x0020_de_x0020_SesionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExisteSesion">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/ExisteSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSesion">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/CrearSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenovarSesion">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/RenovarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/EliminarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteItem">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/ExisteItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearItem">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/CrearItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarItem">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/ModificarItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarItem">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/EliminarItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerItem">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/TraerItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerVersion">
+      <soap:operation soapAction="http://bcr.fi.cr/webservices/sesiones/TraerVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Administrador_x0020_de_x0020_SesionesSoap12" type="tns:Administrador_x0020_de_x0020_SesionesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExisteSesion">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/ExisteSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSesion">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/CrearSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenovarSesion">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/RenovarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/EliminarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteItem">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/ExisteItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearItem">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/CrearItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarItem">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/ModificarItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarItem">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/EliminarItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerItem">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/TraerItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerVersion">
+      <soap12:operation soapAction="http://bcr.fi.cr/webservices/sesiones/TraerVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Administrador_x0020_de_x0020_Sesiones">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provee los servicios necesarios para la Administración de Sesiones de Aplicaciones Web Intranet en Alta Disponibilidad @ Banco de Costa Rica</wsdl:documentation>
+    <wsdl:port name="Administrador_x0020_de_x0020_SesionesSoap" binding="tns:Administrador_x0020_de_x0020_SesionesSoap">
+      <soap:address location="http://desesiones-app:12014/bcr.sesiones.servicios/AdministradorSesiones.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Administrador_x0020_de_x0020_SesionesSoap12" binding="tns:Administrador_x0020_de_x0020_SesionesSoap12">
+      <soap12:address location="http://desesiones-app:12014/bcr.sesiones.servicios/AdministradorSesiones.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

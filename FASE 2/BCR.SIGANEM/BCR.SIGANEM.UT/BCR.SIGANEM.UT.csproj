@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71CC7C2A-D737-42A8-B71E-089AF3218DD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCR.SIGANEM.UT</RootNamespace>
+    <AssemblyName>BCR.SIGANEM.UT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binarios\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BCR.SIGANEM.UT.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binarios\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BCR.SIGANEM.EN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=06f5928fc547932c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binarios\BCR.SIGANEM.EN.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\BaseDatos\HelperClass.cs" />
+    <Compile Include="Clases\BaseDatos\LectorConfiguracion.cs" />
+    <Compile Include="Clases\BaseDatos\RegistrarEventLog.cs" />
+    <Compile Include="Clases\BaseDatos\sqlHelper.cs" />
+    <Compile Include="Clases\Consultas\InfoClienteParser.cs" />
+    <Compile Include="Clases\Mantenimientos\GeneradorControles.cs" />
+    <Compile Include="Clases\Mensajes\BitacoraFlags.cs" />
+    <Compile Include="Clases\Mensajes\MessageFlags.cs" />
+    <Compile Include="Clases\Sesiones\HttpHelper.cs" />
+    <Compile Include="Clases\WinService\LectorFechasSistema.cs" />
+    <Compile Include="Enums\EnumFormatoFecha.cs" />
+    <Compile Include="Enums\EnumTipoAccionReplica.cs" />
+    <Compile Include="Enums\EnumTipoComparacion.cs" />
+    <Compile Include="Enums\EnumTipoControl.cs" />
+    <Compile Include="Enums\EnumTipoEstadoGarantia.cs" />
+    <Compile Include="Enums\EnumTipoMensaje.cs" />
+    <Compile Include="Enums\EnumTituloMensaje.cs" />
+    <Compile Include="Enums\EnumTipoBitacora.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BCR.SIGANEM.UT.pfx" />
+    <None Include="Diagramas\Enumeradores.cd" />
+    <None Include="Diagramas\General.cd" />
+    <None Include="Diagramas\ServicioWindows.cd" />
+    <None Include="Diagramas\Utilidades.cd" />
+    <None Include="obj\Debug\BCR.SIGANEM.UT.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\BCR.SIGANEM.UT.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\BCR.SIGANEM.UT.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\BCR.SIGANEM.UT.dll" />
+    <Content Include="obj\Debug\BCR.SIGANEM.UT.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\BCR.SIGANEM.UT.App_GlobalResources.Resource.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

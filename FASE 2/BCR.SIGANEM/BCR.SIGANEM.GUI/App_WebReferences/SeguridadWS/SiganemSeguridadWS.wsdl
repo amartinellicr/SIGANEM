@@ -1,0 +1,1913 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bancobcr.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bancobcr.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB SEGURIDAD</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://bancobcr.com/">
+      <s:element name="IndicesPreciosConsumidorInsertar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:IndicesPreciosConsumidorEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IndicesPreciosConsumidorEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdIndicePrecioConsumidor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Mes" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesMes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ano" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcentajeInflacion" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDesde" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHasta" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BitacorasEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodAccion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodModulo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodEmpresa" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodSistema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatoActualizado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatoEliminado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatoNuevo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesRegistro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IndicesPreciosConsumidorInsertarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndicesPreciosConsumidorInsertarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ValorEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorEstadoCadena" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorError" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorErrorCadena" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IndicesPreciosConsumidorConsultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosConsultaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParametrosConsultaEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IndiceInicioFila" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaximoFilas" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorFiltro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnaFiltro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnaOrdenar" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IndicesPreciosConsumidorConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndicesPreciosConsumidorConsultarResult" type="tns:ArrayOfIndicesPreciosConsumidorEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIndicesPreciosConsumidorEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndicesPreciosConsumidorEntidad" nillable="true" type="tns:IndicesPreciosConsumidorEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IndicesPreciosConsumidorTotalFilas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosTotalFilasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParametrosTotalFilasEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ValorFiltro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnaFiltro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IndicesPreciosConsumidorTotalFilasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IndicesPreciosConsumidorTotalFilasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IndicesPreciosConsumidorConsultarBCCR">
+        <s:complexType />
+      </s:element>
+      <s:element name="IndicesPreciosConsumidorConsultarBCCRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndicesPreciosConsumidorConsultarBCCRResult" type="tns:MensajesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MensajesEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdMensaje" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CausaMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoMensaje" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesTipoMensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UsuariosObtenerAcceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosObtenerAccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuariosObtenerAccesoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosObtenerIntentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosObtenerIntentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosObtenerIntentosResult" type="tns:UsuariosEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UsuariosEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodTipoRol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesTipoRol" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CantidadIntento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Bloqueado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesBloqueado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Conectado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesConectado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIntento" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UltimaConexion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UsuariosRegistrarIntentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:UsuariosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosRegistrarIntentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosRegistrarIntentosResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosRegistrarConexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:UsuariosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosRegistrarConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosRegistrarConexionResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosValidarAcceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desPagina" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosValidarAccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuariosValidarAccesoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosValidarAccesoCodigo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codPagina" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosValidarAccesoCodigoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuariosValidarAccesoCodigoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosObtenerRolUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosObtenerRolUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosObtenerRolUsuarioResult" type="tns:UsuariosEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosInsertar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:UsuariosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosInsertarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosInsertarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosModificar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:UsuariosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosModificarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosModificarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosEliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:UsuariosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosEliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosEliminarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosConsultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosConsultaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosConsultarResult" type="tns:ArrayOfUsuariosEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUsuariosEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UsuariosEntidad" nillable="true" type="tns:UsuariosEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UsuariosConsultarDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:UsuariosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosConsultarDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosConsultarDetalleResult" type="tns:UsuariosEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosTotalFilas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosTotalFilasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosTotalFilasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuariosTotalFilasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesInsertar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:TiposRolesEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TiposRolesEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodTipoRol" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesTipoRol" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolesInsertarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesInsertarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesModificar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:TiposRolesEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesModificarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesModificarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesEliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:TiposRolesEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesEliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesEliminarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesConsultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosConsultaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesConsultarResult" type="tns:ArrayOfTiposRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTiposRolesEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TiposRolesEntidad" nillable="true" type="tns:TiposRolesEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolesConsultarDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:TiposRolesEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesConsultarDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesConsultarDetalleResult" type="tns:TiposRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesTotalFilas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosTotalFilasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesTotalFilasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RolesTotalFilasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesUsuariosConsultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:TiposRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesUsuariosConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RolesUsuariosConsultarResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasConsulta">
+        <s:complexType />
+      </s:element>
+      <s:element name="PantallasConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PantallasConsultaResult" type="tns:ArrayOfPantallasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPantallasEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PantallasEntidad" nillable="true" type="tns:PantallasEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PantallasEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPantalla" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodPantalla" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TituloPantalla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesPantalla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutaPantalla" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PadreOrigen" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubPadreOrigen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pestana" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PantallasConsultarDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasConsultarDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PantallasConsultarDetalleResult" type="tns:PantallasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasRolesInsertar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PantallasRolesEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPantallaRol" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoRol" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPantalla" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PantallasRolesInsertarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PantallasRolesInsertarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasRolesEliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasRolesEliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PantallasRolesEliminarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasRolesConsultaDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:PantallasRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PantallasRolesConsultaDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PantallasRolesConsultaDetalleResult" type="tns:ArrayOfPantallasRolesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPantallasRolesEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PantallasRolesEntidad" nillable="true" type="tns:PantallasRolesEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TiposCambiosInsertar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:TiposCambiosEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TiposCambiosEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoCambio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesFecha" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcentajeDevaluacion" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TiposCambiosInsertarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposCambiosInsertarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposCambiosConsultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosConsultaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposCambiosConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposCambiosConsultarResult" type="tns:ArrayOfTiposCambiosEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTiposCambiosEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TiposCambiosEntidad" nillable="true" type="tns:TiposCambiosEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TiposCambiosTotalFilas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosTotalFilasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposCambiosTotalFilasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TiposCambiosTotalFilasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposCambiosConsultarBCCR">
+        <s:complexType />
+      </s:element>
+      <s:element name="TiposCambiosConsultarBCCRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposCambiosConsultarBCCRResult" type="tns:MensajesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MensajesConsulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:MensajesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MensajesConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MensajesConsultaResult" type="tns:MensajesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParametrosBienesModificar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosBienesEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParametrosBienesEntidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdParametroBien" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionAeronave" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionAlhaja" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionAnimal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionBien" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionBonoPrenda" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionBuque" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionCultivoFruto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionEdificacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionEquipoComputo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionFianza" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionMadera" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionMaquinariaEquipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionMateriaPrima" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionMobiliario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionOtroTipoBien" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionTerreno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionValor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionVehiculo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionFideicomiso" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesPrescripcionFacturaCedida" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoAeronave" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoAlhaja" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoAnimal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoBuque" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoCultivoFruto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoEquipoComputo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoMadera" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoMaquinariaEquipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoMateriaPrima" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoMobiliario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoOtroTipoBien" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoVehiculo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoSUGEFEdificacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesVencimientoAvaluoSUGEFTerreno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoTerreno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoEdificacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoVehiculo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoMaquinariaEquipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoEquipoComputo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoMateriaPrima" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoMobiliario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoMadera" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoAeronave" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoBuque" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoAnimal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoCultivoFruto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoAlhaja" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MesesSeguimientoOtroBien" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMetodoInsercion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIngreso" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioIngreso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimaModificacion" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodUsuarioUltimaModificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesUsuarioUltimaModificacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ParametrosBienesModificarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosBienesModificarResult" type="tns:RespuestaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParametrosBienesConsultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosConsultaEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParametrosBienesConsultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosBienesConsultarResult" type="tns:ArrayOfParametrosBienesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfParametrosBienesEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ParametrosBienesEntidad" nillable="true" type="tns:ParametrosBienesEntidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ParametrosBienesConsultarDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosBienesEntidad" />
+            <s:element minOccurs="0" maxOccurs="1" name="_bitacora" type="tns:BitacorasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParametrosBienesConsultarDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosBienesConsultarDetalleResult" type="tns:ParametrosBienesEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParametrosBienesTotalFilas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_entidad" type="tns:ParametrosTotalFilasEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParametrosBienesTotalFilasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ParametrosBienesTotalFilasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IndicesPreciosConsumidorInsertarSoapIn">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorInsertar" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorInsertarSoapOut">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorConsultar" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorTotalFilasSoapIn">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorTotalFilas" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorTotalFilasSoapOut">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorTotalFilasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorConsultarBCCRSoapIn">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorConsultarBCCR" />
+  </wsdl:message>
+  <wsdl:message name="IndicesPreciosConsumidorConsultarBCCRSoapOut">
+    <wsdl:part name="parameters" element="tns:IndicesPreciosConsumidorConsultarBCCRResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosObtenerAccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosObtenerAcceso" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosObtenerAccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosObtenerAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosObtenerIntentosSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosObtenerIntentos" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosObtenerIntentosSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosObtenerIntentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosRegistrarIntentosSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosRegistrarIntentos" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosRegistrarIntentosSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosRegistrarIntentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosRegistrarConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosRegistrarConexion" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosRegistrarConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosRegistrarConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosValidarAccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosValidarAcceso" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosValidarAccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosValidarAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosValidarAccesoCodigoSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosValidarAccesoCodigo" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosValidarAccesoCodigoSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosValidarAccesoCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosObtenerRolUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosObtenerRolUsuario" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosObtenerRolUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosObtenerRolUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosInsertarSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosInsertar" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosInsertarSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosModificarSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosModificar" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosModificarSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosEliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosEliminar" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosEliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosConsultar" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosConsultarDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosConsultarDetalle" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosConsultarDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosConsultarDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosTotalFilasSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosTotalFilas" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosTotalFilasSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosTotalFilasResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesInsertarSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesInsertar" />
+  </wsdl:message>
+  <wsdl:message name="RolesInsertarSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesModificarSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesModificar" />
+  </wsdl:message>
+  <wsdl:message name="RolesModificarSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesEliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesEliminar" />
+  </wsdl:message>
+  <wsdl:message name="RolesEliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesConsultar" />
+  </wsdl:message>
+  <wsdl:message name="RolesConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesConsultarDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesConsultarDetalle" />
+  </wsdl:message>
+  <wsdl:message name="RolesConsultarDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesConsultarDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesTotalFilasSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesTotalFilas" />
+  </wsdl:message>
+  <wsdl:message name="RolesTotalFilasSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesTotalFilasResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesUsuariosConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesUsuariosConsultar" />
+  </wsdl:message>
+  <wsdl:message name="RolesUsuariosConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesUsuariosConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="PantallasConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:PantallasConsulta" />
+  </wsdl:message>
+  <wsdl:message name="PantallasConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:PantallasConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PantallasConsultarDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:PantallasConsultarDetalle" />
+  </wsdl:message>
+  <wsdl:message name="PantallasConsultarDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:PantallasConsultarDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="PantallasRolesInsertarSoapIn">
+    <wsdl:part name="parameters" element="tns:PantallasRolesInsertar" />
+  </wsdl:message>
+  <wsdl:message name="PantallasRolesInsertarSoapOut">
+    <wsdl:part name="parameters" element="tns:PantallasRolesInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="PantallasRolesEliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:PantallasRolesEliminar" />
+  </wsdl:message>
+  <wsdl:message name="PantallasRolesEliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:PantallasRolesEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="PantallasRolesConsultaDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:PantallasRolesConsultaDetalle" />
+  </wsdl:message>
+  <wsdl:message name="PantallasRolesConsultaDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:PantallasRolesConsultaDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosInsertarSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposCambiosInsertar" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosInsertarSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposCambiosInsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposCambiosConsultar" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposCambiosConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosTotalFilasSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposCambiosTotalFilas" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosTotalFilasSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposCambiosTotalFilasResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosConsultarBCCRSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposCambiosConsultarBCCR" />
+  </wsdl:message>
+  <wsdl:message name="TiposCambiosConsultarBCCRSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposCambiosConsultarBCCRResponse" />
+  </wsdl:message>
+  <wsdl:message name="MensajesConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:MensajesConsulta" />
+  </wsdl:message>
+  <wsdl:message name="MensajesConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:MensajesConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesModificarSoapIn">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesModificar" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesModificarSoapOut">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesConsultarSoapIn">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesConsultar" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesConsultarSoapOut">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesConsultarDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesConsultarDetalle" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesConsultarDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesConsultarDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesTotalFilasSoapIn">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesTotalFilas" />
+  </wsdl:message>
+  <wsdl:message name="ParametrosBienesTotalFilasSoapOut">
+    <wsdl:part name="parameters" element="tns:ParametrosBienesTotalFilasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SiganemSeguridadWSSoap">
+    <wsdl:operation name="IndicesPreciosConsumidorInsertar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: INSERTA UN REGISTRO DE INDICES PRECIOS CONSUMIDOR</wsdl:documentation>
+      <wsdl:input message="tns:IndicesPreciosConsumidorInsertarSoapIn" />
+      <wsdl:output message="tns:IndicesPreciosConsumidorInsertarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorConsultar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE INDICES PRECIOS CONSUMIDOR</wsdl:documentation>
+      <wsdl:input message="tns:IndicesPreciosConsumidorConsultarSoapIn" />
+      <wsdl:output message="tns:IndicesPreciosConsumidorConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorTotalFilas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL TOTAL DE LOS REGISTROS DEL SET DE DATOS DE INDICES PRECIOS CONSUMIDOR</wsdl:documentation>
+      <wsdl:input message="tns:IndicesPreciosConsumidorTotalFilasSoapIn" />
+      <wsdl:output message="tns:IndicesPreciosConsumidorTotalFilasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorConsultarBCCR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE LA ULTIMA CONSULTA DE INDICES PRECIOS CONSUMIDOR AL BCCR</wsdl:documentation>
+      <wsdl:input message="tns:IndicesPreciosConsumidorConsultarBCCRSoapIn" />
+      <wsdl:output message="tns:IndicesPreciosConsumidorConsultarBCCRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerAcceso">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DEL USUARIO VALIDANDO EL ACCESO</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosObtenerAccesoSoapIn" />
+      <wsdl:output message="tns:UsuariosObtenerAccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerIntentos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DEL USUARIO CONSULTANDO LOS INTENTOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosObtenerIntentosSoapIn" />
+      <wsdl:output message="tns:UsuariosObtenerIntentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosRegistrarIntentos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DEL USUARIO VALIDANDO EL ACCESO</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosRegistrarIntentosSoapIn" />
+      <wsdl:output message="tns:UsuariosRegistrarIntentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosRegistrarConexion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DEL USUARIO VALIDANDO EL ACCESO</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosRegistrarConexionSoapIn" />
+      <wsdl:output message="tns:UsuariosRegistrarConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosValidarAcceso">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE SI EL USUARIO TIENE PERMISOS PARA INGRESAR A UNA PAGINA</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosValidarAccesoSoapIn" />
+      <wsdl:output message="tns:UsuariosValidarAccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosValidarAccesoCodigo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE SI EL USUARIO TIENE PERMISOS PARA INGRESAR A UNA PAGINA POR CODIGO DE PAGINA</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosValidarAccesoCodigoSoapIn" />
+      <wsdl:output message="tns:UsuariosValidarAccesoCodigoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerRolUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DEL ROL DEL USUARIO</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosObtenerRolUsuarioSoapIn" />
+      <wsdl:output message="tns:UsuariosObtenerRolUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosInsertar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: INSERTA UN REGISTRO DE USUARIOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosInsertarSoapIn" />
+      <wsdl:output message="tns:UsuariosInsertarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosModificar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ACTUALIZA UN REGISTRO DE USUARIOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosModificarSoapIn" />
+      <wsdl:output message="tns:UsuariosModificarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosEliminar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ELIMINA UN REGISTRO DE USUARIOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosEliminarSoapIn" />
+      <wsdl:output message="tns:UsuariosEliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosConsultar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE USUARIOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosConsultarSoapIn" />
+      <wsdl:output message="tns:UsuariosConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosConsultarDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS FILTRADO DE USUARIOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosConsultarDetalleSoapIn" />
+      <wsdl:output message="tns:UsuariosConsultarDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosTotalFilas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL TOTAL DE LOS REGISTROS DEL SET DE DATOS DE USUARIOS</wsdl:documentation>
+      <wsdl:input message="tns:UsuariosTotalFilasSoapIn" />
+      <wsdl:output message="tns:UsuariosTotalFilasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesInsertar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: INSERTA UN REGISTRO DE TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesInsertarSoapIn" />
+      <wsdl:output message="tns:RolesInsertarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesModificar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ACTUALIZA UN REGISTRO DE TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesModificarSoapIn" />
+      <wsdl:output message="tns:RolesModificarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesEliminar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ELIMINA UN REGISTRO DE TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesEliminarSoapIn" />
+      <wsdl:output message="tns:RolesEliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesConsultar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesConsultarSoapIn" />
+      <wsdl:output message="tns:RolesConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesConsultarDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS FILTRADO DE TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesConsultarDetalleSoapIn" />
+      <wsdl:output message="tns:RolesConsultarDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesTotalFilas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL TOTAL DE LOS REGISTROS DEL SET DE DATOS DE TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesTotalFilasSoapIn" />
+      <wsdl:output message="tns:RolesTotalFilasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesUsuariosConsultar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE CANTIDAD DE USUARIOS POR TIPOS DE ROLES</wsdl:documentation>
+      <wsdl:input message="tns:RolesUsuariosConsultarSoapIn" />
+      <wsdl:output message="tns:RolesUsuariosConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PantallasConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS DE LOS ELEMENTOS PADRE</wsdl:documentation>
+      <wsdl:input message="tns:PantallasConsultaSoapIn" />
+      <wsdl:output message="tns:PantallasConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PantallasConsultarDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS FILTRADO DE ACTIVOS</wsdl:documentation>
+      <wsdl:input message="tns:PantallasConsultarDetalleSoapIn" />
+      <wsdl:output message="tns:PantallasConsultarDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesInsertar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: INSERTA UN REGISTRO DE PANTALLAS SEGUN ROLES</wsdl:documentation>
+      <wsdl:input message="tns:PantallasRolesInsertarSoapIn" />
+      <wsdl:output message="tns:PantallasRolesInsertarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesEliminar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ELIMINA UN REGISTRO DE PANTALLAS SEGUN ROLES</wsdl:documentation>
+      <wsdl:input message="tns:PantallasRolesEliminarSoapIn" />
+      <wsdl:output message="tns:PantallasRolesEliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesConsultaDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: CONSULTA UN REGISTRO DE PANTALLAS SEGUN ROLES</wsdl:documentation>
+      <wsdl:input message="tns:PantallasRolesConsultaDetalleSoapIn" />
+      <wsdl:output message="tns:PantallasRolesConsultaDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosInsertar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: INSERTA UN REGISTRO DE TIPOS CAMBIOS</wsdl:documentation>
+      <wsdl:input message="tns:TiposCambiosInsertarSoapIn" />
+      <wsdl:output message="tns:TiposCambiosInsertarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosConsultar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE TIPOS CAMBIOS</wsdl:documentation>
+      <wsdl:input message="tns:TiposCambiosConsultarSoapIn" />
+      <wsdl:output message="tns:TiposCambiosConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosTotalFilas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL TOTAL DE LOS REGISTROS DEL SET DE DATOS DE TIPOS CAMBIOS</wsdl:documentation>
+      <wsdl:input message="tns:TiposCambiosTotalFilasSoapIn" />
+      <wsdl:output message="tns:TiposCambiosTotalFilasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosConsultarBCCR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE LA ULTIMA CONSULTA DE TIPOS CAMBIOS AL BCCR</wsdl:documentation>
+      <wsdl:input message="tns:TiposCambiosConsultarBCCRSoapIn" />
+      <wsdl:output message="tns:TiposCambiosConsultarBCCRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajesConsulta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE ACTIVOS</wsdl:documentation>
+      <wsdl:input message="tns:MensajesConsultaSoapIn" />
+      <wsdl:output message="tns:MensajesConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesModificar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ACTUALIZA UN REGISTRO DE PARAMETROS DEL SISTEMA</wsdl:documentation>
+      <wsdl:input message="tns:ParametrosBienesModificarSoapIn" />
+      <wsdl:output message="tns:ParametrosBienesModificarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesConsultar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS COMPLETO DE PARAMETROS DEL SISTEMA</wsdl:documentation>
+      <wsdl:input message="tns:ParametrosBienesConsultarSoapIn" />
+      <wsdl:output message="tns:ParametrosBienesConsultarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesConsultarDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL SET DE DATOS FILTRADO DE PARAMETROS DEL SISTEMA</wsdl:documentation>
+      <wsdl:input message="tns:ParametrosBienesConsultarDetalleSoapIn" />
+      <wsdl:output message="tns:ParametrosBienesConsultarDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesTotalFilas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL TOTAL DE LOS REGISTROS DEL SET DE DATOS DE PARAMETROS DEL SISTEMA</wsdl:documentation>
+      <wsdl:input message="tns:ParametrosBienesTotalFilasSoapIn" />
+      <wsdl:output message="tns:ParametrosBienesTotalFilasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SiganemSeguridadWSSoap" type="tns:SiganemSeguridadWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IndicesPreciosConsumidorInsertar">
+      <soap:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorConsultar">
+      <soap:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorConsultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorTotalFilas">
+      <soap:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorTotalFilas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorConsultarBCCR">
+      <soap:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorConsultarBCCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerAcceso">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosObtenerAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerIntentos">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosObtenerIntentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosRegistrarIntentos">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosRegistrarIntentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosRegistrarConexion">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosRegistrarConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosValidarAcceso">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosValidarAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosValidarAccesoCodigo">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosValidarAccesoCodigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerRolUsuario">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosObtenerRolUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosInsertar">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosModificar">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosEliminar">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosConsultar">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosConsultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosConsultarDetalle">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosTotalFilas">
+      <soap:operation soapAction="http://bancobcr.com/UsuariosTotalFilas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesInsertar">
+      <soap:operation soapAction="http://bancobcr.com/RolesInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesModificar">
+      <soap:operation soapAction="http://bancobcr.com/RolesModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesEliminar">
+      <soap:operation soapAction="http://bancobcr.com/RolesEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesConsultar">
+      <soap:operation soapAction="http://bancobcr.com/RolesConsultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesConsultarDetalle">
+      <soap:operation soapAction="http://bancobcr.com/RolesConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesTotalFilas">
+      <soap:operation soapAction="http://bancobcr.com/RolesTotalFilas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesUsuariosConsultar">
+      <soap:operation soapAction="http://bancobcr.com/RolesUsuariosConsultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasConsulta">
+      <soap:operation soapAction="http://bancobcr.com/PantallasConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasConsultarDetalle">
+      <soap:operation soapAction="http://bancobcr.com/PantallasConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesInsertar">
+      <soap:operation soapAction="http://bancobcr.com/PantallasRolesInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesEliminar">
+      <soap:operation soapAction="http://bancobcr.com/PantallasRolesEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesConsultaDetalle">
+      <soap:operation soapAction="http://bancobcr.com/PantallasRolesConsultaDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosInsertar">
+      <soap:operation soapAction="http://bancobcr.com/TiposCambiosInsertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosConsultar">
+      <soap:operation soapAction="http://bancobcr.com/TiposCambiosConsultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosTotalFilas">
+      <soap:operation soapAction="http://bancobcr.com/TiposCambiosTotalFilas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosConsultarBCCR">
+      <soap:operation soapAction="http://bancobcr.com/TiposCambiosConsultarBCCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajesConsulta">
+      <soap:operation soapAction="http://bancobcr.com/MensajesConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesModificar">
+      <soap:operation soapAction="http://bancobcr.com/ParametrosBienesModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesConsultar">
+      <soap:operation soapAction="http://bancobcr.com/ParametrosBienesConsultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesConsultarDetalle">
+      <soap:operation soapAction="http://bancobcr.com/ParametrosBienesConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesTotalFilas">
+      <soap:operation soapAction="http://bancobcr.com/ParametrosBienesTotalFilas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SiganemSeguridadWSSoap12" type="tns:SiganemSeguridadWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IndicesPreciosConsumidorInsertar">
+      <soap12:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorInsertar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorConsultar">
+      <soap12:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorTotalFilas">
+      <soap12:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorTotalFilas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicesPreciosConsumidorConsultarBCCR">
+      <soap12:operation soapAction="http://bancobcr.com/IndicesPreciosConsumidorConsultarBCCR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerAcceso">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosObtenerAcceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerIntentos">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosObtenerIntentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosRegistrarIntentos">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosRegistrarIntentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosRegistrarConexion">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosRegistrarConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosValidarAcceso">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosValidarAcceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosValidarAccesoCodigo">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosValidarAccesoCodigo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosObtenerRolUsuario">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosObtenerRolUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosInsertar">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosInsertar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosModificar">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosModificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosEliminar">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosEliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosConsultar">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosConsultarDetalle">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosTotalFilas">
+      <soap12:operation soapAction="http://bancobcr.com/UsuariosTotalFilas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesInsertar">
+      <soap12:operation soapAction="http://bancobcr.com/RolesInsertar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesModificar">
+      <soap12:operation soapAction="http://bancobcr.com/RolesModificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesEliminar">
+      <soap12:operation soapAction="http://bancobcr.com/RolesEliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesConsultar">
+      <soap12:operation soapAction="http://bancobcr.com/RolesConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesConsultarDetalle">
+      <soap12:operation soapAction="http://bancobcr.com/RolesConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesTotalFilas">
+      <soap12:operation soapAction="http://bancobcr.com/RolesTotalFilas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesUsuariosConsultar">
+      <soap12:operation soapAction="http://bancobcr.com/RolesUsuariosConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasConsulta">
+      <soap12:operation soapAction="http://bancobcr.com/PantallasConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasConsultarDetalle">
+      <soap12:operation soapAction="http://bancobcr.com/PantallasConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesInsertar">
+      <soap12:operation soapAction="http://bancobcr.com/PantallasRolesInsertar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesEliminar">
+      <soap12:operation soapAction="http://bancobcr.com/PantallasRolesEliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PantallasRolesConsultaDetalle">
+      <soap12:operation soapAction="http://bancobcr.com/PantallasRolesConsultaDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosInsertar">
+      <soap12:operation soapAction="http://bancobcr.com/TiposCambiosInsertar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosConsultar">
+      <soap12:operation soapAction="http://bancobcr.com/TiposCambiosConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosTotalFilas">
+      <soap12:operation soapAction="http://bancobcr.com/TiposCambiosTotalFilas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposCambiosConsultarBCCR">
+      <soap12:operation soapAction="http://bancobcr.com/TiposCambiosConsultarBCCR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajesConsulta">
+      <soap12:operation soapAction="http://bancobcr.com/MensajesConsulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesModificar">
+      <soap12:operation soapAction="http://bancobcr.com/ParametrosBienesModificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesConsultar">
+      <soap12:operation soapAction="http://bancobcr.com/ParametrosBienesConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesConsultarDetalle">
+      <soap12:operation soapAction="http://bancobcr.com/ParametrosBienesConsultarDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametrosBienesTotalFilas">
+      <soap12:operation soapAction="http://bancobcr.com/ParametrosBienesTotalFilas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiganemSeguridadWS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB SEGURIDAD</wsdl:documentation>
+    <wsdl:port name="SiganemSeguridadWSSoap" binding="tns:SiganemSeguridadWSSoap">
+      <soap:address location="http://desiganem-app:12000/SiganemSeguridadWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SiganemSeguridadWSSoap12" binding="tns:SiganemSeguridadWSSoap12">
+      <soap12:address location="http://desiganem-app:12000/SiganemSeguridadWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

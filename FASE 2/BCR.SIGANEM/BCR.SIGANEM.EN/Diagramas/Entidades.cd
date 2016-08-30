@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BCR.SIGANEM.EN.BitacorasEntidad">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACAgAAAQAACAACBAQAEIAAAAEAABKAACIAAAQAAAgAA=</HashCode>
+      <FileName>Entidades\Bitacora\BitacorasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MensajesEntidad">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAQBIAQACAAgAAACAAAgAAAAAAEAAAAIAAAAACgA=</HashCode>
+      <FileName>Entidades\Mensajes\MensajesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TipoMensajesEntidad">
+    <Position X="2.25" Y="2" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAAQAAAgAAAAAAAAAAAgAAAAAAAAAAgAAAAAAACAA=</HashCode>
+      <FileName>Entidades\Mensajes\TipoMensajesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ParametrosConsultaEntidad">
+    <Position X="6.75" Y="2" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QEAAAQAAAACAAAAEIAAAAgAAAQAAAgAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Parametros\ParametrosConsultaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ParametrosTotalFilasEntidad">
+    <Position X="4.25" Y="2" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAEAAAAAgAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Parametros\ParametrosTotalFilasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PantallasEntidad">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAAmASSAAAAAAAVABAEeACAgAAAIAgLAEBECARQCAA=</HashCode>
+      <FileName>Entidades\Seguridad\PantallasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposRolesEntidad">
+    <Position X="7" Y="3.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEAySAAQAAAABABAMGAAAgAABAAggAABEQAAAABA=</HashCode>
+      <FileName>Entidades\Seguridad\TiposRolesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PantallasRolesEntidad">
+    <Position X="2.25" Y="3.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAEASSAAAAAAARABAMGAAAgAABIAhAAABEAAAAAAA=</HashCode>
+      <FileName>Entidades\Seguridad\PantallasRolesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.UsuariosEntidad">
+    <Position X="4.25" Y="3.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAEAySAAQAACCBAJAMGARAgAABAAgAiMFEARBAAxA=</HashCode>
+      <FileName>Entidades\Seguridad\UsuariosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ListaItemsBCREntidad">
+    <Position X="2.75" Y="5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQAABAAAAAAAAIAAAAAAABAQAAAAAAQAAAAAg=</HashCode>
+      <FileName>Entidades\Sesion\ListaItemsBCREntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.SessionBCREntidad">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEIAAAAIYAQAAAEAAAAAAABAQAgAAAAAABABAABAAg=</HashCode>
+      <FileName>Entidades\Sesion\SessionBCREntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ControlEntidad">
+    <Position X="5" Y="5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>SgBwAkkCiCAjIYIwIKBoAIBAQggAAAAKBQMiAMQwCQU=</HashCode>
+      <FileName>Entidades\Controles\ControlEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.NodoMenuEntidad">
+    <Position X="7.5" Y="5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAQAAAAACAAAAAIAAAA=</HashCode>
+      <FileName>Entidades\Controles\NodoMenuEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ListaEntidad">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAEAQAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Controles\ListaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.RespuestaEntidad">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAACAAAAAAAAAEQAAAAAAAAABEAA=</HashCode>
+      <FileName>Entidades\Mensajes\RespuestaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ParametrosBienesEntidad">
+    <Position X="4" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>WLpGFEzfzCrh2mEFGBQNfxkioFYCSEkGAAHkCACpNDA=</HashCode>
+      <FileName>Entidades\Seguridad\ParametrosBienesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ReportesEntidad">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAQEASSgAAAAACRABAFGAAAgAAAJAgEAABGAAAQAAA=</HashCode>
+      <FileName>Entidades\Reportes\ReportesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.SessionVariablesBCR">
+    <Position X="0.5" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAQEAAAAAAAAAEAAAAAAAAACAAACIYAAAAABA=</HashCode>
+      <FileName>Entidades\Sesion\SessionVariablesBCR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.VariablesSesionEntidad">
+    <Position X="2.75" Y="6.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAARAAAAAgAAEAAAABAAAAACAAAIAAAA=</HashCode>
+      <FileName>Entidades\Sesion\VariablesSesionEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.AppSettingEntidad">
+    <Position X="7.5" Y="6.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAgAAEAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Entidades\WinService\AppSettingEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.IndicadorEconomicoEntidad">
+    <Position X="5" Y="6.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIQAEASSAAAAQgABABAEGBAAggCAAAoAAABEEBAAAAA=</HashCode>
+      <FileName>Entidades\WinService\IndicadorEconomicoEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.RespuestaIndicadoresEntidad">
+    <Position X="0.5" Y="8" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAwAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAABE=</HashCode>
+      <FileName>Entidades\WinService\RespuestaIndicadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.IndicesPreciosConsumidorEntidad">
+    <Position X="2.75" Y="8" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAQAEASSAAAAAABRIBBEGAAEgQEAAggAAIBEAAAAQAg=</HashCode>
+      <FileName>Entidades\Seguridad\IndicesPreciosConsumidorEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposCambiosEntidad">
+    <Position X="5.25" Y="8" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACBFASSAIAAAAFBABAEOAAEgAAACAgAAABEAAAAgAA=</HashCode>
+      <FileName>Entidades\Seguridad\TiposCambiosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ArchivoDescargaEntidad">
+    <Position X="7.25" Y="8" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEASSAAAAAQCBABEEmAAAgAAIAAgACBBEQAAAAEA=</HashCode>
+      <FileName>Entidades\Procesos\ArchivoDescargaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ProcesosEntidad">
+    <Position X="2.75" Y="9.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEASSEQAAABABABgEGAAIgAAAAAgAAABEAAAAAAA=</HashCode>
+      <FileName>Entidades\Procesos\ProcesosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.BitacoraProcesosConsulta">
+    <Position X="5.25" Y="9.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAABAIAAAACAAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>Entidades\Procesos\BitacoraProcesosConsulta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.BitacoraProcesosDetalle">
+    <Position X="0.5" Y="9.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAACAAQAAAAEAAAAAAAIAAAAAIAEAAAAAAAA=</HashCode>
+      <FileName>Entidades\Procesos\BitacoraProcesosDetalle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

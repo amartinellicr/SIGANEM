@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BCR.SIGANEM.EN.ActivosEntidad" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgAgAAAAAAAAAQAAIAAAAAAAAAAAIAAAAAAACAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ActivosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.AplicablesEntidad" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAEAQAEAAAAAAAAAAAAAAAgAAAAAAE=</HashCode>
+      <FileName>Entidades\Mantenimientos\AplicablesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.VoltajesInstalacionesElectricasEntidad" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEEAAAAAAAAACQAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\VoltajesInstalacionesElectricasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CajasBreakersEntidad" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAACAAAAAABAAAABAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CajasBreakersEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CanalizacionesElectricasEntidad" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAQAAAAAAAAIAAAABAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CanalizacionesElectricasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CantidadesFincasEntidad" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CantidadesFincasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CantonesEntidad" Collapsed="true">
+    <Position X="0.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIEAAAAAAAAAAAAIAAAACIAgAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CantonesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CategoriasCalificacionesEntidad" Collapsed="true">
+    <Position X="2.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAQIIAEAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CategoriasCalificacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CerrajeriasPiezasSanitariasEntidad" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAgAAGEAAAAAAAAAAI=</HashCode>
+      <FileName>Entidades\Mantenimientos\CerrajeriasPiezasSanitariasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ClasesAeronavesEntidad" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAQAAAAAEAAAAAAAAAAAQAAAAAAAAIAIA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ClasesAeronavesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ClasesBuquesEntidad" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAEAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAAI=</HashCode>
+      <FileName>Entidades\Mantenimientos\ClasesBuquesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ClasesGarantiasPrt17Entidad" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAgAAAAAAAAAAAAgAAAAACAAAQBAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ClasesGarantiasPrt17Entidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.DelimitacionesLinderosEntidad" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAggAAIAAAAAAAIBAAAAAACAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\DelimitacionesLinderosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.DerechosEntidad" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAACAAAAAAQAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\DerechosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.DistritosEntidad" Collapsed="true">
+    <Position X="0.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAEAAAAACAIAAAAAAABBAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\DistritosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EmisionesInstrumentosEntidad" Collapsed="true">
+    <Position X="2.25" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAIAAAkhIASgAABEAZFBAwAgwCAlAACAABogIRE=</HashCode>
+      <FileName>Entidades\Mantenimientos\EmisionesInstrumentosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EmisoresEntidad" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAgAAAQAAAAAAAAAAAAAACAAAAAAAAAAAQE=</HashCode>
+      <FileName>Entidades\Mantenimientos\EmisoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EnchapesEntidad" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAKAAgAABAAAIAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EnchapesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EnfoquesEntidad" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAABAAIAAAAAAAAAABAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EnfoquesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EntidadesEntidad" Collapsed="true">
+    <Position X="0.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiACAAIEAAAgBBAAIAAAABAAAAAEMAAAAAAACAAAYA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EntidadesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EscalerasEntidad" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAABgAAAAgAAAAAAAAAAAARAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EscalerasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EstadosAvaluosEntidad" Collapsed="true">
+    <Position X="4" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAAEIAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EstadosAvaluosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EstadosInstalacionesElectricasEntidad" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAQAAAAAAAIAAAAQAAAAAACAQAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EstadosInstalacionesElectricasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.FormasEntidad" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAACAAAIAAIAAABAAAAAIA=</HashCode>
+      <FileName>Entidades\Mantenimientos\FormasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GradosGravamenesEntidad" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAgABAAAAAAIAAAAgCAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\GradosGravamenesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GruposFinancierosEntidad" Collapsed="true">
+    <Position X="0.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAIAAAgAAAAAAAAAAAAAAIAAAAAAAAEA=</HashCode>
+      <FileName>Entidades\Mantenimientos\GruposFinancierosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.IndicadoresMonedasExtranjerasEntidad" Collapsed="true">
+    <Position X="2.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIBAABAAAAAAAAAAAABAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\IndicadoresMonedasExtranjerasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.InstrumentosEntidad" Collapsed="true">
+    <Position X="4" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAABAAAAAAAAAIEAAAAAQAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\InstrumentosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.InterruptoresInstalacionesElectricasEntidad" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAEAAAAAAAAAAAAABAQgAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\InterruptoresInstalacionesElectricasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.LotesSegregadosEntidad" Collapsed="true">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAACAABCAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\LotesSegregadosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MaterialesViasAccesoEntidad" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAgAACAAAAAAAAAAAAAgAAAIAIAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MaterialesViasAccesoEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MonedasEntidad" Collapsed="true">
+    <Position X="2.25" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAgAAAAIAAAAAAABCAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MonedasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.NivelesSocioeconomicosEntidad" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAgAAQAAAAAAAAAAAAIAAAQAAAAAAAAAAQ=</HashCode>
+      <FileName>Entidades\Mantenimientos\NivelesSocioeconomicosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.NivelesTerrenoEntidad" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAJAACBAAAAAAQAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\NivelesTerrenoEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.NumerosLineasEntidad" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAACAAAAAAAAAAIQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\NumerosLineasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PendientesEntidad" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAIAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAABBEAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\PendientesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PinturasEntidad" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAgACAAAAAIACAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\PinturasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ProvinciasEntidad" Collapsed="true">
+    <Position X="0.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAIAAAAAAAACAAIAAAAAAAAAAQIAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ProvinciasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PuntosReferenciasEntidad" Collapsed="true">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAAAAgAAAABAAAAAAQAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\PuntosReferenciasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.RegimenesFiscalizacionesEntidad" Collapsed="true">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAACAgAAAIIACAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\RegimenesFiscalizacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.SeccionesEntidad" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAEAAAAAAAAAABACAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\SeccionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.SituacionesEntidad" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAEAgAAAAAAAAAAAAgEAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\SituacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposEntidadesEntidad" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAABAIAAAAAAAAAACAAAAAAAAAAAAAABAAAAAEAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposEntidadesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposGarantiasEntidad" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAABIAAAACAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposGarantiasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposGruposFinancierosEntidad" Collapsed="true">
+    <Position X="0.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAAABAAAAAAACAAAAAAIAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposGruposFinancierosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposInstrumentosEntidad" Collapsed="true">
+    <Position X="4" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIACAAAAEAAAAAAAAAAABAACAAAAAABA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposInstrumentosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposMitigadoresRiesgosEntidad" Collapsed="true">
+    <Position X="2.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YACABoAAAACAAAAAAwAAAAgAAEQAAIAAAAAAAAAAAgA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposMitigadoresRiesgosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposMonedasEntidad" Collapsed="true">
+    <Position X="2.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAKAAASAAAAAAACAAAAAAAQAAAoAQgAAACAAAgA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposMonedasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposZonasEntidad" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAQAQBAAAAAAAAAAAAABAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposZonasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TopografiasEntidad" Collapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACIAAAAAAAEAAAAAAEAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TopografiasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.UnidadesEntidad" Collapsed="true">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAIAAAAEAAAAAAEAAAAhAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\UnidadesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.UsosSuelosActualEntornosEntidad" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAgAAAAAAAAAAAAAAAAAABAAAgIAAAAAgAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\UsosSuelosActualEntornosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.VerjasEntidad" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAABAABAAAAAIAAAAAAAAAAAAQCAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\VerjasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ViasAccesoEntidad" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAACAIACAAAAAgAAAAAAAAAAACAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ViasAccesoEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.BienesValorarEntidad" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAgAAAAAAAAAAAAAAgAAAAAEAoA=</HashCode>
+      <FileName>Entidades\Mantenimientos\BienesValorarEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CanoasBajantesEntidad" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAACAAAAAAAAAAgAACAABAAAIAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CanoasBajantesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CategoriasRiesgosDeudoresEntidad" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACABBAAAAAAAIAAAAAAAAAAAAAABAAAE=</HashCode>
+      <FileName>Entidades\Mantenimientos\CategoriasRiesgosDeudoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CielosRasosEntidad" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBAAAAAAAAAAAAAEAAAAAAAgAAAAAQAAAgAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CielosRasosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ClasesVehiculosEntidad" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAACAIgCAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ClasesVehiculosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CodigosDuplicadosEntidad" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAQCAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CodigosDuplicadosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CodigosHorizontalidadEntidad" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAACCAAQAAAAAAAAAAAABAAAAAAAAI=</HashCode>
+      <FileName>Entidades\Mantenimientos\CodigosHorizontalidadEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ColindantesEntidad" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAEAAAAAAAAQAAAAAAQCAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ColindantesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CubiertasTechosEntidad" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAQAAAAAAAAAACAEAAAAACEAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CubiertasTechosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.DecisionesEntidad" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAABAAAAAAAIBAAAAAAAIAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\DecisionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EntrepisosEntidad" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMJAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Entidades\Mantenimientos\EntrepisosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EstadosConstruccionesEntidad" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAEAAQAAAAAAAAAAQgAAAAAAAAAAACA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EstadosConstruccionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EstructurasTechosEntidad" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABCAAEAAAAAABAAAAAAAAAEIAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EstructurasTechosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.GruposRiesgosDeudoresEntidad" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAEAAAgAAAAAAAAAAAAAAAAAIAAAAAAAAoAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\GruposRiesgosDeudoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.IndicacionesAjustesAreasEntidad" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAQAAAAAABAAAAAEAAAAAQAAAAAAAI=</HashCode>
+      <FileName>Entidades\Mantenimientos\IndicacionesAjustesAreasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.IndicadoresGeneradoresDivisasEntidad" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABAAAAAAAAAAAEAAAAAAAAAAAAgAAAAAAAAQAABAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\IndicadoresGeneradoresDivisasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MaterialesConstruccionesPredominantesEntidad" Collapsed="true">
+    <Position X="5.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAECAAAAgAAAAAAAAgAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MaterialesConstruccionesPredominantesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MaterialesExternosInternosEntidad" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAMAAAAAAAAAAAAAAAgAAAQAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MaterialesExternosInternosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MaterialesPisosEntidad" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAIAAAAAAAgAAAAAAAAAAAAAAAAAAEAAABAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MaterialesPisosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MaterialesPuertasEntidad" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAgAAAAAgABAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MaterialesPuertasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.OrientacionesEntidad" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAICAAAAAEABAAAAAAAQABAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\OrientacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PlanesInversionesEntidad" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAAAAAAAAAAAQAAAAAAAAAIAAACAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Entidades\Mantenimientos\PlanesInversionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.SistemasConstructivosEntidad" Collapsed="true">
+    <Position X="5.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAEAAAIAAACAAAAAAIAAgAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\SistemasConstructivosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.SolicitantesEntidad" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAEAAACAAABAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\SolicitantesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposAdjudicacionesBienesEntidad" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAIAAAAAABAAAAAAAAAAAIAAAAAAAIACAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposAdjudicacionesBienesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposAsignacionesCalificacionesEntidad" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAACAQCAAAAAAAAAAAAIAAAAIAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposAsignacionesCalificacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposBienesEntidad" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAIAAAAAAAAAAAIAoAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposBienesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposCapacidadesPagosEntidad" Collapsed="true">
+    <Position X="5.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACACAAIAAAIAAAABAAAAAAg=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposCapacidadesPagosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposCarterasEntidad" Collapsed="true">
+    <Position X="7.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABAAAAAAAAAIQAAAAAEAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposCarterasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposCasosEntidad" Collapsed="true">
+    <Position X="9.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAEAAAAAAAAAAAAAAAAAAACAAAgAAACAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposCasosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposClasificacionesInstrumentosEntidad" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAEAAAAAgAgAAAACAAAAAAAIAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposClasificacionesInstrumentosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposComportamientosPagosEntidad" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAADAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAECAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposComportamientosPagosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposConstruccionesEntidad" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAIAAAQAAAAAAAAAAAAAAAAgACAACAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposConstruccionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposDocumentosLegalesEntidad" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAAAAQBAAAABIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposDocumentosLegalesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposEmisoresEntidad" Collapsed="true">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQEAAAAAAABAAAACAAAIAAAAAAAEAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposEmisoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposGradosEntidad" Collapsed="true">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAgAEAQAAIAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposGradosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposIndicadoresInscripcionesEntidad" Collapsed="true">
+    <Position X="9.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQEAAAAAIAAAAAABAAAAAABAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposIndicadoresInscripcionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposIngresosEntidad" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAEAAAAAAABBAAAEAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposIngresosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposInmueblesEntidad" Collapsed="true">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAABAAAAgAAAAAAEAEACAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposInmueblesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposLiquidezEntidad" Collapsed="true">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAABAAAQA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposLiquidezEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposPersonasEntidad" Collapsed="true">
+    <Position X="7.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAQAAAAAAABgA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposPersonasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposPolizasEntidad" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAAgAAgABAQA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposPolizasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.VentanasEntidad" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAIAAAAgAAAAAAAAIAAAAAgAAAAAAAAAAQAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\VentanasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposEstadosAvaluosEntidad" Collapsed="true">
+    <Position X="4" Y="15.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAEAAgAAAAAAABAAAAAAAAQAAAAAACAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposEstadosAvaluosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ParametrosConsultaEntidad" Collapsed="true">
+    <Position X="2.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAQAAAACAAAAEIAAAAgAAAQAAAgAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Parametros\ParametrosConsultaEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ParametrosTotalFilasEntidad" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAEAAAAAgAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Parametros\ParametrosTotalFilasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TenenciasPrt15Entidad" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAACAAAQAAg=</HashCode>
+      <FileName>Entidades\Mantenimientos\TenenciasPrt15Entidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TenenciasPrt17Entidad" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAgAAAACAAAAAAAAgAAAAAAAAAAAAAABAAAI=</HashCode>
+      <FileName>Entidades\Mantenimientos\TenenciasPrt17Entidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.MaterialesExternosTapichelesEntidad" Collapsed="true">
+    <Position X="9.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAgAAAAAAACQAAAAEAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\MaterialesExternosTapichelesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.NotariosEntidad" Collapsed="true">
+    <Position X="5.75" Y="14.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gIAAAAAAAACAAAAAAAAIAAAAAgAIAACAAEAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\NotariosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ZonasTasadoresEntidad" Collapsed="true">
+    <Position X="5.75" Y="11.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAABAAEAAAEAgAAAQAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ZonasTasadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CalificacionesEmpresasCalificadorasEntidad" Collapsed="true">
+    <Position X="4" Y="19.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgAoAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CalificacionesEmpresasCalificadorasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CaracteristicasTasadoresEntidad" Collapsed="true">
+    <Position X="9.25" Y="15.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIgAAAgAAAAAAEAAAAAAACAAQAAIACIAIAAAAAiAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CaracteristicasTasadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.CategoriasRiesgosEmpresasCalificadorasEntidad" Collapsed="true">
+    <Position X="4" Y="12.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAEQAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\CategoriasRiesgosEmpresasCalificadorasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.DistribucionesZonasTasadoresEntidad" Collapsed="true">
+    <Position X="0.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAAAAAAAAABEAAAAAAAAAAAAAAAAAAEAAAAAIAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\DistribucionesZonasTasadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.EmpresasCalificadorasEntidad" Collapsed="true">
+    <Position X="4" Y="18.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAQIIgAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\EmpresasCalificadorasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.FiscalizadoresEntidad" Collapsed="true">
+    <Position X="7.5" Y="14.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAFACAAAAAAAAAAAAAAAAAAABAAAACAIABAAE=</HashCode>
+      <FileName>Entidades\Mantenimientos\FiscalizadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.PlazosCalificacionesEntidad" Collapsed="true">
+    <Position X="4" Y="17.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAAgAAAACAAAAAAAAAAAAAAAAAAAAAAAEEAAAAQAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\PlazosCalificacionesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ReportesRolesEntidad" Collapsed="true">
+    <Position X="7.5" Y="12.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAICAAAgAAAAAAAAAAAAAIBAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ReportesRolesEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.ReportesSeguiEntidad" Collapsed="true">
+    <Position X="5.75" Y="12.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAQAAAAAgAAAAAAAACAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\ReportesSeguiEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TasadoresEntidad" Collapsed="true">
+    <Position X="9.25" Y="14.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAwAAAAIEAAAAAAAAAAAAAAgAABAAABAAAACAIAAACA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TasadoresEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposAvalesFianzasEntidad" Collapsed="true">
+    <Position X="9.25" Y="12.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAIAAAggAgAAAAAABAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposAvalesFianzasEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposIdentificacionesRUCEntidad" Collapsed="true">
+    <Position X="11" Y="12.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACQAAAAEAAAAAAAAAAAAABEAAAAAAAAAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposIdentificacionesRUCEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BCR.SIGANEM.EN.TiposServiciosEntidad" Collapsed="true">
+    <Position X="5.75" Y="13.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EgAAIAgAgAAAAAAAAAACAAAAAAAAAIAAAAAAAAgAAAA=</HashCode>
+      <FileName>Entidades\Mantenimientos\TiposServiciosEntidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,184 @@
+﻿/***************** FONDO *****************/
+.body
+{
+    background-color: #F7F8FA;
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    vertical-align:top;
+    font-family: Verdana;
+    font-size: 11px;
+    bottom:0px;
+    vertical-align:bottom;
+    display:block;
+}
+
+/***************** ENCABEZADO *****************/
+.tablePage
+{
+    border: none;
+    border-collapse: collapse;
+    width:100%;
+}
+
+.divControls
+{
+    background-color: #F7F8FA;
+    height: 100%;
+    width: 100%
+}
+
+.tdImage
+{
+    text-align: left;
+    vertical-align:middle;
+    width: 8%;
+}
+
+.tdTitle
+{
+    text-align: left;
+    vertical-align:middle;
+    width: 92%;
+}
+
+.titlePage
+{
+    color: #A5ACB5;
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+.titlePage2
+{
+    color: #000000;
+    font-family: Verdana;
+    font-size: 12px;
+    font-weight:bold;
+}
+
+/***************** FORMULARIO *****************/
+
+.tableForm
+{
+    border: none;
+    width:100%;
+    vertical-align: top;
+}
+
+.titleForm
+{
+    color: #798FA5;
+    font-family: Verdana;
+    font-size: 13px;
+    font-weight:bold;
+}
+
+.titleForm2{
+    color: #000000;
+    font-family: Verdana;
+    font-size: 12px;
+    font-weight:bold;
+}
+
+.tdLine
+{
+    border-bottom: 1px solid #798FA5;
+    vertical-align: top;
+}
+
+.tdLineSub
+{
+    border-bottom: 1px solid #A5ACB5;
+    vertical-align: top;
+}
+
+
+
+/***************** BARRA DE MENSAJES *****************/
+
+.divBarraMensaje{
+    background-color: #FEE599; 
+    text-align: left; 
+    vertical-align: middle;
+    border: 1px solid #FFCE39;
+    width: 99.9%;
+    height: 100%;
+}
+
+.etiquetaBarraMensajeError
+{
+    font-family: Verdana;
+    color: #FF0000;
+    font-weight: bold;
+}
+ 
+.etiquetaBarraMensajeExito
+{
+    font-family: Verdana;
+    color: #00CC00;
+    font-weight: bold;
+}
+
+
+/********************************************/
+body, form
+{
+    height: 100%; 
+    width: 100%; 
+    margin: 0px 0px 0px 0px;
+}
+
+#divRibbon
+{
+    height: 137px; 
+    width: 100%; 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    background-color: #E8ECF0
+}
+
+#divContenido
+{
+    position: absolute; 
+    top: 137px; 
+    left: 0; 
+    bottom: 0px; 
+    right: 0
+}
+
+#divContenidoSecciones
+{
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    bottom: 0px; 
+    right: 0; 
+    background-color: #E8ECF0; 
+    float: left; 
+    width: 186px
+}
+
+#divContenidoDatos
+{
+    position: absolute; 
+    top: 0px; 
+    left: 186px; 
+    bottom: 0px; 
+    right: 0; 
+    background-color: #E8ECF0; 
+    padding: 10px;
+}
+
+#divContenidoDatosControles
+{
+    background-color: #F7F8FA; 
+    position: absolute; 
+    top: 3px; 
+    left: 3px; 
+    bottom: 36px; 
+    right: 3px; 
+    border: 1px solid #C0C0C0; 
+    overflow: scroll;
+}

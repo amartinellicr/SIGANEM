@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Interfaces de Integración con el Registro Único de Clientes</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ObtenerCedulaSICC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoConversion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCedulaSICCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerCedulaSICCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteSICAD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipoPersona" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idSicc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteSICADResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarClienteSICADResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerInfoCedulas_Cajero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCedula_Cajero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerInfoCedulas_CajeroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerInfoCedulas_CajeroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCedulasSICC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCedulasSICCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCedulasSICCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoRespuesta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeXML" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerUsuarioSICC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioSICCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuarioSICCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteFisico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteFisicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplicarClienteFisicoResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteJuridico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteJuridicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplicarClienteJuridicoResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPersonaRUC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPersonaRUCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPersonaRUCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarProspecto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarProspectoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplicarProspectoResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteFisicoSISTAR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteFisicoSISTARResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplicarClienteFisicoSISTARResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteJuridicoSISTAR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteJuridicoSISTARResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplicarClienteJuridicoSISTARResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteSICC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplicarClienteSICCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplicarClienteSICCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteRUC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteRUCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarClienteRUCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteSICC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteSICCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarClienteSICCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteBCRGarantias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoFormato" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoPersona" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteBCRGarantiasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarClienteBCRGarantiasResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosGestionCobro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXMLCedulasEntrada" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosGestionCobroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDatosGestionCobroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarClienteCOMEX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarClienteCOMEXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarClienteCOMEXResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCatalogo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCodigoCatalogo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCatalogoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCatalogoResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCedulaSICCFuncionario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerCedulaSICCFuncionarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerCedulaSICCFuncionarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarClientesRUC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pApellido1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pApellido2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRazonSocial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pFiltro" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pTipoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarClientesRUCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarClientesRUCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPersonaCajas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPersonaCajasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPersonaCajasResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MantenimientoPersonaRUC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nAccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoIdentificacion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPais" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelefonoHabitacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelefonoMovil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelefonoTrabajo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFechaVto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLugarNacimiento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSectorEconomico" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nActividadEconomica" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOcupacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProfesion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nEstadoCivil" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strApartadoPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProvincia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCanton" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDistrito" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCodigoPostal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDireccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strApellido1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strApellido2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSexo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCedulaFuncionario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nOficinaCreacion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNombreFuncionario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MantenimientoPersonaRUCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MantenimientoPersonaRUCResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCuentasCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCuentasClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCuentasClienteResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInformacionCuentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nCodConcepto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCodOficina" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nCodCuenta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTipoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInformacionCuentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInformacionCuentasResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCDPSCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCDPSClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCDPSClienteResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInformacionCDPS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nCodCDP" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInformacionCDPSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInformacionCDPSResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarClienteROE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTIpoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCedulaCliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoConversion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarClienteROEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarClienteROEResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCedulas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoBusqueda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoIdentificacion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentitificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCedulasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarCedulasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarNumerosOperacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarNumerosOperacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarNumerosOperacionResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerNombresImagenesDigitalizadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCedulaCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerNombresImagenesDigitalizadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerNombresImagenesDigitalizadasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRutaImagenDigitalizada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strIDImagen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRutaImagenDigitalizadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRutaImagenDigitalizadaResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidarCedulaSINPE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nTipoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarCedulaSINPEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarCedulaSINPEResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSupervisionCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoIdentificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumeroIdentificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSupervisionClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerSupervisionClienteResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerCedulaSICCSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerCedulaSICC" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCedulaSICCSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerCedulaSICCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteSICADSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarClienteSICAD" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteSICADSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarClienteSICADResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoCedulas_CajeroSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoCedulas_Cajero" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoCedulas_CajeroSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoCedulas_CajeroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCedulasSICCSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCedulasSICC" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCedulasSICCSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCedulasSICCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSICCSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioSICC" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSICCSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioSICCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteFisicoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteFisico" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteFisicoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteFisicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteJuridicoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteJuridico" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteJuridicoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteJuridicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPersonaRUCSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPersonaRUC" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPersonaRUCSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPersonaRUCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarProspectoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplicarProspecto" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarProspectoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplicarProspectoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteFisicoSISTARSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteFisicoSISTAR" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteFisicoSISTARSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteFisicoSISTARResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteJuridicoSISTARSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteJuridicoSISTAR" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteJuridicoSISTARSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteJuridicoSISTARResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteSICCSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteSICC" />
+  </wsdl:message>
+  <wsdl:message name="ReplicarClienteSICCSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplicarClienteSICCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteRUCSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarClienteRUC" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteRUCSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarClienteRUCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteSICCSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarClienteSICC" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteSICCSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarClienteSICCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBCRGarantiasSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarClienteBCRGarantias" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBCRGarantiasSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarClienteBCRGarantiasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosGestionCobroSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosGestionCobro" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosGestionCobroSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosGestionCobroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteCOMEXSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteCOMEX" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteCOMEXSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteCOMEXResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCatalogo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCatalogoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCatalogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCedulaSICCFuncionarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerCedulaSICCFuncionario" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerCedulaSICCFuncionarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerCedulaSICCFuncionarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarClientesRUCSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarClientesRUC" />
+  </wsdl:message>
+  <wsdl:message name="BuscarClientesRUCSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarClientesRUCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPersonaCajasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPersonaCajas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPersonaCajasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPersonaCajasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MantenimientoPersonaRUCSoapIn">
+    <wsdl:part name="parameters" element="tns:MantenimientoPersonaRUC" />
+  </wsdl:message>
+  <wsdl:message name="MantenimientoPersonaRUCSoapOut">
+    <wsdl:part name="parameters" element="tns:MantenimientoPersonaRUCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCuentasClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentasCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCuentasClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentasClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionCuentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionCuentas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionCuentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCDPSClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCDPSCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCDPSClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCDPSClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionCDPSSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionCDPS" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionCDPSSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionCDPSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteROESoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteROE" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteROESoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteROEResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCedulasSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarCedulas" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCedulasSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarCedulasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarNumerosOperacionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarNumerosOperacion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarNumerosOperacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarNumerosOperacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerNombresImagenesDigitalizadasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerNombresImagenesDigitalizadas" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerNombresImagenesDigitalizadasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerNombresImagenesDigitalizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRutaImagenDigitalizadaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerRutaImagenDigitalizada" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRutaImagenDigitalizadaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerRutaImagenDigitalizadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarCedulaSINPESoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarCedulaSINPE" />
+  </wsdl:message>
+  <wsdl:message name="ValidarCedulaSINPESoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarCedulaSINPEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSupervisionClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerSupervisionCliente" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSupervisionClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerSupervisionClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSRUCSoap">
+    <wsdl:operation name="ObtenerCedulaSICC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la cédula SICC a partir de una cédula RUC y viceversa</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerCedulaSICCSoapIn" />
+      <wsdl:output message="tns:ObtenerCedulaSICCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteSICAD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Valida la identificación proporcionada con la información de empadronamiento</wsdl:documentation>
+      <wsdl:input message="tns:ValidarClienteSICADSoapIn" />
+      <wsdl:output message="tns:ValidarClienteSICADSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoCedulas_Cajero">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la información de las cedulas RUC y SICC correspondientes a un cajero en AAATR.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerInfoCedulas_CajeroSoapIn" />
+      <wsdl:output message="tns:ObtenerInfoCedulas_CajeroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCedulasSICC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve todas las cédulas SICC relacionadas a una cédula RUC</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarCedulasSICCSoapIn" />
+      <wsdl:output message="tns:ConsultarCedulasSICCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSICC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la cédula SICC de un empleado BCR</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerUsuarioSICCSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuarioSICCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteFisico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente físico en la base de datos RUC. Recibe el tipo de identificación y el número de identificación como parámetros.</wsdl:documentation>
+      <wsdl:input message="tns:ReplicarClienteFisicoSoapIn" />
+      <wsdl:output message="tns:ReplicarClienteFisicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteJuridico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente jurídico en la base de datos RUC. Recibe el tipo de identificación y el número de identificación como parámetros.</wsdl:documentation>
+      <wsdl:input message="tns:ReplicarClienteJuridicoSoapIn" />
+      <wsdl:output message="tns:ReplicarClienteJuridicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPersonaRUC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente o prospecto en la base de datos RUC.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarPersonaRUCSoapIn" />
+      <wsdl:output message="tns:ConsultarPersonaRUCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarProspecto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del prospecto en la base de datos RUC. Recibe el tipo de identificación y el número de identificación como parámetros.</wsdl:documentation>
+      <wsdl:input message="tns:ReplicarProspectoSoapIn" />
+      <wsdl:output message="tns:ReplicarProspectoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteFisicoSISTAR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente físico en la base de datos RUC a partir de una cédula SICC. Recibe el tipo de identificación y el número de identificación como parámetros.</wsdl:documentation>
+      <wsdl:input message="tns:ReplicarClienteFisicoSISTARSoapIn" />
+      <wsdl:output message="tns:ReplicarClienteFisicoSISTARSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteJuridicoSISTAR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente jurídico en la base de datos RUC a partir de una cédula SICC. Recibe el tipo de identificación y el número de identificación como parámetros.</wsdl:documentation>
+      <wsdl:input message="tns:ReplicarClienteJuridicoSISTARSoapIn" />
+      <wsdl:output message="tns:ReplicarClienteJuridicoSISTARSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteSICC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente en la base de datos SICC.</wsdl:documentation>
+      <wsdl:input message="tns:ReplicarClienteSICCSoapIn" />
+      <wsdl:output message="tns:ReplicarClienteSICCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteRUC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente físico, jurídico, o del prospecto en RUC, segun sea la identificación recibida por parámetro.</wsdl:documentation>
+      <wsdl:input message="tns:ValidarClienteRUCSoapIn" />
+      <wsdl:output message="tns:ValidarClienteRUCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteSICC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información del cliente físico o jurídico en RUC, segun sea la identificación y tipo de identificacion SICC recibidas por parámetro.</wsdl:documentation>
+      <wsdl:input message="tns:ValidarClienteSICCSoapIn" />
+      <wsdl:output message="tns:ValidarClienteSICCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBCRGarantias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información de un cliente a partir de su cédula SICC o SUGEF.</wsdl:documentation>
+      <wsdl:input message="tns:ValidarClienteBCRGarantiasSoapIn" />
+      <wsdl:output message="tns:ValidarClienteBCRGarantiasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosGestionCobro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recibe un XML con una serie de cédulas SICC y el método retornará otro XML con la información de los telefonos y un indicador de si es cliente es empleado según se encuentre en RUC.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerDatosGestionCobroSoapIn" />
+      <wsdl:output message="tns:ObtenerDatosGestionCobroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClienteCOMEX">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información solicitada por COMEX del cliente físico o jurídico, segun sea la identificación recibida por parámetro.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarClienteCOMEXSoapIn" />
+      <wsdl:output message="tns:ConsultarClienteCOMEXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCatalogo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información de los catálogos que se encuentran en el RUC, para ser utilizados por cualquier sistema que lo requiera, segun sea el codigo recibido por parámetro.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarCatalogoSoapIn" />
+      <wsdl:output message="tns:ConsultarCatalogoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCedulaSICCFuncionario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la cédula sicc del funcionario, segun sea la identificación RUC recibida por parámetro.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerCedulaSICCFuncionarioSoapIn" />
+      <wsdl:output message="tns:ObtenerCedulaSICCFuncionarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarClientesRUC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información de clientes de RUC a partir de su cédula SICC o SUGEF, nombre, apellidos y razon social.</wsdl:documentation>
+      <wsdl:input message="tns:BuscarClientesRUCSoapIn" />
+      <wsdl:output message="tns:BuscarClientesRUCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPersonaCajas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información de clientes o prospectos de RUC a partir de su cédula y tipo de indetificación.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarPersonaCajasSoapIn" />
+      <wsdl:output message="tns:ConsultarPersonaCajasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoPersonaRUC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite modificar la información de clientes, prospectos y crear prospectos usuarios de cajas</wsdl:documentation>
+      <wsdl:input message="tns:MantenimientoPersonaRUCSoapIn" />
+      <wsdl:output message="tns:MantenimientoPersonaRUCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentasCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener las cuentas de un cliente de RUC a partir de su cédula SICC.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarCuentasClienteSoapIn" />
+      <wsdl:output message="tns:ConsultarCuentasClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionCuentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información de las cuentas de un cliente de RUC a dado la cuenta.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInformacionCuentasSoapIn" />
+      <wsdl:output message="tns:ConsultarInformacionCuentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCDPSCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener los CDP'S de un cliente de RUC a partir de su cédula SICC.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarCDPSClienteSoapIn" />
+      <wsdl:output message="tns:ConsultarCDPSClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionCDPS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener la información de un CDP de un cliente de RUC a dado la el numero de CDP.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInformacionCDPSSoapIn" />
+      <wsdl:output message="tns:ConsultarInformacionCDPSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClienteROE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta la información de un cliente necesaria para el registro de un ROE.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarClienteROESoapIn" />
+      <wsdl:output message="tns:ConsultarClienteROESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCedulas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Busca las cédulas de un cliente, a partir de la cédula RUC o la cédula SICC.</wsdl:documentation>
+      <wsdl:input message="tns:BuscarCedulasSoapIn" />
+      <wsdl:output message="tns:BuscarCedulasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNumerosOperacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener los nuemeros de operación de créditos.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarNumerosOperacionSoapIn" />
+      <wsdl:output message="tns:ConsultarNumerosOperacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNombresImagenesDigitalizadas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Busca las imágenes de un cliente relacionadas a InfoImage.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerNombresImagenesDigitalizadasSoapIn" />
+      <wsdl:output message="tns:ObtenerNombresImagenesDigitalizadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRutaImagenDigitalizada">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Busca la ruta de una imágen de InfoImage.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerRutaImagenDigitalizadaSoapIn" />
+      <wsdl:output message="tns:ObtenerRutaImagenDigitalizadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCedulaSINPE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la cédula SICC de un cliente, a partir de la cédula SINPE.</wsdl:documentation>
+      <wsdl:input message="tns:ValidarCedulaSINPESoapIn" />
+      <wsdl:output message="tns:ValidarCedulaSINPESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSupervisionCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Permite obtener si un cliente requiere o esta en proceso de autorización.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerSupervisionClienteSoapIn" />
+      <wsdl:output message="tns:ObtenerSupervisionClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSRUCSoap" type="tns:WSRUCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerCedulaSICC">
+      <soap:operation soapAction="http://tempuri.org/ObtenerCedulaSICC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteSICAD">
+      <soap:operation soapAction="http://tempuri.org/ValidarClienteSICAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoCedulas_Cajero">
+      <soap:operation soapAction="http://tempuri.org/ObtenerInfoCedulas_Cajero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCedulasSICC">
+      <soap:operation soapAction="http://tempuri.org/ConsultarCedulasSICC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSICC">
+      <soap:operation soapAction="http://tempuri.org/ObtenerUsuarioSICC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteFisico">
+      <soap:operation soapAction="http://tempuri.org/ReplicarClienteFisico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteJuridico">
+      <soap:operation soapAction="http://tempuri.org/ReplicarClienteJuridico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPersonaRUC">
+      <soap:operation soapAction="http://tempuri.org/ConsultarPersonaRUC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarProspecto">
+      <soap:operation soapAction="http://tempuri.org/ReplicarProspecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteFisicoSISTAR">
+      <soap:operation soapAction="http://tempuri.org/ReplicarClienteFisicoSISTAR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteJuridicoSISTAR">
+      <soap:operation soapAction="http://tempuri.org/ReplicarClienteJuridicoSISTAR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteSICC">
+      <soap:operation soapAction="http://tempuri.org/ReplicarClienteSICC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteRUC">
+      <soap:operation soapAction="http://tempuri.org/ValidarClienteRUC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteSICC">
+      <soap:operation soapAction="http://tempuri.org/ValidarClienteSICC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBCRGarantias">
+      <soap:operation soapAction="http://tempuri.org/ValidarClienteBCRGarantias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosGestionCobro">
+      <soap:operation soapAction="http://tempuri.org/ObtenerDatosGestionCobro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClienteCOMEX">
+      <soap:operation soapAction="http://tempuri.org/ConsultarClienteCOMEX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCatalogo">
+      <soap:operation soapAction="http://tempuri.org/ConsultarCatalogo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCedulaSICCFuncionario">
+      <soap:operation soapAction="http://tempuri.org/ObtenerCedulaSICCFuncionario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarClientesRUC">
+      <soap:operation soapAction="http://tempuri.org/BuscarClientesRUC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPersonaCajas">
+      <soap:operation soapAction="http://tempuri.org/ConsultarPersonaCajas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoPersonaRUC">
+      <soap:operation soapAction="http://tempuri.org/MantenimientoPersonaRUC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentasCliente">
+      <soap:operation soapAction="http://tempuri.org/ConsultarCuentasCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionCuentas">
+      <soap:operation soapAction="http://tempuri.org/ConsultarInformacionCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCDPSCliente">
+      <soap:operation soapAction="http://tempuri.org/ConsultarCDPSCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionCDPS">
+      <soap:operation soapAction="http://tempuri.org/ConsultarInformacionCDPS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClienteROE">
+      <soap:operation soapAction="http://tempuri.org/ConsultarClienteROE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCedulas">
+      <soap:operation soapAction="http://tempuri.org/BuscarCedulas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNumerosOperacion">
+      <soap:operation soapAction="http://tempuri.org/ConsultarNumerosOperacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNombresImagenesDigitalizadas">
+      <soap:operation soapAction="http://tempuri.org/ObtenerNombresImagenesDigitalizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRutaImagenDigitalizada">
+      <soap:operation soapAction="http://tempuri.org/ObtenerRutaImagenDigitalizada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCedulaSINPE">
+      <soap:operation soapAction="http://tempuri.org/ValidarCedulaSINPE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSupervisionCliente">
+      <soap:operation soapAction="http://tempuri.org/ObtenerSupervisionCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSRUCSoap12" type="tns:WSRUCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerCedulaSICC">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerCedulaSICC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteSICAD">
+      <soap12:operation soapAction="http://tempuri.org/ValidarClienteSICAD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoCedulas_Cajero">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerInfoCedulas_Cajero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCedulasSICC">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarCedulasSICC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioSICC">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerUsuarioSICC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteFisico">
+      <soap12:operation soapAction="http://tempuri.org/ReplicarClienteFisico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteJuridico">
+      <soap12:operation soapAction="http://tempuri.org/ReplicarClienteJuridico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPersonaRUC">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarPersonaRUC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarProspecto">
+      <soap12:operation soapAction="http://tempuri.org/ReplicarProspecto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteFisicoSISTAR">
+      <soap12:operation soapAction="http://tempuri.org/ReplicarClienteFisicoSISTAR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteJuridicoSISTAR">
+      <soap12:operation soapAction="http://tempuri.org/ReplicarClienteJuridicoSISTAR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplicarClienteSICC">
+      <soap12:operation soapAction="http://tempuri.org/ReplicarClienteSICC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteRUC">
+      <soap12:operation soapAction="http://tempuri.org/ValidarClienteRUC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteSICC">
+      <soap12:operation soapAction="http://tempuri.org/ValidarClienteSICC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBCRGarantias">
+      <soap12:operation soapAction="http://tempuri.org/ValidarClienteBCRGarantias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosGestionCobro">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerDatosGestionCobro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClienteCOMEX">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarClienteCOMEX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCatalogo">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarCatalogo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCedulaSICCFuncionario">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerCedulaSICCFuncionario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarClientesRUC">
+      <soap12:operation soapAction="http://tempuri.org/BuscarClientesRUC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPersonaCajas">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarPersonaCajas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoPersonaRUC">
+      <soap12:operation soapAction="http://tempuri.org/MantenimientoPersonaRUC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentasCliente">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarCuentasCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionCuentas">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarInformacionCuentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCDPSCliente">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarCDPSCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionCDPS">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarInformacionCDPS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClienteROE">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarClienteROE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCedulas">
+      <soap12:operation soapAction="http://tempuri.org/BuscarCedulas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNumerosOperacion">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarNumerosOperacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNombresImagenesDigitalizadas">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerNombresImagenesDigitalizadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRutaImagenDigitalizada">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerRutaImagenDigitalizada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCedulaSINPE">
+      <soap12:operation soapAction="http://tempuri.org/ValidarCedulaSINPE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSupervisionCliente">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerSupervisionCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSRUC">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Interfaces de Integración con el Registro Único de Clientes</wsdl:documentation>
+    <wsdl:port name="WSRUCSoap" binding="tns:WSRUCSoap">
+      <soap:address location="http://bcr0106wsv81:12000/bcr.ruc.servicios/wsruc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSRUCSoap12" binding="tns:WSRUCSoap12">
+      <soap12:address location="http://bcr0106wsv81:12000/bcr.ruc.servicios/wsruc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,137 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCR.SIGANEM.EN", "BCR.SIGANEM.EN\BCR.SIGANEM.EN.csproj", "{97884003-2388-4D2F-B260-7C91CC3C7F23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCR.SIGANEM.BL", "BCR.SIGANEM.BL\BCR.SIGANEM.BL.csproj", "{E1AE0F85-5897-4C18-9C8E-B115434653D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCR.SIGANEM.DA", "BCR.SIGANEM.DA\BCR.SIGANEM.DA.csproj", "{C73FE610-CD47-42D4-8280-A1F079552308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCR.SIGANEM.UT", "BCR.SIGANEM.UT\BCR.SIGANEM.UT.csproj", "{71CC7C2A-D737-42A8-B71E-089AF3218DD2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BCR.SIGANEM.WS", "BCR.SIGANEM.WS", "{5540E8E1-801E-4A3A-BBD1-4B4691301CE6}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/ws"
+		Debug.AspNetCompiler.PhysicalPath = "BCR.SIGANEM.WS\"
+		Debug.AspNetCompiler.TargetPath = "..\..\..\Users\111260118\Desktop\ws\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ws"
+		Release.AspNetCompiler.PhysicalPath = "BCR.SIGANEM.WS\"
+		Release.AspNetCompiler.TargetPath = "..\..\..\Users\111260118\Desktop\ws\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62784"
+		VWDDynamicPort = "true"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BCR.SIGANEM.GUI", "BCR.SIGANEM.GUI", "{8359D7A3-17DB-4FE6-BADF-BD200ADF9B8E}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{97884003-2388-4D2F-B260-7C91CC3C7F23}|BCR.SIGANEM.EN.dll;{71CC7C2A-D737-42A8-B71E-089AF3218DD2}|BCR.SIGANEM.UT.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/app"
+		Debug.AspNetCompiler.PhysicalPath = "BCR.SIGANEM.GUI\"
+		Debug.AspNetCompiler.TargetPath = "..\..\..\Users\111260118\Desktop\app\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/app"
+		Release.AspNetCompiler.PhysicalPath = "BCR.SIGANEM.GUI\"
+		Release.AspNetCompiler.TargetPath = "..\..\..\Users\111260118\Desktop\app\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62787"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.21.32.183:8080/tfs/productoscollection
+		SccProjectUniqueName0 = BCR.SIGANEM.EN\\BCR.SIGANEM.EN.csproj
+		SccProjectName0 = BCR.SIGANEM.EN
+		SccAuxPath0 = http://172.21.32.183:8080/tfs/productoscollection
+		SccLocalPath0 = BCR.SIGANEM.EN
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = BCR.SIGANEM.BL\\BCR.SIGANEM.BL.csproj
+		SccProjectName1 = BCR.SIGANEM.BL
+		SccAuxPath1 = http://172.21.32.183:8080/tfs/productoscollection
+		SccLocalPath1 = BCR.SIGANEM.BL
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = BCR.SIGANEM.DA\\BCR.SIGANEM.DA.csproj
+		SccProjectName2 = BCR.SIGANEM.DA
+		SccAuxPath2 = http://172.21.32.183:8080/tfs/productoscollection
+		SccLocalPath2 = BCR.SIGANEM.DA
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = BCR.SIGANEM.UT\\BCR.SIGANEM.UT.csproj
+		SccProjectName3 = BCR.SIGANEM.UT
+		SccAuxPath3 = http://172.21.32.183:8080/tfs/productoscollection
+		SccLocalPath3 = BCR.SIGANEM.UT
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccWebProject4 = true
+		SccProjectUniqueName4 = BCR.SIGANEM.WS
+		SccProjectName4 = BCR.SIGANEM.WS
+		SccAuxPath4 = http://172.21.32.183:8080/tfs/productoscollection
+		SccLocalPath4 = BCR.SIGANEM.WS
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectEnlistmentChoice4 = 2
+		SccWebProject5 = true
+		SccProjectUniqueName5 = BCR.SIGANEM.GUI
+		SccProjectName5 = BCR.SIGANEM.GUI
+		SccAuxPath5 = http://172.21.32.183:8080/tfs/productoscollection
+		SccLocalPath5 = BCR.SIGANEM.GUI
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectEnlistmentChoice5 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97884003-2388-4D2F-B260-7C91CC3C7F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97884003-2388-4D2F-B260-7C91CC3C7F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97884003-2388-4D2F-B260-7C91CC3C7F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97884003-2388-4D2F-B260-7C91CC3C7F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1AE0F85-5897-4C18-9C8E-B115434653D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1AE0F85-5897-4C18-9C8E-B115434653D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1AE0F85-5897-4C18-9C8E-B115434653D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1AE0F85-5897-4C18-9C8E-B115434653D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C73FE610-CD47-42D4-8280-A1F079552308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C73FE610-CD47-42D4-8280-A1F079552308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C73FE610-CD47-42D4-8280-A1F079552308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C73FE610-CD47-42D4-8280-A1F079552308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CC7C2A-D737-42A8-B71E-089AF3218DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CC7C2A-D737-42A8-B71E-089AF3218DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CC7C2A-D737-42A8-B71E-089AF3218DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CC7C2A-D737-42A8-B71E-089AF3218DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5540E8E1-801E-4A3A-BBD1-4B4691301CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5540E8E1-801E-4A3A-BBD1-4B4691301CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5540E8E1-801E-4A3A-BBD1-4B4691301CE6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5540E8E1-801E-4A3A-BBD1-4B4691301CE6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8359D7A3-17DB-4FE6-BADF-BD200ADF9B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8359D7A3-17DB-4FE6-BADF-BD200ADF9B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8359D7A3-17DB-4FE6-BADF-BD200ADF9B8E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8359D7A3-17DB-4FE6-BADF-BD200ADF9B8E}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

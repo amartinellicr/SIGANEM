@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" />
+  <xs:import schemaLocation="http://bcr0106asg91.bcr.fi.cr:16001/BCR.ServiciosGenerales.SVL.SvAdministrarSesiones.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CrearSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pAplicacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pTiempoExpiracion" type="xs:int" />
+        <xs:element minOccurs="0" name="pForzarCierre" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="CrearSesionResult" nillable="true" type="q1:RespuestaSesion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ConsultarSesionResult" nillable="true" type="q2:RespuestaConsultaSesion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ActualizarSesionResult" nillable="true" type="q3:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="EliminarSesionResult" nillable="true" type="q4:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearVariable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="pVariable" nillable="true" type="q5:Variable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearVariableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="CrearVariableResult" nillable="true" type="q6:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearListaVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="pVariables" nillable="true" type="q7:ArrayOfVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearListaVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="CrearListaVariablesResult" nillable="true" type="q8:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVariable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreVariable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVariableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ConsultarVariableResult" nillable="true" type="q9:RespuestaConsultaVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarListaVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pVariables" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarListaVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ConsultarListaVariablesResult" nillable="true" type="q11:RespuestaConsultaListaVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVariablesSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVariablesSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ConsultarVariablesSesionResult" nillable="true" type="q12:RespuestaConsultaListaVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarVariable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="pVariable" nillable="true" type="q13:ActualizarVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarVariableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ActualizarVariableResult" nillable="true" type="q14:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarListaVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="pVariables" nillable="true" type="q15:ArrayOfActualizarVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarListaVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="ActualizarListaVariablesResult" nillable="true" type="q16:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVariable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreVariable" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVariableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="EliminarVariableResult" nillable="true" type="q17:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarListaVariables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pVariables" nillable="true" type="q18:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarListaVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="EliminarListaVariablesResult" nillable="true" type="q19:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVariablesNoPersistentes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVariablesNoPersistentesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="EliminarVariablesNoPersistentesResult" nillable="true" type="q20:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVariablesSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pIdSesion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVariablesSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BCR.ServiciosGenerales.ETL" minOccurs="0" name="EliminarVariablesSesionResult" nillable="true" type="q21:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

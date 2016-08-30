@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bancobcr.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bancobcr.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB MANEJADOR DE SESIONES</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://bancobcr.com/">
+      <s:element name="UsuarioExisteAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioExisteAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioExisteAdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioAutenticadoAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioAutenticadoAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioAutenticadoAdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioNombreAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioNombreAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioNombreAdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoUsuario" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSesionResult" type="tns:RespuestaSesion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaSesion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Respuesta">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IdSesion" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:element name="EliminarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idSesion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarSesionResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idSesion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSesionResult" type="tns:RespuestaConsultaSesion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaConsultaSesion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Respuesta">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="FechaExpiracion" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdSesion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PeriodoExpiracion" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="EliminarVariable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Variables" type="tns:VariablesSesionEntidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VariablesSesionEntidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idSesion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Persistencia" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarVariableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarVariableResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UsuarioExisteAdSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioExisteAd" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioExisteAdSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioExisteAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioAutenticadoAdSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioAutenticadoAd" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioAutenticadoAdSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioAutenticadoAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioNombreAdSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioNombreAd" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioNombreAdSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioNombreAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSesion" />
+  </wsdl:message>
+  <wsdl:message name="CrearSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarSesion" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarVariableSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarVariable" />
+  </wsdl:message>
+  <wsdl:message name="EliminarVariableSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarVariableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SiganemSesionesWCFSoap">
+    <wsdl:operation name="UsuarioExisteAd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: VALIDA SI EL USUARIO EXISTE EN ACTIVE DIRECTORY</wsdl:documentation>
+      <wsdl:input message="tns:UsuarioExisteAdSoapIn" />
+      <wsdl:output message="tns:UsuarioExisteAdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioAutenticadoAd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: VALIDA LA CORRECTA AUTENTICACIÓN DEL USUARIO EN ACTIVE DIRECTORY</wsdl:documentation>
+      <wsdl:input message="tns:UsuarioAutenticadoAdSoapIn" />
+      <wsdl:output message="tns:UsuarioAutenticadoAdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioNombreAd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: DEVUELVE EL NOMBRE COMPLETO DEL USUARIO EN ACTIVE DIRECTORY</wsdl:documentation>
+      <wsdl:input message="tns:UsuarioNombreAdSoapIn" />
+      <wsdl:output message="tns:UsuarioNombreAdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: CREA LA SESIÓN DEL USUARIO</wsdl:documentation>
+      <wsdl:input message="tns:CrearSesionSoapIn" />
+      <wsdl:output message="tns:CrearSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ELIMINAR LA SESIÓN DEL USUARIO</wsdl:documentation>
+      <wsdl:input message="tns:EliminarSesionSoapIn" />
+      <wsdl:output message="tns:EliminarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSesion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: CONSULTAR LA SESIÓN DEL USUARIO</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarSesionSoapIn" />
+      <wsdl:output message="tns:ConsultarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PROCEDIMIENTO: ELIMINAR LA VARIABLE DE SESIÓN DEL USUARIO</wsdl:documentation>
+      <wsdl:input message="tns:EliminarVariableSoapIn" />
+      <wsdl:output message="tns:EliminarVariableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SiganemSesionesWCFSoap" type="tns:SiganemSesionesWCFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UsuarioExisteAd">
+      <soap:operation soapAction="http://bancobcr.com/UsuarioExisteAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioAutenticadoAd">
+      <soap:operation soapAction="http://bancobcr.com/UsuarioAutenticadoAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioNombreAd">
+      <soap:operation soapAction="http://bancobcr.com/UsuarioNombreAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSesion">
+      <soap:operation soapAction="http://bancobcr.com/CrearSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <soap:operation soapAction="http://bancobcr.com/EliminarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSesion">
+      <soap:operation soapAction="http://bancobcr.com/ConsultarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariable">
+      <soap:operation soapAction="http://bancobcr.com/EliminarVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SiganemSesionesWCFSoap12" type="tns:SiganemSesionesWCFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UsuarioExisteAd">
+      <soap12:operation soapAction="http://bancobcr.com/UsuarioExisteAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioAutenticadoAd">
+      <soap12:operation soapAction="http://bancobcr.com/UsuarioAutenticadoAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioNombreAd">
+      <soap12:operation soapAction="http://bancobcr.com/UsuarioNombreAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSesion">
+      <soap12:operation soapAction="http://bancobcr.com/CrearSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSesion">
+      <soap12:operation soapAction="http://bancobcr.com/EliminarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSesion">
+      <soap12:operation soapAction="http://bancobcr.com/ConsultarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariable">
+      <soap12:operation soapAction="http://bancobcr.com/EliminarVariable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiganemSesionesWCF">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SERVICIO WEB MANEJADOR DE SESIONES</wsdl:documentation>
+    <wsdl:port name="SiganemSesionesWCFSoap" binding="tns:SiganemSesionesWCFSoap">
+      <soap:address location="http://localhost:62784/BCR.SIGANEM.WS/SiganemSesionesWCF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SiganemSesionesWCFSoap12" binding="tns:SiganemSesionesWCFSoap12">
+      <soap12:address location="http://localhost:62784/BCR.SIGANEM.WS/SiganemSesionesWCF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

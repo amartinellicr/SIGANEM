@@ -1,0 +1,5 @@
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.BL\obj\Debug\BCR.SIGANEM.BL.csprojResolveAssemblyReference.cache
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\Binarios\BCR.SIGANEM.BL.dll
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\Binarios\BCR.SIGANEM.BL.pdb
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.BL\obj\Debug\BCR.SIGANEM.BL.dll
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.BL\obj\Debug\BCR.SIGANEM.BL.pdb
