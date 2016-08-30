@@ -9,6 +9,10 @@ SET Monto_Grado_Gravamen_Original = Monto_Grado_Gravamen,
 
 GO
 
+UPDATE dbo.GARANTIAS_OPERACIONES
+SET Monto_Grado_Gravamen = NULL
+GO
+
 
 
 
