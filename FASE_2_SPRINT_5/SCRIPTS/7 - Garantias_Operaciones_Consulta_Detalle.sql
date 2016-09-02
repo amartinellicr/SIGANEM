@@ -64,12 +64,11 @@ BEGIN
 			,GOP.Id_Garantia_Real
 			,GOP.Ind_Estado_Replicado
 			,GOP.Id_Tipo_Moneda_Monto_Gravamen
-			,CASE 
+			,ISNULL((CASE 
 				WHEN GOP.Ind_Metodo_Insercion = 'I' AND @dtFecha_Calculo_Monto_Grado_Gravamen IS NULL THEN GOP.Monto_Grado_Gravamen_Original
 				WHEN GOP.Ind_Metodo_Insercion = 'M' AND ISNULL(Ind_Monto_Grado_Gravamen_Modificado, 0) = 1 THEN GOP.Monto_Grado_Gravamen_Modificado
 				ELSE COALESCE(GOP.Monto_Grado_Gravamen, GOP.Monto_Grado_Gravamen_Modificado, GOP.Monto_Grado_Gravamen_Original)
-			 END AS Monto_Grado_Gravamen,			
-			GOP.Monto_Grado_Gravamen
+			 END), 0) AS Monto_Grado_Gravamen			
 			,GOP.Id_Grado_Gravamen
 			,GOP.Fecha_Constitucion_Garantia
 			,GOP.Id_Clase_Garantia_PRT17

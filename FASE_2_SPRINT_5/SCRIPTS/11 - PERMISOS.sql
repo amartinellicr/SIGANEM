@@ -1,30 +1,32 @@
-﻿USE [USSIGANEM]
+﻿USE [SIGANEM]
 GO
 
 
 /*PERMISOS TABLAS*/
 
-GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_VALORES TO RAP_AccesoUSSIGANEM
-GO
-GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GRADOS_PRIORIDADES TO RAP_AccesoUSSIGANEM
-GO
-GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_FIDEICOMETIDAS TO RAP_AccesoUSSIGANEM
+GRANT SELECT, INSERT, DELETE, UPDATE ON dbo.GARANTIAS_OPERACIONES TO RAP_AccesoSIGANEM
 GO
 
 
 /*PERMISOS SPs */
 
-GRANT EXECUTE ON Calculo_Montos_Prioridades_Colonizado TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Calculo_Monto_Grado_Gravamen TO RAP_AccesoSIGANEM
 GO
-GRANT EXECUTE ON Calculo_Valor_Mercado_Colonizado TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Garantias_Operaciones_Inserta TO RAP_AccesoSIGANEM
 GO
-GRANT EXECUTE ON Calculo_Actualiza_Valor_Nominal TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Garantias_Operaciones_Actualiza TO RAP_AccesoSIGANEM
 GO
-GRANT EXECUTE ON Calculo_Porcentaje_Aceptacion_Terreno_SUGEF_Fideicometida TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Garantias_Operaciones_Elimina TO RAP_AccesoSIGANEM
 GO
-GRANT EXECUTE ON Calculo_Porcentaje_Aceptacion_No_Terreno_SUGEF_Fideicometida TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Garantias_Operaciones_Consulta_Detalle TO RAP_AccesoSIGANEM
 GO
-GRANT EXECUTE ON Calculo_Monto_Mitigador_Calculado_Fideicometido TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Operaciones_Actualiza TO RAP_AccesoSIGANEM
 GO
-GRANT EXECUTE ON Calculo_Monto_Mitigador_Calculado TO RAP_AccesoUSSIGANEM
+GRANT EXECUTE ON Operaciones_Actualiza_Generales TO RAP_AccesoSIGANEM
 GO
+GRANT EXECUTE ON Operaciones_Elimina TO RAP_AccesoSIGANEM
+GO
+
+GRANT EXECUTE ON Calculo_Monto_Grado_Gravamen TO RAP_AccesoIntegracion
+GO
+
