@@ -109,7 +109,6 @@ BEGIN
 			AND TM.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT
 			ON CAT.Id_Tipo_Mitigador_Riesgo = TM.Id_Tipo_Mitigador_Riesgo
-			AND CAT.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT.Ind_Estado_Registro = 1
 		INNER JOIN dbo.PARAMETROS_BIENES PAR
 			ON 1 = 1

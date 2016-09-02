@@ -133,7 +133,6 @@ BEGIN
 			AND TM.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT
 			ON CAT.Id_Tipo_Mitigador_Riesgo = TM.Id_Tipo_Mitigador_Riesgo
-			AND CAT.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.GARANTIAS_REALES_POLIZAS GARPOL
 			ON GARPOL.Id_Garantia_Real = GAR.Id_Garantia_Real
@@ -204,7 +203,6 @@ BEGIN
 			AND TM.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT
 			ON CAT.Id_Tipo_Mitigador_Riesgo = TM.Id_Tipo_Mitigador_Riesgo
-			AND CAT.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.GARANTIAS_REALES_POLIZAS GARPOL
 			ON GARPOL.Id_Garantia_Real = GAR.Id_Garantia_Real
@@ -311,7 +309,6 @@ BEGIN
 			AND TM.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT
 			ON CAT.Id_Tipo_Mitigador_Riesgo = TM.Id_Tipo_Mitigador_Riesgo
-			AND CAT.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.GARANTIAS_REALES_POLIZAS GARPOL
 			ON GARPOL.Id_Garantia_Real = GAR.Id_Garantia_Real
@@ -374,7 +371,6 @@ BEGIN
 			AND TM.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT
 			ON CAT.Id_Tipo_Mitigador_Riesgo = TM.Id_Tipo_Mitigador_Riesgo
-			AND CAT.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.GARANTIAS_REALES_POLIZAS GARPOL
 			ON GARPOL.Id_Garantia_Real = GAR.Id_Garantia_Real
@@ -410,17 +406,14 @@ BEGIN
 			ON TM.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT
 			ON CAT.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
-			AND CAT.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT.Id_Categoria_Calificacion = GAV.Id_Categoria_Riesgo_Empresa_Calificadora 
 			AND CAT.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT1
 			ON CAT1.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
 			AND CAT1.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
-			AND CAT1.Id_Categoria_Calificacion = 2 --NO APLICA CALIFICACION
 			AND CAT1.Ind_Estado_Registro = 1
 		LEFT JOIN dbo.CATEGORIAS_CALIFICACIONES_TIPOS_MITIGADORES_RIESGOS CAT2
 			ON CAT2.Id_Tipo_Mitigador_Riesgo = GARFID.Id_Tipo_Mitigador_Riesgo
-			AND CAT2.Id_Tipo_Garantia = GARFID.Id_Tipo_Garantia
 			AND CAT2.Id_Categoria_Calificacion = 1 --SIN CALIFICACION
 			AND CAT2.Ind_Estado_Registro = 1
 		INNER JOIN dbo.PARAMETROS_BIENES PAR
