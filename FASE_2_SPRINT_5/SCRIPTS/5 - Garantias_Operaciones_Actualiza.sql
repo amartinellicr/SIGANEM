@@ -127,7 +127,7 @@ BEGIN
                     @vdCod_Usuario_Ingreso = Cod_Usuario_Ingreso,
 					@viId_Fideicomiso = Id_Fideicomiso,
 					@viId_Garantia_Aval = Id_Garantia_Aval,
-					@vnMonto_Grado_Gravamen_Original = Monto_Grado_Gravamen_Original
+					@vnMonto_Grado_Gravamen_Original = ISNULL(Monto_Grado_Gravamen_Original, @pnMonto_Grado_Gravamen)
              FROM 
                     dbo.GARANTIAS_OPERACIONES
              WHERE  

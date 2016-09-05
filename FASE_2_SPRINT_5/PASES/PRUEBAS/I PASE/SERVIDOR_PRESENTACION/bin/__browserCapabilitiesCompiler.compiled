@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/BCR.SIGANEM.GUI/App_Browsers/" hash="79ada8ca" filehash="ffffd6245c8df68c" flags="110000" assembly="App_Browsers" type="ASP.ApplicationBrowserCapabilitiesFactory">
+    <filedeps>
+        <filedep name="/BCR.SIGANEM.GUI/App_Browsers/Browsers.browser" />
+    </filedeps>
+</preserve>

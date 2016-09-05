@@ -1,0 +1,43 @@
+﻿.modalBackground
+{
+    /*ESTILOS*/
+    background-color: #6E6E6E; /* IE 8 */
+    /*BROWSER*/
+    opacity: 0.6;
+    -moz-opacity: 0.6; /* Safari 1.x */
+    -khtml-opacity: 0.6; /* Good browsers */    
+    filter: alpha(opacity=80); /* Netscape */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 5-7 */
+}
+
+.modalPopup
+{
+    /*ESTILOS*/
+    border-width: 3px;
+    border-color: Gray;
+    border-style: solid;
+    background-color: #EFF5FB;
+    border: solid 1px #333333;
+    /*ALINEACION*/
+    margin: 0 auto;
+    padding: 3px;
+    text-align: center;
+    /*TAMANO*/
+    width: 250px;
+    /*BROWSER*/
+    behavior: url(ie-css3.htc); /* This lets IE know to call the script on all elements which get the 'box' class */
+    box-shadow: 10px 10px 20px #000; /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */    
+    border-radius: 15px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+    -moz-box-shadow: 10px 10px 20px #000; /* Firefox */
+    -webkit-box-shadow: 10px 10px 20px #000; /* Safari and Chrome */
+    -moz-border-radius: 15px; /* Firefox */
+    -webkit-border-radius: 15px; /* Safari and Chrome */
+}
+
+.popupControl
+{
+    /*ESTILOS*/
+    background-color: #FFFFFF;
+    position: absolute;
+    visibility: hidden;
+}

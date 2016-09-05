@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="8" virtualPath="/BCR.SIGANEM.GUI/global.asax" hash="79ada8ca" filehash="cd906372bc4" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
+    <filedeps>
+        <filedep name="/BCR.SIGANEM.GUI/global.asax" />
+    </filedeps>
+</preserve>
