@@ -76,7 +76,8 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
             AsignaWebServicesTypeNames();
 
             //EFECTO DE AUTOCOMPLETAR PARA EL CAMPO N BIEN 
-            txtCodigoBien.Attributes.Add("onblur", "AutoCompletar('" + txtCodigoBien.ClientID + "','" + ddlTipoBien.ClientID + "','" + ddlIdFormatoIdentificacionVehiculo.ClientID + "','0')");
+            //RQ_MANT_2016050410580724: BACKLOG 3943 - SE COMENTA
+            //txtCodigoBien.Attributes.Add("onblur", "AutoCompletar('" + txtCodigoBien.ClientID + "','" + ddlTipoBien.ClientID + "','" + ddlIdFormatoIdentificacionVehiculo.ClientID + "','0')");
 
             #region MENSAJE INFORMAR
 
@@ -1337,6 +1338,10 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
                 chkEstadoHorizontal.Checked = true;
                 chkEstadoHorizontal.Enabled = true;
 
+                //RQ_MANT_2016050410580724: BACKLOG 3943
+                //COMPLETA CON CEROS EL CAMPO NUMERO BIEN
+                AutoCompletarNBien(false);
+
                 //ELIMINA HIPOTECA ABIERTA DE DDLTIPOCLASE
                 if (ddlIdClaseTipoBien.Items.Count > 0)
                 {
@@ -1369,6 +1374,10 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
                 chkEstadoDuplicado.Enabled = false;
                 chkEstadoHorizontal.Checked = false;
                 chkEstadoHorizontal.Enabled = false;
+
+                //RQ_MANT_2016050410580724: BACKLOG 3943
+                //COMPLETA CON CEROS EL CAMPO NUMERO BIEN
+                AutoCompletarNBien(true);
 
                 //ELIMINA BONO DE PRENDA DE DDLTIPOCLASE
                 if (ddlIdClaseTipoBien.Items.Count > 0)
@@ -1403,6 +1412,10 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
 
                 //COMBO FORMATO DE IDENTIFICACION VEHICULO
                 ddlFormatoIdentificacionVehiculoIdentificacionVehiculo();
+
+                //RQ_MANT_2016050410580724: BACKLOG 3943
+                //COMPLETA CON CEROS EL CAMPO NUMERO BIEN
+                AutoCompletarNBien(true);
             }
             else
             {
@@ -1431,6 +1444,10 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
                 //EFECTO DE NUMERO DE BIEN
                 txtCodigoBien.MaxLength = 6;
                 txtCodigoBien.ToolTip = "Númerico de 6 caracteres";
+
+                //RQ_MANT_2016050410580724: BACKLOG 3943
+                //COMPLETA CON CEROS EL CAMPO NUMERO BIEN
+                AutoCompletarNBien(true);
             }
             else
             {
@@ -1452,6 +1469,10 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
                 //EFECTO DE NUMERO DE BIEN
                 txtCodigoBien.MaxLength = 6;
                 txtCodigoBien.ToolTip = "Númerico de 6 caracteres";
+
+                //RQ_MANT_2016050410580724: BACKLOG 3943
+                //COMPLETA CON CEROS EL CAMPO NUMERO BIEN
+                AutoCompletarNBien(true);
             }
             else
             {
@@ -2072,11 +2093,13 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
     private bool ValidarNumeroBien()
     {
         var regex6Numerico = new Regex(@"^\d{6}$");
-        ////Linea Nueva
-        //var regexNumerico = new Regex(@"^\d{1,6}$");
+        
         var regex3letras3numeros = new Regex(@"^[a-zA-Z]{3}\d{3}$");
 
         var regexNoVocales = new Regex(@"^[^aeiouAEIOU]{3}");
+
+        //RQ_MANT_2016050410580724: BACKLOG 3943
+        var regex6NumericoNoFijo = new Regex(@"^\d{1,6}$");
 
         //Control de Cambios 1.1
         var regex17alfanumericosFijo = new Regex(@"^([a-zA-Z]|\d){17}$");
@@ -2090,32 +2113,35 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
         //VALOR SELECCIONADO EN EL FORMATO DE IDENTIFICACION VEHICULO
         string valorFormatoIdentificacion = this.ddlIdFormatoIdentificacionVehiculo.SelectedItem.Text;
 
-        if (ObtenerTipoBien().Equals(1) || ObtenerTipoBien().Equals(2) || ObtenerTipoBien().Equals(9) || ObtenerTipoBien().Equals(10))
+        //RQ_MANT_2016050410580724: BACKLOG 3943
+        if (ObtenerTipoBien().Equals(1) || ObtenerTipoBien().Equals(2))
         {
-            //VERIFICACION DEL FORMATO NUMERICO 6 CARACTERES
-            if (!regex6Numerico.IsMatch(this.txtCodigoBien.Text))
-            ////Linea Nueva
-            //if (!regexNumerico.IsMatch(this.txtCodigoBien.Text))
+            //VERIFICACION DEL FORMATO NUMERICO 6 CARACTERES NO FIJOS
+            if (!regex6NumericoNoFijo.IsMatch(this.txtCodigoBien.Text))
             {
                 existeError = true;
             }
         }
         else
         {
-            if (!ObtenerTipoBien().Equals(3))
+            if (ObtenerTipoBien().Equals(9) || ObtenerTipoBien().Equals(10))
             {
-                //VERIFICACION DEL FORMATO ALFANUMERICO 17 CARACTERES
-                if (!regex17alfanumericos.IsMatch(this.txtCodigoBien.Text))
+                //VERIFICACION DEL FORMATO NUMERICO 6 CARACTERES
+                if (!regex6Numerico.IsMatch(this.txtCodigoBien.Text))
                 {
                     existeError = true;
                 }
-
-                ////VERIFICACION DEL FORMATO ALFANUMERICO 17 CARACTERES PERO NO DEBEN SER SOLO LETRAS
-                //if (regexLetras.IsMatch(this.txtCodigoBien.Text))
-                //{
-                //    existeError = true;
-                //    existeErrorSoloLetras = true;
-                //}
+            }
+            else
+            {
+                if (!ObtenerTipoBien().Equals(3))
+                {
+                    //VERIFICACION DEL FORMATO ALFANUMERICO 17 CARACTERES
+                    if (!regex17alfanumericos.IsMatch(this.txtCodigoBien.Text))
+                    {
+                        existeError = true;
+                    }
+                }
             }
         }
 
@@ -2162,6 +2188,19 @@ public partial class wucGarantiasFideicomisoReales : System.Web.UI.UserControl
         }
 
         return existeError;
+    }
+
+    //RQ_MANT_2016050410580724: BACKLOG 3943
+    private void AutoCompletarNBien(bool texto)
+    {
+        if (texto)
+        {
+            this.txtCodigoBien.Attributes.Add("onblur", "AutoCompletar('" + txtCodigoBien.ClientID + "','" + ddlTipoBien.ClientID + "','" + ddlIdFormatoIdentificacionVehiculo.ClientID + "','0')");
+        }
+        else
+        {
+            this.txtCodigoBien.Attributes.Add("onblur", "");
+        }
     }
 
     #endregion
