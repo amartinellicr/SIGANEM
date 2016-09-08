@@ -111,7 +111,7 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\BCR.SIGANEM.UT.App_GlobalResources.Resource.resources" />
+    <EmbeddedResource Include="obj\Debug\BCR.SIGANEM.UT.App_GlobalResources.Resource" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />

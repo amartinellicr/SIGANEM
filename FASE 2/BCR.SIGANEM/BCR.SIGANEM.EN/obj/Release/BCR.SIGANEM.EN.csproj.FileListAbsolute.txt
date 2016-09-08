@@ -1,0 +1,4 @@
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.EN\bin\Release\BCR.SIGANEM.EN.dll
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.EN\bin\Release\BCR.SIGANEM.EN.pdb
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.EN\obj\Release\BCR.SIGANEM.EN.dll
+D:\workdir Arnoldo Martinelli\FASE 2\BCR.SIGANEM\BCR.SIGANEM.EN\obj\Release\BCR.SIGANEM.EN.pdb
