@@ -20,3 +20,5 @@ GRANT EXECUTE ON Calculo_Porcentaje_Responsabilidad_Escenario_A TO RAP_AccesoSIG
 GO
 GRANT EXECUTE ON Calculo_Porcentaje_Responsabilidad_Escenario_B TO RAP_AccesoSIGANEM
 GO
+GRANT EXECUTE ON Calculo_Porcentaje_Aceptacion_No_Terreno_SUGEF_Fideicometida TO RAP_AccesoSIGANEM
+GO

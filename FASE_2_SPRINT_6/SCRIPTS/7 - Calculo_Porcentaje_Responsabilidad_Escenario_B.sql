@@ -73,7 +73,6 @@ BEGIN
 			GAF.Ind_Estado_Registro = 1 
 		AND GAROPER.Ind_Estado_Registro = 1
 		GROUP BY 
-			GAROPER.Id_Operacion,
 			GAROPER.Id_Garantia_Fiduciaria,
 			GAROPER.Id_Tipo_Garantia
 		HAVING COUNT(1) > 1
@@ -169,7 +168,7 @@ BEGIN
 		AND GAROPER.Ind_Estado_Registro = 1
 		GROUP BY 
 			GAROPER.Id_Operacion
-		HAVING COUNT(1) > 1
+		--HAVING COUNT(1) > 1
 
 		CREATE NONCLUSTERED INDEX AUX_PCJ_OPERACIONES_B_01 ON dbo.AUX_PCJ_OPERACIONES_B
 		(Id_Operacion ASC) 
@@ -181,17 +180,17 @@ BEGIN
 		CREATE TABLE dbo.AUX_PCJ_GARANTIAS_B_1
 		(Id_Garantia INT,
 		Id_Tipo_Garantia INT,
-		Saldo_Colonizado DECIMAL(22,2)
+		Saldo_Total_Colonizado DECIMAL(22,2)
 		)
 
-		INSERT INTO dbo.AUX_PCJ_GARANTIAS_B_1 (Id_Garantia, Id_Tipo_Garantia, Saldo_Colonizado)
+		INSERT INTO dbo.AUX_PCJ_GARANTIAS_B_1 (Id_Garantia, Id_Tipo_Garantia, Saldo_Total_Colonizado)
 		SELECT 
 			AUX_V.Id_Garantia,
 			GAROPER.Id_Tipo_Garantia,
-			SUM(CASE TP.Cod_Tipo_Operacion WHEN 1 THEN ISNULL(OPER.Saldo_Colonizado,0)
-										   WHEN 2 THEN ISNULL(OPER.Saldo_Original_Colonizado,0)
-										   ELSE 0
-				END) Saldo_Colonizado
+			SUM(CASE TP.Cod_Tipo_Operacion	WHEN 1 THEN ISNULL(OPER.Saldo_Colonizado,0)
+											WHEN 2 THEN ISNULL(OPER.Saldo_Original_Colonizado,0)
+											ELSE 0
+				END) AS Saldo_Total_Colonizado
 		FROM 
 			dbo.GARANTIAS_OPERACIONES GAROPER
 		INNER JOIN dbo.OPERACIONES OPER
@@ -201,7 +200,7 @@ BEGIN
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B  AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B AUX_V
-			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Fiduciaria, GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
 			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
@@ -223,12 +222,12 @@ BEGIN
 		)
 
 		INSERT INTO dbo.AUX_PCJ_OPERACIONES_B_1 (Id_Operacion, Saldo_Colonizado)
-		SELECT 
+		SELECT DISTINCT
 			GAROPER.Id_Operacion,
-			SUM(CASE TP.Cod_Tipo_Operacion WHEN 1 THEN ISNULL(OPER.Saldo_Colonizado,0)
-										   WHEN 2 THEN ISNULL(OPER.Saldo_Original_Colonizado,0)
-										   ELSE 0
-				END) Saldo_Colonizado
+			CASE TP.Cod_Tipo_Operacion WHEN 1 THEN ISNULL(OPER.Saldo_Colonizado,0)
+									   WHEN 2 THEN ISNULL(OPER.Saldo_Original_Colonizado,0)
+									   ELSE 0
+			END AS Saldo_Colonizado
 		FROM 
 			dbo.GARANTIAS_OPERACIONES GAROPER
 		INNER JOIN dbo.OPERACIONES OPER
@@ -238,23 +237,23 @@ BEGIN
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B  AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B AUX_V
-			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Fiduciaria, GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
 			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
-		GROUP BY GAROPER.Id_Operacion
+		--GROUP BY GAROPER.Id_Operacion
 
 		CREATE NONCLUSTERED INDEX AUX_PCJ_OPERACIONES_B_1_01 ON dbo.AUX_PCJ_OPERACIONES_B_1
 		(Id_Operacion ASC)
 
 
 		UPDATE GAROPER
-			SET Porcentaje_Responsabilidad_SUGEF = CASE WHEN AUX_V.Saldo_Colonizado <> 0 THEN 
-															CASE WHEN ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Colonizado) * 100,2) > 100 
+			SET Porcentaje_Responsabilidad_SUGEF = CASE WHEN AUX_V.Saldo_Total_Colonizado <> 0 THEN 
+															CASE WHEN ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100,2) > 100 
 															THEN 100 
-															WHEN ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Colonizado) * 100,2) < 0
+															WHEN ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100,2) < 0
 															THEN 0
-															ELSE ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Colonizado) * 100,2)
+															ELSE ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100,2)
 														END
 													ELSE 0
 													END
@@ -263,7 +262,7 @@ BEGIN
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B_1 AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B_1 AUX_V
-			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Fiduciaria, GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
 			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
