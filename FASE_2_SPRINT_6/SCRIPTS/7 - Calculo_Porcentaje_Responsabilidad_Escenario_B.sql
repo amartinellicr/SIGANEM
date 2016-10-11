@@ -63,23 +63,6 @@ BEGIN
 
 		INSERT INTO dbo.AUX_PCJ_GARANTIAS_B (Id_Garantia, Id_Tipo_Garantia)
 		SELECT 
-			GAROPER.Id_Garantia_Fiduciaria,
-			GAROPER.Id_Tipo_Garantia
-		FROM 
-			dbo.GARANTIAS_FIDUCIARIAS GAF
-		INNER JOIN dbo.GARANTIAS_OPERACIONES GAROPER
-			ON GAF.Id_Garantia_Fiduciaria = GAROPER.Id_Garantia_Fiduciaria
-		WHERE 
-			GAF.Ind_Estado_Registro = 1 
-		AND GAROPER.Ind_Estado_Registro = 1
-		GROUP BY 
-			GAROPER.Id_Garantia_Fiduciaria,
-			GAROPER.Id_Tipo_Garantia
-		HAVING COUNT(1) > 1
-
-		UNION 
-
-		SELECT 
 			GAROPER.Id_Garantia_Valor,
 			GAROPER.Id_Tipo_Garantia
 		FROM 
@@ -200,7 +183,7 @@ BEGIN
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B  AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B AUX_V
-			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Fiduciaria, GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
 			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
@@ -237,7 +220,7 @@ BEGIN
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B  AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B AUX_V
-			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Fiduciaria, GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
 			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
@@ -262,7 +245,7 @@ BEGIN
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B_1 AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B_1 AUX_V
-			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Fiduciaria, GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
 			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
