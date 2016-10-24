@@ -143,9 +143,11 @@ BEGIN
 								THEN 1
 								ELSE 0
 							END,
-			Validacion_2 = CASE WHEN GRI.Fecha_Anotacion IS NULL AND GRI.Fecha_Inscripcion IS NULL AND (DATEADD(D,30,GAROPER.Fecha_Constitucion_Garantia)) > GETDATE()
-								THEN 1
-								ELSE 0
+			Validacion_2 =	CASE WHEN GRI.Id_Garantia_Operacion IS NULL AND (DATEADD(D, 30, GAROPER.Fecha_Constitucion_Garantia)) > GETDATE()
+									THEN 1
+								 WHEN GRI.Id_Garantia_Operacion IS NOT NULL AND GRI.Fecha_Anotacion IS NULL AND GRI.Fecha_Inscripcion IS NULL AND (DATEADD(D,30,GAROPER.Fecha_Constitucion_Garantia)) > GETDATE()
+									THEN 1
+								 ELSE 0
 							END,
 			Validacion_3 = CASE WHEN GRI.Fecha_Anotacion IS NULL AND GRI.Fecha_Inscripcion IS NOT NULL 
 								THEN 1

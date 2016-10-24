@@ -163,7 +163,7 @@ BEGIN
 		CREATE TABLE dbo.AUX_PCJ_GARANTIAS_B_1
 		(Id_Garantia INT,
 		Id_Tipo_Garantia INT,
-		Saldo_Total_Colonizado DECIMAL(22,2)
+		Saldo_Total_Colonizado DECIMAL(30,10)
 		)
 
 		INSERT INTO dbo.AUX_PCJ_GARANTIAS_B_1 (Id_Garantia, Id_Tipo_Garantia, Saldo_Total_Colonizado)
@@ -201,7 +201,7 @@ BEGIN
 
 		CREATE TABLE dbo.AUX_PCJ_OPERACIONES_B_1
 		(Id_Operacion INT,
-		Saldo_Colonizado DECIMAL(22,2)
+		Saldo_Colonizado DECIMAL(30,10)
 		)
 
 		INSERT INTO dbo.AUX_PCJ_OPERACIONES_B_1 (Id_Operacion, Saldo_Colonizado)
@@ -230,23 +230,57 @@ BEGIN
 		(Id_Operacion ASC)
 
 
-		UPDATE GAROPER
-			SET Porcentaje_Responsabilidad_SUGEF = CASE WHEN AUX_V.Saldo_Total_Colonizado <> 0 THEN 
-															CASE WHEN ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100,2) > 100 
-															THEN 100 
-															WHEN ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100,2) < 0
-															THEN 0
-															ELSE ROUND((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100,2)
-														END
-													ELSE 0
-													END
+		IF(OBJECT_ID('dbo.AUX_PCJ_OPERACIONES_B_2') IS NOT NULL)
+			DROP TABLE dbo.AUX_PCJ_OPERACIONES_B_2
+
+
+		CREATE TABLE dbo.AUX_PCJ_OPERACIONES_B_2
+		(Id_Operacion INT,
+		Id_Garantia INT,
+		Id_Tipo_Garantia INT,
+		Saldo_Colonizado DECIMAL(30,10),
+		Porcentaje DECIMAL(30,10)		
+		)
+
+
+		INSERT INTO dbo.AUX_PCJ_OPERACIONES_B_2 (Id_Operacion,Id_Garantia, Id_Tipo_Garantia, Saldo_Colonizado, Porcentaje)
+		SELECT 
+			AUX_O.Id_Operacion,
+			AUX_V.Id_Garantia,
+			AUX_V.Id_Tipo_Garantia,
+			AUX_O.Saldo_Colonizado,
+			CASE WHEN AUX_V.Saldo_Total_Colonizado <> 0 THEN 
+					CASE WHEN ((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100) > 100 
+					THEN 100 
+					WHEN ((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100) < 0
+					THEN 0
+					ELSE ((AUX_O.Saldo_Colonizado / AUX_V.Saldo_Total_Colonizado) * 100)
+				END
+			ELSE 0
+			END AS Porcentaje
 		FROM 
 			dbo.GARANTIAS_OPERACIONES GAROPER
 		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B_1 AUX_O
 			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
 		INNER JOIN dbo.AUX_PCJ_GARANTIAS_B_1 AUX_V
 			ON AUX_V.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
-			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
+			AND AUX_V.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia	
+		WHERE 
+			GAROPER.Ind_Estado_Registro = 1
+
+		CREATE NONCLUSTERED INDEX AUX_PCJ_OPERACIONES_B_2_01 ON dbo.AUX_PCJ_OPERACIONES_B_2
+		(Id_Operacion ASC,
+		Id_Garantia ASC,
+		Id_Tipo_Garantia ASC)
+
+		UPDATE GAROPER
+			SET Porcentaje_Responsabilidad_SUGEF = ROUND(AUX_O.Porcentaje, 2)
+		FROM 
+			dbo.GARANTIAS_OPERACIONES GAROPER
+		INNER JOIN dbo.AUX_PCJ_OPERACIONES_B_2 AUX_O
+			ON AUX_O.Id_Operacion = GAROPER.Id_Operacion
+			AND AUX_O.Id_Garantia = COALESCE(GAROPER.Id_Garantia_Valor, GAROPER.Id_Garantia_Real, GAROPER.Id_Fideicomiso, GAROPER.Id_Garantia_Aval)
+			AND AUX_O.Id_Tipo_Garantia = GAROPER.Id_Tipo_Garantia
 		WHERE 
 			GAROPER.Ind_Estado_Registro = 1
 
